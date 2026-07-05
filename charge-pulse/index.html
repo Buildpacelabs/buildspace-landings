@@ -1,0 +1,503 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charge Pulse — Real-Time EV Charging Finder, Trip Planner & Live Availability</title>
+  <meta name="description" content="Charge Pulse finds EV chargers before you need them: live OCPP availability across networks, traffic-aware routing, a battery-aware trip planner, and voice-guided navigation. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/charge-pulse/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A0E0F">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="Charge Pulse — Real-Time EV Charging Finder & Trip Planner">
+  <meta property="og:description" content="Live OCPP availability across networks, traffic-aware routing, a battery-aware trip planner, and voice-guided navigation. Find the charger before you need it.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/charge-pulse/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/charge-pulse/assets/product-map.png">
+  <meta property="og:image:alt" content="Charge Pulse live map showing pulsing EV station markers across the Bay Area with real-time availability by network.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Charge Pulse — Real-Time EV Charging Finder & Trip Planner">
+  <meta name="twitter:description" content="Live OCPP availability across networks, traffic-aware routing, a battery-aware trip planner, and voice-guided navigation.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/charge-pulse/assets/product-map.png">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0E0F'/%3E%3Cpath d='M18 4 8 18h6l-2 10 10-14h-6l2-10z' fill='%2322D3EE'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Charge Pulse",
+    "description": "Real-time EV charging station finder with GPS navigation, live OCPP availability, traffic-aware routing and a battery-aware trip planner. Web app plus Flutter mobile with voice-guided navigation and offline map caching.",
+    "applicationCategory": "TravelApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Charge Pulse home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="url(#bolt)"/><defs><linearGradient id="bolt" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#22D3EE"/><stop offset="1" stop-color="#B6FF3C"/></linearGradient></defs></svg>
+      </span>
+      ChargePulse
+      <span class="live-dot" aria-hidden="true"></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#showcase">Map</a>
+      <a href="#showcase">Trip planner</a>
+      <a href="#networks">Networks</a>
+      <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">Built by <span>BuildspaceLabs&nbsp;↗</span></a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Get the app</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero section-pad" aria-labelledby="hero-title">
+  <span class="glow glow-a glow-breathe" aria-hidden="true"></span>
+  <span class="glow glow-b glow-breathe" aria-hidden="true"></span>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="live-pill">
+        <span class="dot" aria-hidden="true"></span>
+        Live network
+        <em>· <span data-countup="993" data-suffix="">993</span> stations online</em>
+      </span>
+
+      <h1 id="hero-title">
+        Find the charger<br>
+        <span class="sweep">before you need it.</span>
+      </h1>
+
+      <p class="lede">
+        Real-time availability across every network, traffic-aware routing, and a battery-aware trip planner — so you reach the right charger on the first try.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">
+          Get the app
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="#showcase">Plan a trip</a>
+      </div>
+
+      <p class="hero-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        Live status via OCPP · CCS, CHAdeMO, Type 2 &amp; NACS
+      </p>
+    </div>
+
+    <!-- Signature live-map motif -->
+    <div class="map-stage reveal" data-delay="1" aria-hidden="true">
+      <div class="map-chip">
+        <span class="dot"></span> <span class="n">993</span>&nbsp;online
+      </div>
+
+      <svg class="map-svg" viewBox="0 0 580 580" preserveAspectRatio="xMidYMid slice" role="presentation">
+        <defs>
+          <linearGradient id="routeGrad" x1="60" y1="300" x2="520" y2="200" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#22D3EE"/>
+            <stop offset="1" stop-color="#B6FF3C"/>
+          </linearGradient>
+          <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+            <path d="M48 0H0V48" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+          </pattern>
+        </defs>
+
+        <rect width="580" height="580" fill="url(#grid)"/>
+
+        <!-- subtle roads -->
+        <g stroke="rgba(255,255,255,0.06)" stroke-width="6" fill="none" stroke-linecap="round">
+          <path d="M-20 150 H600"/>
+          <path d="M-20 430 H600"/>
+          <path d="M140 -20 V600"/>
+          <path d="M420 -20 V600"/>
+          <path d="M-20 60 L600 380"/>
+        </g>
+
+        <!-- self-drawing route -->
+        <path class="route-line" d="M 60 300 C 120 220, 180 250, 230 190 S 330 90, 400 130 S 470 240, 520 200"/>
+        <circle class="route-dot" r="5"/>
+
+        <!-- pulsing station markers -->
+        <g class="marker cyan" style="--d:0s" transform="translate(60,300)">
+          <circle class="halo" r="10" style="animation-delay:0s"/>
+          <circle class="core" r="7"/><circle class="pin" r="3"/>
+        </g>
+        <g class="marker lime" transform="translate(230,190)">
+          <circle class="halo" r="10" style="animation-delay:.5s"/>
+          <circle class="core" r="7"/><circle class="pin" r="3"/>
+        </g>
+        <g class="marker cyan" transform="translate(400,130)">
+          <circle class="halo" r="10" style="animation-delay:1s"/>
+          <circle class="core" r="7"/><circle class="pin" r="3"/>
+        </g>
+        <g class="marker cyan" transform="translate(520,200)">
+          <circle class="halo" r="10" style="animation-delay:1.4s"/>
+          <circle class="core" r="7"/><circle class="pin" r="3"/>
+        </g>
+        <g class="marker lime" transform="translate(160,430)">
+          <circle class="halo" r="10" style="animation-delay:.8s"/>
+          <circle class="core" r="7"/><circle class="pin" r="3"/>
+        </g>
+        <g class="marker cyan" transform="translate(430,410)">
+          <circle class="halo" r="10" style="animation-delay:1.9s"/>
+          <circle class="core" r="7"/><circle class="pin" r="3"/>
+        </g>
+        <g class="marker lime" transform="translate(330,320)">
+          <circle class="halo" r="10" style="animation-delay:2.3s"/>
+          <circle class="core" r="7"/><circle class="pin" r="3"/>
+        </g>
+      </svg>
+
+      <!-- charge-fill widget -->
+      <div class="charge-widget">
+        <div class="cw-top">
+          <span class="label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+            Charging · CCS · 150 kW
+          </span>
+          <span class="cw-pct">80%</span>
+        </div>
+        <div class="charge-track"><div class="charge-bar"></div></div>
+        <div class="cw-sub"><span>Battery-aware ETA</span><span>18 min to 80%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<section class="marquee-band" id="networks" aria-label="Supported connectors and networks">
+  <p class="marquee-label">Every connector · every major network</p>
+  <div class="marquee" id="marquee">
+    <!-- set repeats twice for seamless loop (see script) -->
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="8"/><path d="M9 10h.01M15 10h.01M8 15h8" stroke-linecap="round"/></svg><strong>CCS</strong></span>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1.4"/><circle cx="15" cy="10" r="1.4"/><circle cx="12" cy="15" r="1.4"/></svg><strong>CHAdeMO</strong></span>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="9" r="1.3"/><circle cx="16" cy="9" r="1.3"/><circle cx="8" cy="15" r="1.3"/><circle cx="16" cy="15" r="1.3"/><circle cx="12" cy="12" r="1.3"/></svg><strong>Type 2</strong></span>
+    <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="7"/><path d="M12 8v8M9 11h6" stroke-linecap="round"/></svg><strong>Tesla NACS</strong></span>
+    <span class="chip net"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h16M9 8v12M15 8v12"/></svg><strong>Tesla</strong></span>
+    <span class="chip net"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M6 8l12 8M18 8L6 16"/></svg><strong>ChargePoint</strong></span>
+    <span class="chip net"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg><strong>EVgo</strong></span>
+    <span class="chip net"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18"/></svg><strong>Electrify America</strong></span>
+  </div>
+</section>
+
+<!-- ============ STAT BAND ============ -->
+<section class="stats section-pad" aria-labelledby="stats-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Live in production</span>
+      <h2 id="stats-title">Numbers that move in real time</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="num grad">Real&#8209;time</div>
+        <p class="label">Connector-level station availability, streamed straight from an OCPP backend.</p>
+        <p class="sub">Occupied, available or offline — updated live.</p>
+      </div>
+      <div class="stat reveal" data-delay="1">
+        <div class="num grad"><span data-countup="60">0</span><span class="unit">%</span></div>
+        <p class="label">Reduction in support tickets after launch.</p>
+        <p class="sub">Fewer "is this charger working?" calls.</p>
+      </div>
+      <div class="stat reveal" data-delay="2">
+        <div class="num"><span data-countup="993">0</span></div>
+        <p class="label">Stations online in the live network status view.</p>
+        <p class="sub">In-product figure across the operator's network.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section-pad" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2 id="how-title">Find. Route. Charge.</h2>
+      <p>Three moves from anxious to arrived — each backed by real infrastructure, not guesswork.</p>
+    </div>
+    <div class="steps">
+      <article class="step reveal">
+        <span class="num-tag">01 · FIND</span>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg>
+        </div>
+        <h3>See what's actually free</h3>
+        <p>Geospatial search surfaces nearby stations with live, connector-level status — available, in-use or offline — so you never drive to a dead plug.</p>
+        <span class="tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg> Real-time OCPP status</span>
+      </article>
+
+      <article class="step reveal" data-delay="1">
+        <span class="num-tag">02 · ROUTE</span>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M18 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M8 17h6a4 4 0 0 0 0-8H9a4 4 0 0 1 0-8h1"/></svg>
+        </div>
+        <h3>Route around traffic and range</h3>
+        <p>The trip planner places charge stops sized to your battery and pace, with traffic-aware ETAs and state-of-charge along the whole route.</p>
+        <span class="tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg> Traffic-aware Directions API</span>
+      </article>
+
+      <article class="step reveal" data-delay="2">
+        <span class="num-tag">03 · CHARGE</span>
+        <div class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        </div>
+        <h3>Get there hands-free</h3>
+        <p>Voice-guided turn-by-turn takes over on mobile, with offline tile caching so navigation holds through canyons and dead zones.</p>
+        <span class="tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg> Voice nav + offline tiles</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE ============ -->
+<section class="showcase section-pad" id="showcase" aria-labelledby="showcase-title">
+  <span class="glow glow-s glow-breathe" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" style="justify-content:center">Inside the app</span>
+      <h2 id="showcase-title">The whole trip, on one live map</h2>
+      <p>Real screens from the shipped product — light, fast, and honest about what's available right now.</p>
+    </div>
+
+    <div class="gallery">
+      <!-- MAP -->
+      <div class="shot">
+        <div class="shot-copy reveal">
+          <span class="kicker">Live map</span>
+          <h3>Pulsing markers, real availability</h3>
+          <p>Every station across the Bay Area shows real-time availability by network. Markers pulse with live status so you can read a whole city at a glance.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Filter by CCS, CHAdeMO, Type 2 and NACS</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Availability streamed by network, in real time</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Tap any marker for connectors and speeds</li>
+          </ul>
+        </div>
+        <figure class="shot-fig reveal" data-delay="1">
+          <div class="plate float">
+            <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>chargepulse.app/map</span></div>
+            <img src="assets/product-map.png" alt="Charge Pulse live map with pulsing station markers across the Bay Area, showing real-time charger availability color-coded by network.">
+          </div>
+          <figcaption>Live map — real-time station availability by network across the Bay Area.</figcaption>
+        </figure>
+      </div>
+
+      <!-- TRIP -->
+      <div class="shot reverse">
+        <div class="shot-copy reveal">
+          <span class="kicker">Trip planner</span>
+          <h3>Charge stops sized to your battery</h3>
+          <p>Enter a destination and the planner drops charge stops matched to your battery and pace, with ETA, state-of-charge along the route, and pre-conditioning cues before you arrive.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Battery-aware stops and arrival state-of-charge</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Traffic-aware ETA the whole way</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Pre-conditioning cues before each stop</li>
+          </ul>
+        </div>
+        <figure class="shot-fig reveal" data-delay="1">
+          <div class="plate float">
+            <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>chargepulse.app/trip</span></div>
+            <img src="assets/product-trip.png" alt="Charge Pulse trip planner showing charge stops sized to the battery and pace, with ETA and battery state-of-charge plotted along the route.">
+          </div>
+          <figcaption>Trip planner — battery-aware stops, ETA and state-of-charge along the route.</figcaption>
+        </figure>
+      </div>
+
+      <!-- STATION -->
+      <div class="shot">
+        <div class="shot-copy reveal">
+          <span class="kicker">Station detail</span>
+          <h3>Everything before you pull in</h3>
+          <p>Each station page lists connectors and live status, on-site amenities, and recent activity — so you know exactly what you're rolling up to.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Connectors, speeds and live connector status</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Amenities and recent charging activity</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Driver reviews and session history</li>
+          </ul>
+        </div>
+        <figure class="shot-fig reveal" data-delay="1">
+          <div class="plate float">
+            <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>chargepulse.app/station</span></div>
+            <img src="assets/product-station.png" alt="Charge Pulse station detail page listing connectors, live status, on-site amenities and recent charging activity.">
+          </div>
+          <figcaption>Station detail — connectors, live status, amenities and recent activity.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE GRID ============ -->
+<section class="features section-pad" aria-labelledby="feat-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Feature set</span>
+      <h2 id="feat-title">Built for range anxiety's end</h2>
+      <p>Everything a driver needs to trust a charger before they commit the miles.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="feat reveal">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>Connector filters</h3>
+        <p>Narrow the map to exactly the plug you drive — CCS, CHAdeMO, Type 2 or Tesla NACS — with a tap.</p>
+      </article>
+      <article class="feat reveal" data-delay="1">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Live OCPP status</h3>
+        <p>Connector-level availability streamed from an OCPP backend — occupied, free or offline, always current.</p>
+      </article>
+      <article class="feat reveal" data-delay="2">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M18 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/><path d="M8 17h6a4 4 0 0 0 0-8H9a4 4 0 0 1 0-8h1"/></svg></div>
+        <h3>Traffic-aware routing</h3>
+        <p>Directions API routing accounts for live traffic, so ETAs and charge timing reflect the road you'll actually drive.</p>
+      </article>
+      <article class="feat reveal">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3z"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg></div>
+        <h3>Voice-guided navigation</h3>
+        <p>Hands-free turn-by-turn on mobile keeps your eyes on the road all the way to the plug.</p>
+      </article>
+      <article class="feat reveal" data-delay="1">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a4 4 0 0 1 4-4 5 5 0 0 1 9.6-1.5A3.5 3.5 0 0 1 18 16H8a4 4 0 0 1-4-1z"/><path d="M9 20l2-2 2 2"/></svg></div>
+        <h3>Offline tile caching</h3>
+        <p>Cached map tiles keep navigation alive through canyons, garages and dead zones — no signal required.</p>
+      </article>
+      <article class="feat reveal" data-delay="2">
+        <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 9h16M9 13h7M9 16h4"/></svg></div>
+        <h3>Session history + reviews</h3>
+        <p>Track cost per kWh across past charges and read driver reviews before you trust a new station.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATFORM STRIP ============ -->
+<section class="platform section-pad" aria-labelledby="plat-title">
+  <div class="wrap">
+    <div class="platform-card reveal">
+      <div>
+        <span class="eyebrow">One product, everywhere</span>
+        <h2 id="plat-title">Web planning, mobile driving.</h2>
+        <p>Plan on the web where the big map lives, then drive with the Flutter app — voice-guided and offline-ready when the signal isn't.</p>
+        <div class="pill-row">
+          <span class="tech-pill">Next.js</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Flutter</span>
+          <span class="tech-pill">OCPP</span>
+          <span class="tech-pill">Google Maps API</span>
+        </div>
+      </div>
+      <div class="platform-visual" aria-hidden="true">
+        <div class="device web">
+          <div class="screen">
+            <span class="mini-line" style="top:22%;left:12%;width:46%"></span>
+            <span class="mini-line" style="top:40%;left:20%;width:60%"></span>
+            <span class="mini-line" style="top:58%;left:12%;width:34%"></span>
+            <span class="mini-line" style="top:74%;left:30%;width:50%"></span>
+          </div>
+          <span class="plat-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Web</span>
+        </div>
+        <div class="device mobile">
+          <div class="screen">
+            <span class="mini-line" style="top:18%;left:18%;width:60%"></span>
+            <span class="mini-line" style="top:40%;left:18%;width:44%"></span>
+            <span class="mini-line" style="top:60%;left:18%;width:64%"></span>
+          </div>
+          <span class="plat-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg> Flutter</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta section-pad" aria-labelledby="cta-title">
+  <span class="glow glow-c1 glow-breathe" aria-hidden="true"></span>
+  <span class="glow glow-c2 glow-breathe" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <span class="eyebrow" style="justify-content:center">Plan your next trip</span>
+      <h2 id="cta-title">Never gamble on a<br><span class="gradient-text">dead charger</span> again.</h2>
+      <p>Bring Charge Pulse to your network, or talk to the team that shipped it. We'll walk you through the live map, the planner, and the OCPP backend behind it.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary btn-lg" href="contact.html">
+          Talk to us
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Book a demo</a>
+      </div>
+      <p class="cta-mail">Prefer email? <a href="mailto:hello@buildspacelabs.com">hello@buildspacelabs.com</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Charge Pulse home">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="url(#bolt2)"/><defs><linearGradient id="bolt2" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#22D3EE"/><stop offset="1" stop-color="#B6FF3C"/></linearGradient></defs></svg></span>
+          ChargePulse
+        </a>
+        <p>Real-time EV charging finder, trip planner and live availability — so drivers reach the right charger on the first try.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="#showcase">Live map</a>
+        <a href="#showcase">Trip planner</a>
+        <a href="#networks">Networks &amp; connectors</a>
+        <a href="#feat-title">Features</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="contact.html">Talk to us</a>
+        <a href="https://buildspacelabs.com" target="_blank" rel="noopener">BuildspaceLabs ↗</a>
+        <a href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Book a demo</a>
+        <a href="mailto:hello@buildspacelabs.com">hello@buildspacelabs.com</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <a class="credit" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+        <span class="bs-lockup" aria-hidden="true">{bs}</span>
+        <span>
+          <strong>Designed &amp; engineered by BuildspaceLabs</strong>
+          <span class="tagline">We design and ship AI-native products like this one.</span>
+        </span>
+      </a>
+      <p class="footer-legal">Charge Pulse is built for a leading EV charging network. © 2026 BuildspaceLabs.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

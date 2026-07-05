@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://buildpacelabs.github.io/buildspace-landings/sitemap.xml

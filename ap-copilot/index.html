@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AP Copilot — AI Accounts-Payable Automation that Reads & Routes Invoices</title>
+  <meta name="description" content="AP Copilot is an AI accounts-payable copilot that reads every invoice, matches line items to the PO, runs duplicate and price-variance checks, and routes clean approvals. Built by BuildspaceLabs." />
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/ap-copilot/" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#4F46E5" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BuildspaceLabs" />
+  <meta property="og:title" content="AP Copilot — AI Accounts-Payable Automation that Reads & Routes Invoices" />
+  <meta property="og:description" content="An AI accounts-payable copilot that reads every invoice, matches line items to the PO, runs duplicate and price-variance checks, and routes clean approvals." />
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/ap-copilot/" />
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/ap-copilot/assets/product-dashboard.webp" />
+  <meta property="og:image:alt" content="AP Copilot invoice inbox dashboard with KPI tiles, spend-by-category chart and the invoice queue with PO-match and confidence columns." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AP Copilot — AI Accounts-Payable Automation that Reads & Routes Invoices" />
+  <meta name="twitter:description" content="An AI accounts-payable copilot that reads every invoice, matches line items to the PO, runs duplicate and price-variance checks, and routes clean approvals." />
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/ap-copilot/assets/product-dashboard.webp" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234F46E5'/%3E%3Cpath d='M9 21.5 L16 9 L23 21.5' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='21.5' r='2' fill='white'/%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AP Copilot",
+    "description": "An AI accounts-payable copilot that reads invoices, matches them to POs, runs duplicate and price-variance checks, and routes clean approvals.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="AP Copilot home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="var(--accent)"/>
+            <path d="M9 21.5 L16 9 L23 21.5" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="21.5" r="1.9" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="brand-word">AP&nbsp;Copilot</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#security">Security</a>
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">Built by BuildspaceLabs <span aria-hidden="true">↗</span></a>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Book a demo</a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <a href="#how">How it works</a>
+      <a href="#tour">Product</a>
+      <a href="#security">Security</a>
+      <a href="https://buildspacelabs.com" target="_blank" rel="noopener">Built by BuildspaceLabs ↗</a>
+      <a class="btn btn-primary" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Book a demo</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Accounts payable, on autopilot</p>
+          <h1 id="hero-title">The accounts-payable inbox that clears itself.</h1>
+          <p class="hero-sub">AP Copilot reads every invoice the moment it lands, matches each line to the purchase order, and routes clean approvals under your policy. Only genuine exceptions reach a human — each with the model's reasoning and a full audit trail.</p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Book a demo</a>
+            <a class="btn btn-ghost" href="#tour">See it live <span aria-hidden="true">→</span></a>
+          </div>
+
+          <ul class="trust-strip" aria-label="What AP Copilot does">
+            <li><span class="dot" aria-hidden="true"></span>Reads every invoice</li>
+            <li><span class="dot" aria-hidden="true"></span>Matches to PO</li>
+            <li><span class="dot" aria-hidden="true"></span>Routes clean approvals</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE ANIMATION: invoice extraction card -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="extract-card" id="extract-card">
+            <div class="ec-head">
+              <div class="ec-file">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+                <span class="ec-name">INV-20418.pdf</span>
+              </div>
+              <span class="ec-badge">Extracting</span>
+            </div>
+
+            <ul class="ec-fields">
+              <li class="ec-field" data-conf="98" data-delay="0">
+                <span class="ec-label">Vendor</span>
+                <span class="ec-value">Northwind Supply Co.</span>
+                <span class="ec-ring" data-ring></span>
+              </li>
+              <li class="ec-field" data-conf="99" data-delay="1">
+                <span class="ec-label">PO&nbsp;#</span>
+                <span class="ec-value">PO-4471</span>
+                <span class="ec-ring" data-ring></span>
+              </li>
+              <li class="ec-field" data-conf="97" data-delay="2">
+                <span class="ec-label">Amount</span>
+                <span class="ec-value mono">$18,240.00</span>
+                <span class="ec-ring" data-ring></span>
+              </li>
+              <li class="ec-field" data-conf="96" data-delay="3">
+                <span class="ec-label">Tax</span>
+                <span class="ec-value mono">$1,459.20</span>
+                <span class="ec-ring" data-ring></span>
+              </li>
+              <li class="ec-field" data-conf="99" data-delay="4">
+                <span class="ec-label">Total</span>
+                <span class="ec-value mono">$19,699.20</span>
+                <span class="ec-ring" data-ring></span>
+              </li>
+            </ul>
+
+            <div class="ec-foot">
+              <span class="ec-match"><span class="ec-check" aria-hidden="true"></span>Matched to PO-4471</span>
+              <span class="ec-route">Routed to approver</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS BAND -->
+    <section class="metrics" aria-labelledby="metrics-title">
+      <div class="wrap">
+        <h2 id="metrics-title" class="visually-hidden">AP Copilot performance metrics</h2>
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric-num" data-count="82" data-suffix="%">0%</span>
+            <span class="metric-label">Auto-matched to PO</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num" data-count="98" data-suffix="%">0%</span>
+            <span class="metric-label">Avg extraction confidence</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num" data-count="1284" data-format="comma">0</span>
+            <span class="metric-label">Invoices / month</span>
+          </div>
+          <div class="metric">
+            <span class="metric-num" data-count="1.7" data-decimals="1" data-suffix="%">0%</span>
+            <span class="metric-label">Need human review</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="section problem" aria-labelledby="problem-title">
+      <div class="wrap">
+        <p class="section-label reveal">01 — The problem</p>
+        <div class="problem-grid">
+          <div class="reveal">
+            <h2 id="problem-title">A shared inbox is not an approval system.</h2>
+            <p class="lede">Invoices arrive as email attachments in a dozen formats. Someone keys the fields by hand, hunts down the matching PO, checks it isn't a duplicate, then chases an approver. Every step is manual, slow, and quietly error-prone — and none of it leaves an audit trail a controller can defend.</p>
+          </div>
+          <div class="problem-cols reveal">
+            <div class="pcol pcol-before">
+              <span class="pcol-tag pcol-tag-amber">Before</span>
+              <ul>
+                <li>PDFs re-keyed by hand, field by field</li>
+                <li>POs matched from memory or spreadsheets</li>
+                <li>Duplicates and price creep slip through</li>
+                <li>Approvals stall in a personal inbox</li>
+              </ul>
+            </div>
+            <div class="pcol pcol-after">
+              <span class="pcol-tag pcol-tag-green">With AP Copilot</span>
+              <ul>
+                <li>Every field extracted with a confidence score</li>
+                <li>Line-level PO match within a set tolerance</li>
+                <li>Duplicate, price and budget checks run first</li>
+                <li>Clean invoices routed to the right approver</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="section-label reveal">02 — How it works</p>
+        <h2 id="how-title" class="reveal">Read, match, route — three steps, largely touchless.</h2>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-index mono">01</span>
+            <span class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11l5 5v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M14 4v6h6"/><path d="M8 13h8M8 16.5h5"/></svg>
+            </span>
+            <div class="step-body">
+              <h3>Read</h3>
+              <p>Invoices land by email and AP Copilot captures the source PDF, then extracts every field — vendor, PO, amounts, tax, totals and line items — with a per-field confidence score.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-index mono">02</span>
+            <span class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h6M14 8h6M4 16h6M14 16h6"/><circle cx="12" cy="8" r="2"/><circle cx="12" cy="16" r="2"/></svg>
+            </span>
+            <div class="step-body">
+              <h3>Match</h3>
+              <p>Each line is matched against the originating purchase order within a configurable price tolerance, while duplicate, price-variance and budget checks run against a full quarter of history.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-index mono">03</span>
+            <span class="step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h9"/><path d="M13 7l5 5-5 5"/><circle cx="20" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <div class="step-body">
+              <h3>Route</h3>
+              <p>Clean invoices are routed to the right approver under policy and cleared without a touch. Only genuine exceptions surface for a human — each carrying the model's reasoning and an auditable trail.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PRODUCT TOUR -->
+    <section class="section tour" id="tour" aria-labelledby="tour-title">
+      <div class="wrap">
+        <p class="section-label reveal">03 — Product tour</p>
+        <h2 id="tour-title" class="reveal">See the pipeline, end to end.</h2>
+
+        <div class="tour-row reveal">
+          <div class="tour-text">
+            <h3>The invoice inbox</h3>
+            <p>KPI tiles across the top, spend by category and exceptions-by-type at a glance, and a live queue where every invoice shows its PO-match state and extraction confidence. The controller sees the whole month in one view.</p>
+          </div>
+          <figure class="tour-figure">
+            <div class="browser-frame">
+              <div class="browser-bar" aria-hidden="true">
+                <span class="dots"><i></i><i></i><i></i></span>
+                <span class="browser-url">app.apcopilot.io/inbox</span>
+              </div>
+              <img src="assets/product-dashboard.webp" width="1200" height="750" loading="lazy" decoding="async" alt="AP Copilot invoice inbox showing KPI tiles, a spend-by-category chart, an exceptions-by-type breakdown, and the invoice queue with PO-match state and confidence columns." />
+            </div>
+            <figcaption>The invoice inbox — KPI tiles, spend by category, exceptions by type, and the queue with PO-match and confidence columns.</figcaption>
+          </figure>
+        </div>
+
+        <div class="tour-row tour-row-rev reveal">
+          <div class="tour-text">
+            <h3>Invoice review, with the receipts</h3>
+            <p>Open any invoice and the source PDF sits beside the AI-extracted fields, each with a confidence ring. Line-level PO matching, duplicate, price and budget anomaly checks, and the full approval trail are all on one screen — defensible by design.</p>
+          </div>
+          <figure class="tour-figure">
+            <div class="browser-frame">
+              <div class="browser-bar" aria-hidden="true">
+                <span class="dots"><i></i><i></i><i></i></span>
+                <span class="browser-url">app.apcopilot.io/invoice/INV-20418</span>
+              </div>
+              <img src="assets/product-detail.webp" width="1200" height="750" loading="lazy" decoding="async" alt="AP Copilot invoice review for INV-20418: the source PDF beside AI-extracted fields with confidence rings, line-level PO matching, duplicate, price and budget anomaly checks, and the full approval trail." />
+            </div>
+            <figcaption>Invoice review for INV-20418 — source PDF, extracted fields with confidence rings, PO matching, anomaly checks and the approval trail.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE GRID -->
+    <section class="section features" aria-labelledby="features-title">
+      <div class="wrap">
+        <p class="section-label reveal">04 — What's inside</p>
+        <h2 id="features-title" class="reveal">Everything the AP desk needs, in one pipeline.</h2>
+
+        <div class="feature-grid">
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <h3>Email-to-inbox ingestion</h3>
+            <p>Invoices arrive by email and AP Copilot captures the source PDF automatically — no manual upload, no re-keying.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 12 15 9"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <h3>Confidence-scored extraction</h3>
+            <p>Every field is read with a confidence ring, so you know exactly which values to trust and which to glance at.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h7M4 12h7M4 17h7"/><path d="M15 9l2.5 2.5L22 7"/><path d="M15 17h7"/></svg>
+            </span>
+            <h3>Line-level PO matching</h3>
+            <p>Each line is matched to the originating purchase order within a configurable price tolerance you control.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <h3>Anomaly checks</h3>
+            <p>Duplicate, price-variance and budget checks run against a full quarter of history before anything is paid.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="6" r="2.4"/><path d="M7 8.4V17"/><path d="M7 13h6a3 3 0 0 0 3-3V8.4"/><circle cx="16" cy="6" r="2.4"/><path d="M13 19h6"/></svg>
+            </span>
+            <h3>Policy-based routing</h3>
+            <p>Clean invoices route to the right approver under your policy, with a full audit trail on every decision.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            </span>
+            <h3>Spend analytics</h3>
+            <p>Spend by category and an exceptions-by-type breakdown give finance a live read on where money and effort go.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTROL & AUDIT -->
+    <section class="section control" id="security" aria-labelledby="control-title">
+      <div class="wrap control-inner">
+        <div class="reveal">
+          <p class="section-label">05 — Control &amp; audit</p>
+          <h2 id="control-title">Defensible by design.</h2>
+          <p class="lede">AP Copilot doesn't just move faster — it holds up under review. Every extraction carries a confidence score, every check is recorded, and every approval leaves a trail a controller can stand behind.</p>
+        </div>
+        <ul class="control-list reveal">
+          <li>
+            <span class="ctrl-tick" aria-hidden="true"></span>
+            <div><strong>Policy-based routing.</strong> Approvals follow your rules, not someone's inbox — the right person, every time.</div>
+          </li>
+          <li>
+            <span class="ctrl-tick" aria-hidden="true"></span>
+            <div><strong>Full audit trail.</strong> Each invoice records what was extracted, what was checked, and who approved it.</div>
+          </li>
+          <li>
+            <span class="ctrl-tick" aria-hidden="true"></span>
+            <div><strong>Anomaly checks before payment.</strong> Duplicate, price-variance and budget checks run against a full quarter of history.</div>
+          </li>
+          <li>
+            <span class="ctrl-tick" aria-hidden="true"></span>
+            <div><strong>Confidence-scored extraction.</strong> Per-field scores make the model's certainty visible and auditable.</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TECH STRIP -->
+    <section class="section tech" aria-labelledby="tech-title">
+      <div class="wrap">
+        <p class="section-label reveal">06 — Built with</p>
+        <h2 id="tech-title" class="reveal">A modern, production-grade stack.</h2>
+        <ul class="tech-chips reveal" aria-label="Technologies used">
+          <li>Next.js</li>
+          <li>React</li>
+          <li>TypeScript</li>
+          <li>Tailwind CSS</li>
+          <li>Node.js</li>
+          <li>PostgreSQL</li>
+          <li>Prisma</li>
+          <li>LLM + OCR pipeline</li>
+          <li>Vercel</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT / CTA -->
+    <section class="section cta" aria-labelledby="cta-title">
+      <div class="wrap cta-inner reveal">
+        <p class="eyebrow eyebrow-invert">Ready when you are</p>
+        <h2 id="cta-title">Clear your invoice inbox for good.</h2>
+        <p class="cta-sub">See AP Copilot read, match and route your own invoices in a live walkthrough. We'll tailor the tolerances and routing to how your finance team already works.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Book a demo</a>
+          <a class="btn btn-ghost btn-ghost-invert btn-lg" href="contact.html">Talk to us</a>
+        </div>
+        <p class="cta-alt">Or email <a href="mailto:hello@buildspacelabs.com">hello@buildspacelabs.com</a> &middot; <a href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">buildspacelabs.com/contact</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="AP Copilot home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <rect width="32" height="32" rx="8" fill="var(--accent)"/>
+              <path d="M9 21.5 L16 9 L23 21.5" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="16" cy="21.5" r="1.9" fill="#fff"/>
+            </svg>
+          </span>
+          <span class="brand-word">AP&nbsp;Copilot</span>
+        </a>
+        <p class="footer-tag">The accounts-payable inbox that clears itself.</p>
+      </div>
+
+      <div class="footer-credit">
+        <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener" aria-label="BuildspaceLabs">
+          <span class="bs-mark" aria-hidden="true">{bs}</span>
+          <span>Designed &amp; engineered by <strong>BuildspaceLabs</strong></span>
+        </a>
+        <p class="footer-note">We design and ship AI-native products like this one.</p>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>&copy; <span id="year">2026</span> AP Copilot. Built for a mid-market finance team under NDA.</span>
+      <a href="https://buildspacelabs.com" target="_blank" rel="noopener">buildspacelabs.com ↗</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

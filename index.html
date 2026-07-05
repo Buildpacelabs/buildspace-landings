@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildspaceLabs — Product Work, Shipped</title>
+  <meta name="description" content="A set of landing pages for products designed and engineered by BuildspaceLabs — an AI-native product studio. Each one is its own design world: fintech, EV, legal tech." />
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#1D4ED8" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BuildspaceLabs" />
+  <meta property="og:title" content="BuildspaceLabs — Product Work, Shipped" />
+  <meta property="og:description" content="Landing pages for products designed and engineered by BuildspaceLabs. Each one is its own design world." />
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/" />
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/ap-copilot/assets/product-dashboard.webp" />
+  <meta property="og:image:alt" content="A product dashboard from work shipped by BuildspaceLabs." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BuildspaceLabs — Product Work, Shipped" />
+  <meta name="twitter:description" content="Landing pages for products designed and engineered by BuildspaceLabs." />
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/ap-copilot/assets/product-dashboard.webp" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D4ED8'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='13' font-weight='700' fill='white' text-anchor='middle'%3E%7Bbs%7D%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "BuildspaceLabs — Product Work",
+    "description": "Landing pages for products designed and engineered by BuildspaceLabs, an AI-native product studio.",
+    "url": "https://buildpacelabs.github.io/buildspace-landings/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #FBFBFC;
+      --surface: #FFFFFF;
+      --ink: #0B1220;
+      --ink-soft: #48505E;
+      --ink-faint: #79818F;
+      --hairline: #E8EAEF;
+      --blue: #2563EB;
+      --blue-deep: #1D4ED8;
+      --shadow: 0 1px 2px rgba(11,18,32,.04), 0 12px 32px rgba(11,18,32,.06);
+      --shadow-lg: 0 2px 4px rgba(11,18,32,.05), 0 28px 60px rgba(11,18,32,.12);
+      --ease: cubic-bezier(.16,1,.3,1);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg); color: var(--ink);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(251,251,252,.82); backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--hairline);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 700; font-size: 1.02rem; letter-spacing: -.01em; }
+    .brand-mark {
+      width: 30px; height: 30px; border-radius: 8px; background: var(--blue-deep);
+      display: grid; place-items: center; color: #fff; font-family: 'Space Grotesk', monospace;
+      font-weight: 700; font-size: .72rem;
+    }
+    .nav-ext {
+      font-size: .9rem; color: var(--ink-soft); font-weight: 500;
+      padding: 9px 15px; border: 1px solid var(--hairline); border-radius: 999px;
+      transition: border-color .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+    }
+    .nav-ext:hover { color: var(--blue-deep); border-color: color-mix(in srgb, var(--blue) 40%, var(--hairline)); transform: translateY(-1px); }
+
+    /* Hero */
+    .hero { padding: 92px 0 44px; }
+    .eyebrow {
+      font-family: 'Space Grotesk', sans-serif; font-size: .78rem; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase; color: var(--blue-deep);
+      display: inline-flex; align-items: center; gap: 9px;
+    }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 4px color-mix(in srgb, var(--blue) 16%, transparent); }
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+      font-size: clamp(2.3rem, 1.6rem + 3vw, 3.7rem); line-height: 1.05;
+      letter-spacing: -.03em; margin: 20px 0 0; max-width: 15ch;
+    }
+    .hero h1 em { font-style: normal; color: var(--blue-deep); }
+    .hero p {
+      margin: 22px 0 0; max-width: 56ch; font-size: 1.12rem; color: var(--ink-soft);
+    }
+    .hero-meta {
+      margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px 26px;
+      font-size: .9rem; color: var(--ink-faint);
+    }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
+    .hero-meta span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); }
+
+    /* Cards */
+    .grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      padding: 30px 0 40px;
+    }
+    @media (max-width: 920px) { .grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+    .card {
+      background: var(--surface); border: 1px solid var(--hairline); border-radius: 18px;
+      overflow: hidden; box-shadow: var(--shadow);
+      transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+      display: flex; flex-direction: column;
+      opacity: 0; transform: translateY(22px);
+    }
+    .card.in { opacity: 1; transform: none; }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: color-mix(in srgb, var(--blue) 26%, var(--hairline)); }
+    .card-thumb { position: relative; aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid var(--hairline); background: #f2f4f8; }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top left; transition: transform .6s var(--ease); }
+    .card:hover .card-thumb img { transform: scale(1.045); }
+    .card-accent { position: absolute; inset: 0 0 auto 0; height: 3px; }
+    .card-body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .card-tag {
+      font-size: .72rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .card h2 { font-family: 'Space Grotesk', sans-serif; font-size: 1.32rem; font-weight: 600; letter-spacing: -.02em; }
+    .card p { font-size: .96rem; color: var(--ink-soft); flex: 1; }
+    .card-cta {
+      margin-top: 6px; display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 600; font-size: .94rem; color: var(--blue-deep);
+    }
+    .card-cta svg { transition: transform .25s var(--ease); }
+    .card:hover .card-cta svg { transform: translateX(4px); }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--hairline); padding: 40px 0 56px; margin-top: 20px; }
+    .foot { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+    .foot-credit { display: flex; align-items: center; gap: 12px; }
+    .foot-credit .brand-mark { width: 34px; height: 34px; }
+    .foot-credit strong { display: block; font-size: .98rem; }
+    .foot-credit span { font-size: .88rem; color: var(--ink-faint); }
+    .foot a.plain { color: var(--ink-soft); font-size: .9rem; }
+    .foot a.plain:hover { color: var(--blue-deep); }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+      .card { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="BuildspaceLabs home">
+        <span class="brand-mark">{bs}</span> BuildspaceLabs
+      </a>
+      <a class="nav-ext" href="https://buildspacelabs.com" target="_blank" rel="noopener">buildspacelabs.com ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <span class="eyebrow">Selected product work</span>
+      <h1>Products we&rsquo;ve shipped, each its <em>own thing</em>.</h1>
+      <p>A small set of landing pages for products designed and engineered by BuildspaceLabs. Different industries, different design languages, one studio behind them. Open any one.</p>
+      <div class="hero-meta">
+        <span>Hand-built HTML &amp; CSS</span>
+        <span>Fintech &middot; EV &middot; Legal tech</span>
+        <span>More coming</span>
+      </div>
+    </section>
+
+    <section class="grid wrap" aria-label="Product landing pages">
+      <a class="card" href="ap-copilot/index.html">
+        <div class="card-thumb">
+          <span class="card-accent" style="background:linear-gradient(90deg,#4F46E5,#818cf8)"></span>
+          <img src="ap-copilot/assets/product-dashboard.webp" alt="AP Copilot invoice inbox dashboard with KPI tiles, a spend-by-category chart and an exceptions queue." loading="lazy" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Fintech &middot; Finance ops</span>
+          <h2>AP Copilot</h2>
+          <p>An AI accounts-payable copilot that reads every invoice, matches it to the PO, and routes clean approvals &mdash; exceptions only.</p>
+          <span class="card-cta">View landing
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card" href="charge-pulse/index.html">
+        <div class="card-thumb">
+          <span class="card-accent" style="background:linear-gradient(90deg,#22D3EE,#B6FF3C)"></span>
+          <img src="charge-pulse/assets/product-trip.png" alt="Charge Pulse trip planner showing charge stops sized to the battery, ETA and state-of-charge along the route." loading="lazy" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">EV &middot; Energy &middot; Mobility</span>
+          <h2>Charge Pulse</h2>
+          <p>A real-time EV charging finder with live availability, a battery-aware trip planner and voice-guided navigation.</p>
+          <span class="card-cta">View landing
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="card" href="brief-forge/index.html">
+        <div class="card-thumb">
+          <span class="card-accent" style="background:linear-gradient(90deg,#7B2D26,#B8925A)"></span>
+          <img src="brief-forge/assets/product-riskgrid.png" alt="Brief Forge clause review grid labelling each contract clause as high risk, unusual, market or favorable." loading="lazy" />
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Legal tech</span>
+          <h2>Brief Forge</h2>
+          <p>Contract-review AI for solo lawyers and small firms &mdash; extract, score against market standard, and redline in minutes.</p>
+          <span class="card-cta">View landing
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div class="foot-credit">
+        <span class="brand-mark">{bs}</span>
+        <div>
+          <strong>Designed &amp; engineered by BuildspaceLabs</strong>
+          <span>An AI-native product studio. We design and ship products like these.</span>
+        </div>
+      </div>
+      <a class="plain" href="https://buildspacelabs.com" target="_blank" rel="noopener">buildspacelabs.com ↗</a>
+    </div>
+  </footer>
+
+  <script>
+    // Staggered reveal for the cards.
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var cards = document.querySelectorAll('.card');
+      if (reduce || !('IntersectionObserver' in window)) {
+        cards.forEach(function (c) { c.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            var i = Array.prototype.indexOf.call(cards, e.target);
+            e.target.style.transitionDelay = (i * 90) + 'ms';
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      cards.forEach(function (c) { io.observe(c); });
+    })();
+  </script>
+</body>
+</html>

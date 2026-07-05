@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brief Forge — AI Contract Review, Clause Risk Scoring & Redlines for Small Firms</title>
+  <meta name="description" content="Brief Forge is contract-review AI for solo lawyers and small firms: extract 14+ fields with citations, score every clause against market standard, and get AI redlines with rationale — a 4-hour review in 30 minutes. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/brief-forge/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#7B2D26">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="Brief Forge — read the whole contract in the time it takes to read the first page.">
+  <meta property="og:description" content="Contract-review AI for solo lawyers and small firms: extract 14+ fields with citations, score every clause against market standard, and get AI redlines with rationale — a 4-hour review in 30 minutes.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/brief-forge/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/brief-forge/assets/product-riskgrid.png">
+  <meta property="og:image:alt" content="Brief Forge clause risk grid, scoring each contract clause as High risk, Unusual, Market or Favorable.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brief Forge — AI contract review for solo lawyers & small firms">
+  <meta name="twitter:description" content="Extract 14+ fields with citations, score every clause against market standard, and get AI redlines with rationale — a 4-hour review in 30 minutes.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/brief-forge/assets/product-riskgrid.png">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='6'%20fill='%237B2D26'/%3E%3Cg%20stroke='%23F6F1E7'%20stroke-width='1.6'%20fill='none'%20stroke-linecap='round'%3E%3Cline%20x1='16'%20y1='7'%20x2='16'%20y2='25'/%3E%3Cline%20x1='9'%20y1='10'%20x2='23'%20y2='10'/%3E%3Cpath%20d='M9%2010%20L6%2017%20a3%203%200%200%200%206%200%20Z'/%3E%3Cpath%20d='M23%2010%20L20%2017%20a3%203%200%200%200%206%200%20Z'/%3E%3C/g%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Brief Forge",
+    "description": "Contract-review AI for solo lawyers and small firms: extract 14+ structured fields with confidence and source citations, score every clause against market standard, and propose AI redlines with rationale — a 4-hour review in 30 minutes.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top" aria-label="Brief Forge — home">
+      <svg class="mark" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <g stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="16" y1="6" x2="16" y2="26"></line>
+          <line x1="8" y1="10" x2="24" y2="10"></line>
+          <circle cx="16" cy="26" r="1.4" fill="currentColor" stroke="none"></circle>
+          <path d="M8 10 L4.5 17.5 a3.5 3.5 0 0 0 7 0 Z"></path>
+          <path d="M24 10 L20.5 17.5 a3.5 3.5 0 0 0 7 0 Z"></path>
+        </g>
+      </svg>
+      <span class="wordmark-text">Brief&nbsp;Forge</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#method">The method</a>
+      <a href="#practice">In practice</a>
+      <a href="#firms">For firms</a>
+      <a class="nav-ext" href="https://buildspacelabs.com" target="_blank" rel="noopener">Built by BuildspaceLabs <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <a class="btn btn-solid header-cta" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Request access</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <a href="#method">The method</a>
+    <a href="#practice">In practice</a>
+    <a href="#firms">For firms</a>
+    <a href="https://buildspacelabs.com" target="_blank" rel="noopener">Built by BuildspaceLabs ↗</a>
+    <a class="btn btn-solid" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Request access</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Legal Tech · Contract review</p>
+        <h1 id="hero-title" class="hero-title">
+          <span class="clip-line"><span>Read the whole contract</span></span>
+          <span class="clip-line"><span>in the time it takes to</span></span>
+          <span class="clip-line"><span>read the <em>first page</em>.</span></span>
+        </h1>
+        <p class="standfirst reveal" data-dropcap="B">Brief Forge is a contract-review instrument for solo lawyers and small firms. Drop in a contract; it extracts the terms that matter, scores every clause against market standard, and drafts the redlines — with its reasoning shown in the margin, the way a good associate would.</p>
+
+        <div class="hero-actions reveal">
+          <a class="btn btn-solid" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Request access</a>
+          <a class="btn btn-ghost" href="#method">See the method <span aria-hidden="true">→</span></a>
+        </div>
+
+        <p class="byline reveal"><span class="byline-rule" aria-hidden="true"></span> A contract-review instrument by BuildspaceLabs.</p>
+      </div>
+
+      <!-- Signature animation: tracked-change redline -->
+      <figure class="hero-plate reveal" aria-label="A sample contract clause being redlined by Brief Forge">
+        <figcaption class="plate-tab">
+          <span class="plate-dot" aria-hidden="true"></span>
+          Indemnification · Clause 8.2
+          <span class="plate-flag flag-high">High risk</span>
+        </figcaption>
+        <div class="clause-body">
+          <p class="clause-text" id="clause-line">
+            The Provider shall indemnify the Client against
+            <span class="redline" id="redline-target"><span class="strike">any and all claims</span><span class="insert" id="redline-insert">third-party claims</span></span>
+            arising from the Services<span class="redline redline-2"><span class="strike strike-2">, without limitation</span></span>.
+          </p>
+          <aside class="margin-note" id="margin-note" aria-hidden="true">
+            <span class="note-tick"></span>
+            <span class="note-label">AI rationale</span>
+            <span class="note-text">Uncapped, all-claims indemnity is off-market. Narrowed to third-party claims and struck the unlimited carve-out.</span>
+          </aside>
+        </div>
+        <div class="clause-foot">
+          <span class="foot-item"><span class="ring ring-high" aria-hidden="true"></span> Posture: <strong>Unusual</strong></span>
+          <span class="foot-item foot-actions">
+            <span class="mini-btn mini-approve" aria-hidden="true">Approve</span>
+            <span class="mini-btn mini-reject" aria-hidden="true">Reject</span>
+          </span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ THE STAT ============ -->
+  <section class="stat" aria-labelledby="stat-title">
+    <div class="wrap">
+      <hr class="rule-top">
+      <p class="stat-eyebrow eyebrow reveal">The premise</p>
+      <h2 id="stat-title" class="stat-line reveal">
+        A first-pass review, from
+        <span class="stat-em stat-from">four hours</span>
+        to
+        <span class="stat-em stat-to">thirty minutes</span>.
+      </h2>
+      <dl class="stat-figs">
+        <div class="stat-fig reveal">
+          <dt>Structured fields extracted, per contract</dt>
+          <dd><span class="num" data-count="14">0</span><span class="plus">+</span></dd>
+        </div>
+        <div class="stat-fig reveal">
+          <dt>Redlines suggested, with rationale</dt>
+          <dd><span class="num" data-count="12">0</span><span class="plus">+</span></dd>
+        </div>
+        <div class="stat-fig reveal">
+          <dt>Risk postures per clause</dt>
+          <dd><span class="num" data-count="4">0</span></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ THE METHOD ============ -->
+  <section class="method" id="method" aria-labelledby="method-title">
+    <div class="wrap">
+      <hr class="rule-top">
+      <header class="section-head">
+        <p class="eyebrow reveal">The method</p>
+        <h2 id="method-title" class="section-title reveal">Three movements, in order.</h2>
+        <p class="section-lede reveal">Every contract passes through the same disciplined sequence. Nothing is guessed at; each output carries its source, its score, or its reasoning.</p>
+      </header>
+
+      <ol class="movements">
+        <li class="movement reveal">
+          <span class="numeral">I.</span>
+          <div class="movement-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="6" width="28" height="36" rx="2"></rect>
+              <line x1="16" y1="15" x2="32" y2="15"></line>
+              <line x1="16" y1="21" x2="28" y2="21"></line>
+              <circle cx="31" cy="31" r="6"></circle>
+              <path d="M31 28.5 v2.5 h2"></path>
+            </svg>
+          </div>
+          <h3 class="movement-title">Extract</h3>
+          <p class="movement-text">The AI reads the document and lifts <strong>14+ structured fields</strong> — parties, term, governing law, caps, notice periods — each with a confidence ring and a citation that jumps straight back to the source clause.</p>
+          <p class="movement-foot">Confidence-scored · Click-to-source</p>
+        </li>
+
+        <li class="movement reveal">
+          <span class="numeral">II.</span>
+          <div class="movement-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="10" y1="14" x2="38" y2="14"></line>
+              <line x1="10" y1="24" x2="38" y2="24"></line>
+              <line x1="10" y1="34" x2="38" y2="34"></line>
+              <circle cx="16" cy="14" r="3" fill="currentColor" stroke="none"></circle>
+              <circle cx="30" cy="24" r="3" fill="currentColor" stroke="none"></circle>
+              <circle cx="22" cy="34" r="3" fill="currentColor" stroke="none"></circle>
+            </svg>
+          </div>
+          <h3 class="movement-title">Score</h3>
+          <p class="movement-text">Every clause is graded against market standard and flagged <span class="chip chip-high">Unusual</span> <span class="chip chip-market">Market</span> <span class="chip chip-fav">Favorable</span> — so the ones that need a human are obvious before anyone opens the file.</p>
+          <p class="movement-foot">Clause-by-clause · vs. market standard</p>
+        </li>
+
+        <li class="movement reveal">
+          <span class="numeral">III.</span>
+          <div class="movement-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="18" x2="24" y2="18"></line>
+              <line x1="28" y1="18" x2="36" y2="18" stroke-dasharray="1 3"></line>
+              <line x1="12" y1="26" x2="36" y2="26"></line>
+              <path d="M14 33 l4 4 l8 -9"></path>
+              <path d="M30 37 l6 -6 M30 31 l6 6" stroke-width="1.2"></path>
+            </svg>
+          </div>
+          <h3 class="movement-title">Redline</h3>
+          <p class="movement-text">Where a clause is off-market, Brief Forge drafts the edit as an <strong>inline diff</strong> — strike and replacement — with a written rationale and an approve / reject control, so the lawyer stays the author.</p>
+          <p class="movement-foot">Inline diffs · Rationale · Approve / reject</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ FIGURES ============ -->
+  <section class="figures" aria-labelledby="figures-title">
+    <div class="wrap">
+      <hr class="rule-top">
+      <header class="section-head">
+        <p class="eyebrow reveal">In the product</p>
+        <h2 id="figures-title" class="section-title reveal">The instrument, at work.</h2>
+      </header>
+
+      <figure class="plate reveal">
+        <div class="browser">
+          <div class="browser-bar" aria-hidden="true">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="browser-url">briefforge.app / matter / extraction</span>
+          </div>
+          <img src="assets/product-extraction.png" width="1600" height="1000" loading="lazy" decoding="async"
+            alt="Brief Forge extraction view: a split pane listing more than fourteen extracted contract fields, each with a confidence score, and a click-to-source citation linking back to the underlying clause in the contract.">
+        </div>
+        <figcaption><span class="fig-label">Fig. 1 —</span> Extraction. 14+ fields lifted from the document, each confidence-scored and citation-linked back to its source clause.</figcaption>
+      </figure>
+
+      <figure class="plate reveal">
+        <div class="browser">
+          <div class="browser-bar" aria-hidden="true">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="browser-url">briefforge.app / matter / risk</span>
+          </div>
+          <img src="assets/product-riskgrid.png" width="1600" height="1000" loading="lazy" decoding="async"
+            alt="Brief Forge risk grid: a clause-by-clause table labelling each contract clause as High risk, Unusual, Market or Favorable, with market-standard comparisons shown alongside.">
+        </div>
+        <figcaption><span class="fig-label">Fig. 2 —</span> Scoring. A clause-by-clause risk grid, each row measured against market standard and posture-flagged.</figcaption>
+      </figure>
+
+      <figure class="plate reveal">
+        <div class="browser">
+          <div class="browser-bar" aria-hidden="true">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="browser-url">briefforge.app / matter / redline</span>
+          </div>
+          <img src="assets/product-redline.png" width="1600" height="1000" loading="lazy" decoding="async"
+            alt="Brief Forge redline view: inline diffs showing struck text and suggested replacements, each accompanied by an AI rationale and approve or reject controls.">
+        </div>
+        <figcaption><span class="fig-label">Fig. 3 —</span> Redlining. Inline diffs with written rationale, approved or rejected by the lawyer — who stays the author.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ IN PRACTICE ============ -->
+  <section class="practice" id="practice" aria-labelledby="practice-title">
+    <div class="wrap">
+      <hr class="rule-top">
+      <header class="section-head">
+        <p class="eyebrow reveal">In practice</p>
+        <h2 id="practice-title" class="section-title reveal">What changes on the matter.</h2>
+      </header>
+
+      <div class="pullpoints">
+        <article class="pullpoint reveal">
+          <p class="pp-numeral">01</p>
+          <h3 class="pp-title">The first pass takes minutes, not an afternoon.</h3>
+          <p class="pp-text">A review that ran four hours by hand compresses to about thirty. The associate opens a document that has already been read, scored, and marked up.</p>
+        </article>
+        <article class="pullpoint reveal">
+          <p class="pp-numeral">02</p>
+          <h3 class="pp-title">Risk surfaces at intake, before partner review.</h3>
+          <p class="pp-text">Off-market and unusual clauses are flagged the moment a contract lands — so the questions worth a partner's time are visible before the file is ever escalated.</p>
+        </article>
+        <article class="pullpoint reveal">
+          <p class="pp-numeral">03</p>
+          <h3 class="pp-title">Every redline is tracked, per matter.</h3>
+          <p class="pp-text">Approvals and rejections are recorded against the matter, giving a clean, reportable record of what was changed and why — ready for the client.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOR FIRMS ============ -->
+  <section class="firms" id="firms" aria-labelledby="firms-title">
+    <div class="wrap firms-grid">
+      <div class="firms-copy">
+        <hr class="rule-top">
+        <p class="eyebrow reveal">For solo lawyers &amp; small firms</p>
+        <h2 id="firms-title" class="section-title reveal">A whole book of business, on one screen.</h2>
+        <p class="section-lede reveal">Brief Forge holds every matter in a single sidebar — no per-seat sprawl, no partner-sized platform to administer. It was built for the lawyer who is also the firm.</p>
+        <ul class="firms-list reveal">
+          <li><span class="tick" aria-hidden="true"></span> A pipeline of all firm matters in one sidebar</li>
+          <li><span class="tick" aria-hidden="true"></span> Posture chips read at a glance across the book</li>
+          <li><span class="tick" aria-hidden="true"></span> Redline history that reports cleanly to clients</li>
+        </ul>
+      </div>
+
+      <aside class="firms-panel reveal" aria-label="Illustrative matter pipeline">
+        <div class="panel-head">
+          <span class="panel-title">Matters</span>
+          <span class="panel-count">6 active</span>
+        </div>
+        <ul class="matter-list">
+          <li class="matter"><span class="matter-name">Acme MSA</span><span class="chip chip-high">Unusual</span></li>
+          <li class="matter"><span class="matter-name">Northwind NDA</span><span class="chip chip-fav">Favorable</span></li>
+          <li class="matter"><span class="matter-name">Halcyon SaaS</span><span class="chip chip-market">Market</span></li>
+          <li class="matter"><span class="matter-name">Riverstone Lease</span><span class="chip chip-high">Unusual</span></li>
+          <li class="matter"><span class="matter-name">Delta SOW</span><span class="chip chip-market">Market</span></li>
+          <li class="matter"><span class="matter-name">Kestrel Employment</span><span class="chip chip-fav">Favorable</span></li>
+        </ul>
+        <p class="panel-foot">Posture: <span class="posture-key"><span class="chip chip-high">Unusual</span><span class="chip chip-market">Market</span><span class="chip chip-fav">Favorable</span></span></p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ COLOPHON ============ -->
+  <section class="colophon" aria-label="Technical colophon">
+    <div class="wrap">
+      <hr class="rule-top">
+      <p class="colophon-line reveal">
+        <span class="colophon-mark">❧</span>
+        Set and built with
+        <span class="col-tech">Next.js</span> ·
+        <span class="col-tech">Tailwind</span> ·
+        <span class="col-tech">Framer&nbsp;Motion</span> ·
+        <span class="col-tech">TypeScript</span>.
+        Engineered by BuildspaceLabs for a boutique law firm under NDA.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / CTA ============ -->
+  <section class="cta" id="contact" aria-labelledby="cta-title">
+    <div class="wrap cta-inner">
+      <p class="eyebrow reveal">Request access</p>
+      <h2 id="cta-title" class="cta-title reveal">Put the first pass on the machine.</h2>
+      <p class="cta-lede reveal">See Brief Forge run on a live contract, or tell us about the matters your firm handles most. We will show you the extraction, the scoring, and the redlines on a document you know.</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid btn-lg" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Request access</a>
+        <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="wordmark footer-wordmark" href="#top" aria-label="Brief Forge — top">
+        <svg class="mark" width="22" height="22" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <g stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="16" y1="6" x2="16" y2="26"></line>
+            <line x1="8" y1="10" x2="24" y2="10"></line>
+            <circle cx="16" cy="26" r="1.4" fill="currentColor" stroke="none"></circle>
+            <path d="M8 10 L4.5 17.5 a3.5 3.5 0 0 0 7 0 Z"></path>
+            <path d="M24 10 L20.5 17.5 a3.5 3.5 0 0 0 7 0 Z"></path>
+          </g>
+        </svg>
+        <span class="wordmark-text">Brief Forge</span>
+      </a>
+      <p class="footer-tag">Contract-review AI for solo lawyers and small firms. Extract, score, and redline — a 4-hour review in 30 minutes.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#method">The method</a>
+      <a href="#practice">In practice</a>
+      <a href="#firms">For firms</a>
+      <a href="contact.html">Talk to us</a>
+      <a href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Request access</a>
+    </nav>
+
+    <div class="footer-credit">
+      <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener" aria-label="BuildspaceLabs">
+        <span class="bs-badge">{bs}</span>
+        <span class="bs-lines">
+          <span class="bs-strong">Designed &amp; engineered by BuildspaceLabs</span>
+          <span class="bs-sub">We design and ship AI-native products like this one.</span>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© <span id="year">2026</span> Brief Forge. A BuildspaceLabs instrument.</p>
+    <p><a href="https://buildspacelabs.com" target="_blank" rel="noopener">buildspacelabs.com <span aria-hidden="true">↗</span></a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
