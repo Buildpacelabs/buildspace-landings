@@ -52,7 +52,7 @@
       <a href="index.html#firms">For firms</a>
       <a class="nav-ext" href="https://buildspacelabs.com" target="_blank" rel="noopener">Built by BuildspaceLabs <span aria-hidden="true">↗</span></a>
     </nav>
-    <a class="btn btn-solid header-cta" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Request access</a>
+    <a class="btn btn-solid header-cta" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Request access</a>
   </div>
 </header>
 
@@ -73,8 +73,8 @@
 
         <div class="contact-alt">
           <p class="alt-label">Prefer to write directly?</p>
-          <p><a class="alt-mail" href="mailto:hello@buildspacelabs.com">hello@buildspacelabs.com</a></p>
-          <p><a class="alt-link" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">buildspacelabs.com/contact <span aria-hidden="true">↗</span></a></p>
+          <p><a class="alt-mail" href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a></p>
+          <p><a class="alt-link" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">buildspacelabs.com/contact-us <span aria-hidden="true">↗</span></a></p>
         </div>
       </div>
 
@@ -82,10 +82,14 @@
       <div class="form-wrap">
         <p class="form-flag" role="status" id="form-success" tabindex="-1" hidden>
           <span class="flag-tick" aria-hidden="true"></span>
-          Thank you — your email draft is open. Send it and we'll be in touch within one business day.
+          <span id="form-success-msg">Thank you — we've got your note and will be in touch within one business day.</span>
         </p>
 
-        <form id="contact-form" class="contact-form" novalidate>
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="22e61215-5db1-4922-82d8-af16ec5a17e4">
+          <input type="hidden" name="subject" value="New Brief Forge access request">
+          <input type="hidden" name="from_name" value="Brief Forge — landing page">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
           <div class="field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" required placeholder="Jane Attorney">
@@ -103,7 +107,7 @@
             <textarea id="message" name="message" rows="5" placeholder="The kinds of contracts we review most, and where the first pass eats our time…"></textarea>
           </div>
           <button type="submit" class="btn btn-solid btn-lg form-submit">Request access</button>
-          <p class="form-note">Opens a prefilled email to hello@buildspacelabs.com. Nothing is sent until you press send.</p>
+          <p class="form-note">Sent straight to our team. We usually reply within one business day.</p>
         </form>
       </div>
     </div>
@@ -132,7 +136,7 @@
       <a href="index.html#practice">In practice</a>
       <a href="index.html#firms">For firms</a>
       <a href="index.html">Home</a>
-      <a href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Request access</a>
+      <a href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Request access</a>
     </nav>
     <div class="footer-credit">
       <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener" aria-label="BuildspaceLabs">

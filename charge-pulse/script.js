@@ -96,38 +96,49 @@
     }
   }
 
-  /* ---------- Contact form -> prefilled mailto ---------- */
-  /* To use a real backend instead, POST to a Formspree/API endpoint here —
-     it's a one-line swap (replace the mailto block with a fetch()). */
+  /* ---------- Contact form -> Web3Forms (AJAX) ---------- */
+  /* Submissions email our team directly; the access key lives in the form's
+     hidden `access_key` field. */
   var form = document.getElementById('contactForm');
   if (form) {
+    var note = document.getElementById('formSuccess');
+    var noteSpan = note ? note.querySelector('span') : null;
+    var btn = form.querySelector('button[type="submit"]');
+    var btnLabel = btn ? btn.innerHTML : '';
+
+    var showNote = function (msg, ok) {
+      if (!note) return;
+      if (noteSpan) { noteSpan.textContent = msg; } else { note.textContent = msg; }
+      note.style.color = ok ? '' : '#FCA5A5';
+      note.classList.add('show');
+      note.focus();
+    };
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var data = new FormData(form);
-      var name = (data.get('name') || '').toString().trim();
-      var email = (data.get('email') || '').toString().trim();
-      var company = (data.get('company') || '').toString().trim();
-      var message = (data.get('message') || '').toString().trim();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (btn) { btn.disabled = true; btn.innerHTML = 'Sending…'; }
 
-      var subject = 'Charge Pulse enquiry — ' + (company || name || 'new lead');
-      var body =
-        'Name: ' + name + '\n' +
-        'Work email: ' + email + '\n' +
-        'Company: ' + company + '\n\n' +
-        'What they\'re building:\n' + message + '\n';
-
-      var href = 'mailto:hello@buildspacelabs.com' +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      window.location.href = href;
-
-      var note = document.getElementById('formSuccess');
-      if (note) {
-        note.classList.add('show');
-        note.focus();
-      }
-      form.reset();
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success) {
+            form.reset();
+            showNote("Thanks — we've got it. We'll be in touch within one business day.", true);
+          } else {
+            showNote((data.message || 'Something went wrong.') + ' You can also email buildspacelabs@vruoom.com.', false);
+          }
+        })
+        .catch(function () {
+          showNote("Network error — please email buildspacelabs@vruoom.com and we'll pick it up.", false);
+        })
+        .finally(function () {
+          if (btn) { btn.disabled = false; btn.innerHTML = btnLabel; }
+        });
     });
   }
 })();

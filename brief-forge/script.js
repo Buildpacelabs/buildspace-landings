@@ -30,44 +30,49 @@
     });
   }
 
-  /* ---------- Contact form (contact.html) ----------
-     No backend. We build a prefilled mailto: from the fields and open it,
-     then show an inline success note.
-     To wire a real backend, swap the block below for a single fetch() to a
-     Formspree/API endpoint — one line: fetch('https://formspree.io/f/XXXX', {method:'POST', body:new FormData(form)}). */
+  /* ---------- Contact form (contact.html) -> Web3Forms (AJAX) ----------
+     Submissions email our team directly; the access key lives in the form's
+     hidden `access_key` field. */
   var contactForm = document.getElementById('contact-form');
   if (contactForm) {
     var successNote = document.getElementById('form-success');
+    var successMsg = document.getElementById('form-success-msg');
+    var submitBtn = contactForm.querySelector('button[type="submit"]');
+    var submitLabel = submitBtn ? submitBtn.innerHTML : '';
+
+    var flag = function (msg, ok) {
+      if (!successNote) return;
+      if (successMsg) { successMsg.textContent = msg; }
+      successNote.style.color = ok ? '' : '#B4382E';
+      successNote.hidden = false;
+      successNote.focus();
+    };
+
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      var data = new FormData(contactForm);
-      var name = (data.get('name') || '').toString().trim();
-      var email = (data.get('email') || '').toString().trim();
-      var company = (data.get('company') || '').toString().trim();
-      var message = (data.get('message') || '').toString().trim();
+      if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Sending…'; }
 
-      var subject = 'Brief Forge — access request from ' + (name || 'a firm');
-      var bodyLines = [
-        'Name: ' + name,
-        'Work email: ' + email,
-        'Company / firm: ' + company,
-        '',
-        'What we are building / need:',
-        message,
-        '',
-        '— Sent from the Brief Forge contact page'
-      ];
-      var href = 'mailto:hello@buildspacelabs.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-
-      window.location.href = href;
-
-      if (successNote) {
-        successNote.hidden = false;
-        successNote.focus();
-      }
-      contactForm.reset();
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(contactForm)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success) {
+            contactForm.reset();
+            flag("Thank you — we've got your note and will be in touch within one business day.", true);
+          } else {
+            flag((data.message || 'Something went wrong') + ' — you can also email buildspacelabs@vruoom.com.', false);
+          }
+        })
+        .catch(function () {
+          flag("Network error — please email buildspacelabs@vruoom.com and we'll pick it up.", false);
+        })
+        .finally(function () {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = submitLabel; }
+        });
     });
   }
 

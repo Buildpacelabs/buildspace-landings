@@ -45,7 +45,7 @@ Enable **Settings → Pages → Deploy from branch → `main` / root**. To serve
 
 ## Contact form
 
-The contact forms have no backend. On submit they open a pre-filled email to **hello@buildspacelabs.com** (a `mailto:` fallback) and link through to the full funnel at [buildspacelabs.com/contact](https://buildspacelabs.com/contact). Swapping in a hosted form endpoint (Formspree, or the BuildspaceLabs contact API) is a one-line change in each `script.js` — see the comment there. Ensure the `hello@buildspacelabs.com` alias exists before publishing.
+Every contact form submits to **[Web3Forms](https://web3forms.com)** over AJAX (`fetch` → `https://api.web3forms.com/submit`), so submissions are emailed straight to the team with no server to run. Each form carries a hidden `access_key`, a per-product `subject`/`from_name`, and a `botcheck` honeypot for spam; the handler shows an inline success/error state and never leaves the page. The access key is in each `contact.html` — rotate it in the Web3Forms dashboard if needed. Primary CTAs and the "prefer email" links point to **buildspacelabs@vruoom.com** and the full funnel at [buildspacelabs.com/contact-us](https://buildspacelabs.com/contact-us). Ensure the `buildspacelabs@vruoom.com` alias exists before publishing.
 
 ## SEO
 

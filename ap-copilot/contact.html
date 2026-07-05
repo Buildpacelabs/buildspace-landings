@@ -50,7 +50,7 @@
         <a href="index.html#security">Security</a>
         <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">Built by BuildspaceLabs <span aria-hidden="true">↗</span></a>
       </nav>
-      <a class="btn btn-primary header-cta" href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-primary header-cta" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
     </div>
   </header>
 
@@ -60,7 +60,7 @@
         <div class="contact-intro">
           <p class="section-label">Get in touch</p>
           <h1>Let's clear your invoice inbox.</h1>
-          <p class="lede">Tell us how your AP process works today and we'll show you AP Copilot reading, matching and routing your own invoices. Prefer email? We're at <a class="inline-link" href="mailto:hello@buildspacelabs.com">hello@buildspacelabs.com</a>.</p>
+          <p class="lede">Tell us how your AP process works today and we'll show you AP Copilot reading, matching and routing your own invoices. Prefer email? We're at <a class="inline-link" href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>.</p>
 
           <ul class="contact-alts">
             <li>
@@ -69,7 +69,7 @@
               </span>
               <div>
                 <span class="alt-label">Email us</span>
-                <a href="mailto:hello@buildspacelabs.com">hello@buildspacelabs.com</a>
+                <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
               </div>
             </li>
             <li>
@@ -78,14 +78,18 @@
               </span>
               <div>
                 <span class="alt-label">Book a demo</span>
-                <a href="https://buildspacelabs.com/contact" target="_blank" rel="noopener">buildspacelabs.com/contact ↗</a>
+                <a href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">buildspacelabs.com/contact-us ↗</a>
               </div>
             </li>
           </ul>
         </div>
 
         <div class="contact-card">
-          <form id="contact-form" novalidate>
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <input type="hidden" name="access_key" value="22e61215-5db1-4922-82d8-af16ec5a17e4" />
+            <input type="hidden" name="subject" value="New AP Copilot enquiry" />
+            <input type="hidden" name="from_name" value="AP Copilot — landing page" />
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
             <div class="field">
               <label for="name">Name</label>
               <input id="name" name="name" type="text" autocomplete="name" required placeholder="Jordan Reyes" />
@@ -141,41 +145,48 @@
 
   <script src="script.js" defer></script>
   <script>
-    /* Contact form: builds a prefilled mailto from the fields and shows an inline
-       success note. No backend needed to demo.
-       To wire a real endpoint, swap the mailto block for one line, e.g.:
-         fetch("https://formspree.io/f/XXXX", { method: "POST", body: new FormData(form) })
-    */
+    /* Contact form -> Web3Forms (AJAX). Submissions email our team directly;
+       the access key lives in the form's hidden `access_key` field. */
     (function () {
       var form = document.getElementById("contact-form");
       var note = document.getElementById("form-note");
       if (!form) return;
+      var btn = form.querySelector('button[type="submit"]');
+      var btnLabel = btn ? btn.innerHTML : "";
+
+      function show(msg, ok) {
+        if (!note) return;
+        note.hidden = false;
+        note.className = "form-note " + (ok ? "ok" : "err");
+        note.style.color = ok ? "" : "#B42318";
+        note.textContent = msg;
+      }
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!form.checkValidity()) { form.reportValidity(); return; }
+        if (btn) { btn.disabled = true; btn.innerHTML = "Sending…"; }
 
-        var name = form.name.value.trim();
-        var email = form.email.value.trim();
-        var company = form.company.value.trim();
-        var message = form.message.value.trim();
-
-        var subject = "AP Copilot demo request — " + (company || name);
-        var body =
-          "Name: " + name + "\n" +
-          "Work email: " + email + "\n" +
-          "Company: " + (company || "—") + "\n\n" +
-          "What you're building:\n" + message + "\n";
-
-        var href = "mailto:hello@buildspacelabs.com?subject=" +
-          encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-        window.location.href = href;
-
-        note.hidden = false;
-        note.className = "form-note ok";
-        note.textContent = "Thanks, " + (name.split(" ")[0] || "there") +
-          " — your email draft is open. If it didn't launch, write us at hello@buildspacelabs.com.";
-        form.reset();
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form)
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (data.success) {
+              form.reset();
+              show("Thanks — we've got it. We'll be in touch within one business day.", true);
+            } else {
+              show((data.message || "Something went wrong.") + " You can also email buildspacelabs@vruoom.com.", false);
+            }
+          })
+          .catch(function () {
+            show("Network error — please email buildspacelabs@vruoom.com and we'll pick it up.", false);
+          })
+          .finally(function () {
+            if (btn) { btn.disabled = false; btn.innerHTML = btnLabel; }
+          });
       });
     })();
   </script>
