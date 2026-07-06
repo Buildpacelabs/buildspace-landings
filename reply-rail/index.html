@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reply Rail — AI Review Responses for Google, Yelp &amp; Facebook</title>
+<meta name="description" content="Pull Google, Yelp and Facebook reviews into one queue, draft a tone-matched reply for each, and track sentiment across locations. Local-business AI by BuildspaceLabs.">
+<link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/reply-rail/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F59E0B">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BuildspaceLabs">
+<meta property="og:title" content="Reply Rail — AI Review Responses for Google, Yelp &amp; Facebook">
+<meta property="og:description" content="Pull Google, Yelp and Facebook reviews into one queue, draft a tone-matched reply for each, and track sentiment across locations. Local-business AI by BuildspaceLabs.">
+<meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/reply-rail/">
+<meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/reply-rail/assets/dashboard.png">
+<meta property="og:image:alt" content="Reply Rail sentiment dashboard showing Google, Yelp and Facebook ratings with AI-extracted themes.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reply Rail — AI Review Responses for Google, Yelp &amp; Facebook">
+<meta name="twitter:description" content="Pull Google, Yelp and Facebook reviews into one queue, draft a tone-matched reply for each, and track sentiment across locations. Local-business AI by BuildspaceLabs.">
+<meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/reply-rail/assets/dashboard.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23F59E0B'/%3E%3Cpath d='M16 6l2.9 5.9 6.5.95-4.7 4.58 1.1 6.47L16 20.85 10.1 23.9l1.1-6.47-4.7-4.58 6.5-.95z' fill='%23fff'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"SoftwareApplication",
+  "name":"Reply Rail",
+  "description":"AI-drafted Google, Yelp and Facebook review responses for local businesses. Reply Rail pulls reviews into a single queue, drafts a tone-matched reply for every one, and tracks sentiment trends across locations.",
+  "applicationCategory":"BusinessApplication",
+  "operatingSystem":"Web",
+  "creator":{
+    "@type":"Organization",
+    "name":"BuildspaceLabs",
+    "url":"https://buildspacelabs.com"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Reply Rail home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.1 5.6.82-4.05 3.95.96 5.58L12 15.8l-5.02 2.65.96-5.58L3.9 8.92l5.6-.82z" fill="#fff"/></svg>
+      </span>
+      <span class="brand-name">Reply Rail</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#platforms">One inbox</a>
+      <a href="#how">How it works</a>
+      <a href="#sentiment">Sentiment</a>
+      <a href="#tour">Product</a>
+    </nav>
+
+    <div class="nav-right">
+      <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+        <span class="lbl">Built by</span> <b>BuildspaceLabs</b>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+      </a>
+      <a class="btn btn-primary" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Local-business review AI</span>
+      <h1 class="reveal" data-d="1">Every review, <span class="accent">answered in one place.</span></h1>
+      <p class="hero-sub reveal" data-d="2">Reply Rail pulls your Google, Yelp and Facebook reviews into a single queue, drafts a tone-matched reply for every one, and shows you what people love — so you stay under 24 hours without writing a word.</p>
+      <div class="hero-cta reveal" data-d="3">
+        <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+        <a class="btn btn-ghost btn-lg" href="#how">See how a reply happens</a>
+      </div>
+      <div class="hero-trust reveal" data-d="4">
+        <span><b>3</b> platforms, one rail</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span><b>6</b> locations</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>Replies in <b>your</b> voice</span>
+      </div>
+    </div>
+
+    <!-- SIGNATURE VISUAL -->
+    <div class="rail reveal" data-d="2" aria-hidden="true">
+      <div class="rail-badge b1">
+        <span class="rb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span><span class="rb-n">&lt;24h</span><span class="rb-l">response time held</span></span>
+      </div>
+      <div class="rail-badge b2">
+        <span class="rb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg></span>
+        <span><span class="rb-n">7 min</span><span class="rb-l">a day, not an hour</span></span>
+      </div>
+
+      <div class="rail-plate">
+        <div class="rail-head">
+          <span class="rail-title"><span class="rail-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span> Unified inbox</span>
+          <span class="rail-live"><span class="pulse"></span> Live</span>
+        </div>
+
+        <!-- incoming source chips -->
+        <div class="rail-sources">
+          <span class="src-chip">
+            <svg class="plat" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.2a5.3 5.3 0 0 1-2.3 3.48v2.9h3.72C21.78 18.68 23 15.76 23 12.27z"/><path fill="#34A853" d="M12 24c3.1 0 5.7-1.03 7.62-2.79l-3.72-2.9c-1.03.7-2.36 1.11-3.9 1.11-3 0-5.54-2.02-6.45-4.74H1.7v2.98A11.98 11.98 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.55 14.68a7.2 7.2 0 0 1 0-4.62V7.08H1.7a12 12 0 0 0 0 10.58z"/><path fill="#EA4335" d="M12 4.75c1.69 0 3.2.58 4.4 1.72l3.28-3.28C17.7 1.28 15.1.25 12 .25A11.98 11.98 0 0 0 1.7 7.08l3.85 2.98C6.46 6.76 9 4.75 12 4.75z"/></svg>
+            Google <small>3 new</small>
+          </span>
+          <span class="src-chip">
+            <svg class="plat" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF1A1A" d="M12.6 2.1c1.1-.2 2.2.6 2.3 1.7l.5 7.1c.1 1.4-1.6 2.1-2.5 1l-4.3-5.3c-.7-.9-.3-2.2.8-2.5zM10 13.9c.6-.5 1.5-.2 1.7.6l1.4 5.2c.3 1.1-1 2-1.9 1.3l-4.3-3.3c-.9-.7-.6-2.1.5-2.3zM8.5 11.5c.2.8-.5 1.5-1.3 1.4L2 12.2c-1.1-.2-1.5-1.6-.6-2.3l3.3-2.6c.9-.7 2.2-.1 2.4 1zM16 14.4c.7-.6 1.8-.2 2 .7l1 4.2c.3 1.1-1 2-1.9 1.3l-2.9-2.5c-.8-.7-.6-2 .3-2.5zM17.3 11.3c-.8 0-1.4-.8-1.1-1.6l1.4-4.6c.3-1.1 1.8-1.2 2.3-.2l1.6 3.4c.5 1-.2 2.2-1.3 2.2z"/></svg>
+            Yelp <small>2 new</small>
+          </span>
+          <span class="src-chip">
+            <svg class="plat" viewBox="0 0 24 24" aria-hidden="true"><path fill="#1877F2" d="M24 12a12 12 0 1 0-13.87 11.85v-8.38H7.08V12h3.05V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12z"/></svg>
+            Facebook <small>1 new</small>
+          </span>
+        </div>
+
+        <!-- the unified review card -->
+        <div class="rail-card" data-stars="2">
+          <div class="rc-top">
+            <span class="rc-avatar">DO</span>
+            <div>
+              <div class="rc-name">Daniela Ortiz</div>
+              <div class="rc-meta">
+                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.2a5.3 5.3 0 0 1-2.3 3.48v2.9h3.72C21.78 18.68 23 15.76 23 12.27z"/><path fill="#34A853" d="M12 24c3.1 0 5.7-1.03 7.62-2.79l-3.72-2.9c-1.03.7-2.36 1.11-3.9 1.11-3 0-5.54-2.02-6.45-4.74H1.7v2.98A11.98 11.98 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.55 14.68a7.2 7.2 0 0 1 0-4.62V7.08H1.7a12 12 0 0 0 0 10.58z"/><path fill="#EA4335" d="M12 4.75c1.69 0 3.2.58 4.4 1.72l3.28-3.28C17.7 1.28 15.1.25 12 .25A11.98 11.98 0 0 0 1.7 7.08l3.85 2.98C6.46 6.76 9 4.75 12 4.75z"/></svg>
+                Aurora SoMa · Google
+              </div>
+            </div>
+            <span class="rc-lane">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+              Urgent
+            </span>
+          </div>
+
+          <div class="stars" role="img" aria-label="2 out of 5 stars">
+            <span class="star"><svg class="base" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><span class="fill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span></span>
+            <span class="star"><svg class="base" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><span class="fill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span></span>
+            <span class="star"><svg class="base" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><span class="fill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span></span>
+            <span class="star"><svg class="base" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><span class="fill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span></span>
+            <span class="star"><svg class="base" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg><span class="fill"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span></span>
+          </div>
+
+          <p class="rc-quote">"Wait was <b>over 18 minutes</b> for a single drip and my drink was lukewarm. Wanted to love this place…"</p>
+
+          <div class="rc-reply">
+            <div class="rc-reply-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg>
+              Drafted reply · apologetic
+            </div>
+            <p class="rc-typed" id="typed"><span class="caret"></span></p>
+            <p class="rc-signature">— Maya, Owner</p>
+            <div class="rc-tones">
+              <span class="tone-chip">Warm</span>
+              <span class="tone-chip">Professional</span>
+              <span class="tone-chip active">Apologetic</span>
+              <span class="tone-chip send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg> Send</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- mini sentiment -->
+        <div class="rail-sentiment">
+          <div class="rs-title"><span>Themes this month</span> <span>651 mentions</span></div>
+          <div class="rs-row">
+            <span class="rs-lbl">Staff</span>
+            <span class="rs-track"><span class="rs-fill pos" style="--w:88%"></span></span>
+            <span class="rs-val">+0.78</span>
+          </div>
+          <div class="rs-row">
+            <span class="rs-lbl">Wait time</span>
+            <span class="rs-track"><span class="rs-fill neg" style="--w:58%"></span></span>
+            <span class="rs-val">−0.42</span>
+          </div>
+          <div class="rs-row">
+            <span class="rs-lbl">Ambiance</span>
+            <span class="rs-track"><span class="rs-fill pos" style="--w:70%"></span></span>
+            <span class="rs-val">+0.51</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<section class="band" aria-label="At a glance">
+  <div class="wrap band-inner">
+    <div class="stat reveal">
+      <div class="stat-n"><span data-count="25" data-suffix="+">0</span></div>
+      <div class="stat-l">reviews queued and ready to answer</div>
+    </div>
+    <div class="stat reveal" data-d="1">
+      <div class="stat-n"><span data-count="6">0</span></div>
+      <div class="stat-l">locations tracked in one rail</div>
+    </div>
+    <div class="stat reveal" data-d="2">
+      <div class="stat-n"><span data-count="3">0</span></div>
+      <div class="stat-l">platforms: Google, Yelp &amp; Facebook</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ONE INBOX, THREE PLATFORMS ============ -->
+<section class="section" id="platforms">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">One inbox, three platforms</span>
+      <h2>Every review lands in the same rail — sorted by how fast it needs you.</h2>
+      <p>An AI urgency model reads each new review as it arrives and drops it into a lane, so you always see the 2-hour fires before the thank-yous.</p>
+    </div>
+
+    <div class="plat-grid">
+      <div class="lanes">
+        <div class="lane urgent reveal">
+          <span class="lane-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+          <div class="lane-body"><h3>Urgent</h3><p>Low-star or flagged reviews to answer within 2 hours to protect the rating.</p></div>
+          <span class="lane-count">7<small>waiting</small></span>
+        </div>
+        <div class="lane soon reveal" data-d="1">
+          <span class="lane-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div class="lane-body"><h3>Reply soon</h3><p>Mixed and mid-star reviews worth a personal touch inside the day.</p></div>
+          <span class="lane-count">6<small>today</small></span>
+        </div>
+        <div class="lane thanked reveal" data-d="2">
+          <span class="lane-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <div class="lane-body"><h3>Auto-thanked</h3><p>Glowing reviews that get a warm, on-brand thank-you the moment they land.</p></div>
+          <span class="lane-count">13<small>handled</small></span>
+        </div>
+        <div class="lane quiet reveal" data-d="3">
+          <span class="lane-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0-6 6c0 3-1.5 4.5-2 5.5h16c-.5-1-2-2.5-2-5.5a6 6 0 0 0-6-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span>
+          <div class="lane-body"><h3>Quiet</h3><p>Star-only ratings with no comment — noted, tallied, and left in peace.</p></div>
+          <span class="lane-count">—<small>no action</small></span>
+        </div>
+      </div>
+
+      <aside class="plat-side reveal" data-d="1">
+        <div class="plat-card">
+          <div class="ph">Pulled from</div>
+          <div class="plat-row">
+            <span class="plat-logo"><svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23 12.27c0-.79-.07-1.54-.2-2.27H12v4.3h6.2a5.3 5.3 0 0 1-2.3 3.48v2.9h3.72C21.78 18.68 23 15.76 23 12.27z"/><path fill="#34A853" d="M12 24c3.1 0 5.7-1.03 7.62-2.79l-3.72-2.9c-1.03.7-2.36 1.11-3.9 1.11-3 0-5.54-2.02-6.45-4.74H1.7v2.98A11.98 11.98 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.55 14.68a7.2 7.2 0 0 1 0-4.62V7.08H1.7a12 12 0 0 0 0 10.58z"/><path fill="#EA4335" d="M12 4.75c1.69 0 3.2.58 4.4 1.72l3.28-3.28C17.7 1.28 15.1.25 12 .25A11.98 11.98 0 0 0 1.7 7.08l3.85 2.98C6.46 6.76 9 4.75 12 4.75z"/></svg></span>
+            <div><div class="pn">Google</div><div class="pd">Business Profile reviews</div></div>
+            <div class="pm"><b>218</b><small>this month</small></div>
+          </div>
+          <div class="plat-row">
+            <span class="plat-logo"><svg viewBox="0 0 24 24"><path fill="#FF1A1A" d="M12.6 2.1c1.1-.2 2.2.6 2.3 1.7l.5 7.1c.1 1.4-1.6 2.1-2.5 1l-4.3-5.3c-.7-.9-.3-2.2.8-2.5zM10 13.9c.6-.5 1.5-.2 1.7.6l1.4 5.2c.3 1.1-1 2-1.9 1.3l-4.3-3.3c-.9-.7-.6-2.1.5-2.3zM8.5 11.5c.2.8-.5 1.5-1.3 1.4L2 12.2c-1.1-.2-1.5-1.6-.6-2.3l3.3-2.6c.9-.7 2.2-.1 2.4 1zM16 14.4c.7-.6 1.8-.2 2 .7l1 4.2c.3 1.1-1 2-1.9 1.3l-2.9-2.5c-.8-.7-.6-2 .3-2.5zM17.3 11.3c-.8 0-1.4-.8-1.1-1.6l1.4-4.6c.3-1.1 1.8-1.2 2.3-.2l1.6 3.4c.5 1-.2 2.2-1.3 2.2z"/></svg></span>
+            <div><div class="pn">Yelp</div><div class="pd">Character-limit aware</div></div>
+            <div class="pm"><b>134</b><small>this month</small></div>
+          </div>
+          <div class="plat-row">
+            <span class="plat-logo"><svg viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12a12 12 0 1 0-13.87 11.85v-8.38H7.08V12h3.05V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12z"/></svg></span>
+            <div><div class="pn">Facebook</div><div class="pd">Page recommendations</div></div>
+            <div class="pm"><b>87</b><small>this month</small></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW A REPLY HAPPENS ============ -->
+<section class="section" id="how" style="background:linear-gradient(180deg,transparent,var(--surface-2))">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How a reply happens</span>
+      <h2>Pull. Draft. Send. Three steps, one rail.</h2>
+      <p>Reply Rail does the reading and the writing. You do the one thing only an owner can — decide it sounds right, and hit send.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-line" aria-hidden="true"></div>
+      <div class="flow-grid">
+        <article class="step reveal">
+          <span class="step-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/><path d="M18 15l3 3-3 3"/></svg></span>
+          <div class="step-k">Step one</div>
+          <h3>Pull</h3>
+          <p>New Google, Yelp and Facebook reviews stream into one queue. The AI urgency model reads each and files it in a lane.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Sorted into Urgent, Reply soon, Auto-thanked, Quiet</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Themes tagged per review</li>
+          </ul>
+        </article>
+
+        <article class="step reveal" data-d="1">
+          <span class="step-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v4M3 5h4M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg></span>
+          <div class="step-k">Step two</div>
+          <h3>Draft</h3>
+          <p>A reply is written in your brand voice, grounded in the exact words of the review, and fitted to each platform's character limit.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Three tone presets: warm, professional, apologetic</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Quotes the phrases the reviewer actually used</li>
+          </ul>
+        </article>
+
+        <article class="step reveal" data-d="2">
+          <span class="step-n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></span>
+          <div class="step-k">Step three</div>
+          <h3>Send</h3>
+          <p>Skim it, tweak a word if you like, and post — right back to the platform it came from. Under 24 hours, every time.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Posts back to Google, Yelp or Facebook</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Response time held under 24h across locations</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SENTIMENT ============ -->
+<section class="section" id="sentiment">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The signal in the noise</span>
+      <h2>Know what people love — and what they don't.</h2>
+      <p>Beyond individual replies, Reply Rail reads every review together: the topics people keep raising, how ratings move over 12 weeks, and how each location is really doing.</p>
+    </div>
+
+    <div class="sent-grid">
+      <div class="panel reveal" id="themePanel">
+        <div class="panel-h">
+          <h3>Themes from this month</h3>
+          <span class="legend">
+            <i class="lp">Positive</i><i class="lm">Mixed</i><i class="ln">Negative</i>
+          </span>
+        </div>
+        <div class="themes">
+          <div class="theme">
+            <div class="th-top"><span class="th-name">Staff friendliness</span><span class="th-count">142 <svg viewBox="0 0 24 24" fill="none" stroke="var(--pos)" stroke-width="2.2"><path d="M4 17l6-6 4 4 6-7"/><path d="M16 8h4v4"/></svg></span></div>
+            <div class="th-track"><span class="th-fill pos" style="--w:92%"></span></div>
+            <div class="th-score up">Sentiment <b>+0.78</b> · people keep naming your baristas</div>
+          </div>
+          <div class="theme">
+            <div class="th-top"><span class="th-name">Pastries</span><span class="th-count">118 <svg viewBox="0 0 24 24" fill="none" stroke="var(--pos)" stroke-width="2.2"><path d="M4 17l6-6 4 4 6-7"/><path d="M16 8h4v4"/></svg></span></div>
+            <div class="th-track"><span class="th-fill pos" style="--w:84%"></span></div>
+            <div class="th-score up">Sentiment <b>+0.71</b></div>
+          </div>
+          <div class="theme">
+            <div class="th-top"><span class="th-name">Wait time</span><span class="th-count">64 <svg viewBox="0 0 24 24" fill="none" stroke="var(--neg)" stroke-width="2.2"><path d="M4 7l6 6 4-4 6 7"/><path d="M16 16h4v-4"/></svg></span></div>
+            <div class="th-track"><span class="th-fill neg" style="--w:60%"></span></div>
+            <div class="th-score down">Sentiment <b>−0.42</b> · the recurring complaint to watch</div>
+          </div>
+          <div class="theme">
+            <div class="th-top"><span class="th-name">Ambiance &amp; music</span><span class="th-count">89 <svg viewBox="0 0 24 24" fill="none" stroke="var(--pos)" stroke-width="2.2"><path d="M4 17l6-6 4 4 6-7"/><path d="M16 8h4v4"/></svg></span></div>
+            <div class="th-track"><span class="th-fill pos" style="--w:74%"></span></div>
+            <div class="th-score up">Sentiment <b>+0.51</b></div>
+          </div>
+          <div class="theme">
+            <div class="th-top"><span class="th-name">Wi-Fi &amp; power</span><span class="th-count">47 <svg viewBox="0 0 24 24" fill="none" stroke="var(--mixed)" stroke-width="2.2"><path d="M5 12h14"/></svg></span></div>
+            <div class="th-track"><span class="th-fill mix" style="--w:52%"></span></div>
+            <div class="th-score">Sentiment <b>+0.18</b> · mixed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-stack">
+        <div class="panel reveal" data-d="1" id="trendPanel">
+          <div class="trend-head">
+            <h3>Rating trend</h3>
+            <span class="rng">Last 12 weeks</span>
+          </div>
+          <p class="trend-sub">All three platforms, one chart.</p>
+          <svg class="chart" viewBox="0 0 320 150" preserveAspectRatio="none" role="img" aria-label="A 12-week rating trend line chart. Google rises from 4.5 to 4.7, Facebook rises from 4.4 to 4.6, and Yelp dips slightly from 4.5 to 4.4.">
+            <line class="grid-l" x1="0" y1="30" x2="320" y2="30"/>
+            <line class="grid-l" x1="0" y1="75" x2="320" y2="75"/>
+            <line class="grid-l" x1="0" y1="120" x2="320" y2="120"/>
+            <!-- google -->
+            <path class="line" style="--len:340" stroke="#4285F4" d="M0 60 C40 55 60 50 90 48 C130 45 160 42 200 38 C240 34 280 30 320 26"/>
+            <circle class="dot" cx="320" cy="26" r="4" fill="#4285F4"/>
+            <!-- facebook -->
+            <path class="line" style="--len:340" stroke="#1877F2" d="M0 72 C40 70 70 66 100 62 C140 58 170 55 210 50 C250 46 285 42 320 40"/>
+            <circle class="dot" cx="320" cy="40" r="4" fill="#1877F2"/>
+            <!-- yelp -->
+            <path class="line" style="--len:340" stroke="#FF1A1A" d="M0 66 C40 68 70 74 100 76 C140 79 170 74 210 76 C250 78 285 80 320 82"/>
+            <circle class="dot" cx="320" cy="82" r="4" fill="#FF1A1A"/>
+          </svg>
+          <div class="chart-legend">
+            <i class="cg">Google 4.7</i><i class="cy">Yelp 4.4</i><i class="cf">Facebook 4.6</i>
+          </div>
+        </div>
+
+        <div class="panel scorecard reveal" data-d="2">
+          <div class="panel-h">
+            <h3>Per-location scorecard</h3>
+            <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-7-10a7 7 0 0 1 14 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg> 6 locations</span>
+          </div>
+          <div class="sc-loc">
+            <span class="sc-name">Aurora SoMa</span>
+            <span class="sc-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg> 4.4</span>
+            <div class="sc-tags">
+              <span class="sc-tag good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 11v9M14 4l-1 6h6a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.8 21H7"/></svg> Loves the space</span>
+              <span class="sc-tag bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Wait time</span>
+            </div>
+          </div>
+          <div class="sc-loc">
+            <span class="sc-name">Aurora Mission</span>
+            <span class="sc-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg> 4.8</span>
+            <div class="sc-tags">
+              <span class="sc-tag good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 11v9M14 4l-1 6h6a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.8 21H7"/></svg> Strong Wi-Fi</span>
+              <span class="sc-tag bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 15h8"/></svg> Seating</span>
+            </div>
+          </div>
+          <div class="sc-loc">
+            <span class="sc-name">Aurora Marina</span>
+            <span class="sc-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg> 4.6</span>
+            <div class="sc-tags">
+              <span class="sc-tag good"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 11v9M14 4l-1 6h6a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 17.8 21H7"/></svg> Natural light</span>
+              <span class="sc-tag bad"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Parking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT TOUR ============ -->
+<section class="section" id="tour" style="background:linear-gradient(180deg,var(--surface-2),transparent)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Inside Reply Rail</span>
+      <h2>The whole workflow, in three screens.</h2>
+      <p>This is the actual product a multi-location coffee chain runs every morning.</p>
+    </div>
+
+    <div class="tour">
+      <!-- inbox -->
+      <div class="shot reveal">
+        <div class="shot-copy">
+          <div class="num">01 — The inbox</div>
+          <h3>Twenty-five reviews, four lanes, zero guesswork.</h3>
+          <p>Every review across Google, Yelp and Facebook, sorted by urgency the moment it arrives. Filter by platform, location or sentiment — and see today's queue at a glance.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Urgent, Reply soon, Auto-thanked and Quiet lanes</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> A suggested action beside each review</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Today's queue: unanswered count and average reply time</li>
+          </ul>
+        </div>
+        <div>
+          <figure class="frame">
+            <div class="frame-bar"><span class="tl"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> app.replyrail.com/inbox</span></div>
+            <img src="assets/hero.png" alt="Reply Rail unified inbox showing 25-plus reviews from Google, Yelp and Facebook sorted into Urgent and Reply-soon lanes, with a suggested reply action beside each and a today's-queue panel on the right." loading="lazy" width="2880" height="1800">
+          </figure>
+          <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg> The unified inbox — reviews across all three platforms, in AI urgency lanes.</figcaption>
+        </div>
+      </div>
+
+      <!-- sentiment -->
+      <div class="shot flip reveal">
+        <div class="shot-copy">
+          <div class="num">02 — The dashboard</div>
+          <h3>Themes and ratings you can act on Monday morning.</h3>
+          <p>Per-platform ratings with month-over-month movement, and a panel of AI-extracted themes coloured by sentiment — so the wait-time complaint surfaces before it costs you a star.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Google, Yelp and Facebook ratings side by side</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Themes with sentiment-coloured bars and example quotes</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Export the month to CSV in one click</li>
+          </ul>
+        </div>
+        <div>
+          <figure class="frame">
+            <div class="frame-bar"><span class="tl"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> app.replyrail.com/sentiment</span></div>
+            <img src="assets/dashboard.png" alt="Reply Rail sentiment dashboard with Google 4.7, Yelp 4.4 and Facebook 4.6 rating cards over sparklines, above a themes panel where AI-extracted topics like staff friendliness and wait time are drawn as green and red sentiment bars." loading="lazy" width="2880" height="1800">
+          </figure>
+          <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg> The sentiment dashboard — platform ratings and extracted themes.</figcaption>
+        </div>
+      </div>
+
+      <!-- detail -->
+      <div class="shot reveal">
+        <div class="shot-copy">
+          <div class="num">03 — The reply</div>
+          <h3>A drafted reply, grounded in what they actually wrote.</h3>
+          <p>Open any review to see the drafted response beside three tone presets, the phrases it pulled from the review, and a live character count against the platform's limit.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Warm, professional and apologetic in one tap</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Highlights the exact quotes it responded to</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Character limit shown per platform before you send</li>
+          </ul>
+        </div>
+        <div>
+          <figure class="frame">
+            <div class="frame-bar"><span class="tl"><i></i><i></i><i></i></span><span class="url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> app.replyrail.com/review</span></div>
+            <img src="assets/detail.png" alt="Reply Rail review detail: a two-star Google review about an 18-minute wait, next to an AI-drafted apologetic owner-signed reply, three tone-preset tabs, a character count against the Google limit, and chips showing the phrases pulled from the review." loading="lazy" width="2880" height="1800">
+          </figure>
+          <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg> The review detail — a drafted reply with three tone presets.</figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH ============ -->
+<section class="section tech">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin:0 auto 28px;text-align:center">
+      <span class="eyebrow" style="justify-content:center">Built to ship</span>
+      <h2>A modern stack, engineered for local business.</h2>
+    </div>
+    <div class="tech-chips reveal" data-d="1">
+      <span class="tech-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 8v8l7-8v8"/></svg> Next.js</span>
+      <span class="tech-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 12c1.5-3 3.5-4.5 6-4.5 3.75 0 4.5 3 6 3.75-1.5 3-3.5 4.5-6 4.5-3.75 0-4.5-3-6-3.75z"/></svg> Tailwind</span>
+      <span class="tech-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg> Framer Motion</span>
+      <span class="tech-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M12 9v7"/></svg> TypeScript</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-section">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <div class="cta-stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.3 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg>
+      </div>
+      <h2>Spend minutes a day on reviews, not an hour.</h2>
+      <p>See Reply Rail on your own Google, Yelp and Facebook reviews. We'll walk you through the inbox, the drafting, and the sentiment trends for your locations.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+        <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+      </div>
+      <p class="cta-note">Built for multi-location local businesses. Now running for an F&amp;B chain under NDA.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div class="f-brand">
+      <a class="brand" href="#top" aria-label="Reply Rail home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.1 5.6.82-4.05 3.95.96 5.58L12 15.8l-5.02 2.65.96-5.58L3.9 8.92l5.6-.82z" fill="#fff"/></svg></span>
+        <span class="brand-name">Reply Rail</span>
+      </a>
+      <p>AI-drafted Google, Yelp and Facebook review responses for local businesses. One queue, one voice, one click.</p>
+    </div>
+    <div class="f-col">
+      <h4>Product</h4>
+      <a href="#platforms">One inbox</a>
+      <a href="#how">How it works</a>
+      <a href="#sentiment">Sentiment</a>
+      <a href="#tour">Product tour</a>
+    </div>
+    <div class="f-col">
+      <h4>Company</h4>
+      <a href="contact.html">Contact</a>
+      <a href="https://buildspacelabs.com" target="_blank" rel="noopener">BuildspaceLabs ↗</a>
+      <a href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo ↗</a>
+      <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+    </div>
+  </div>
+  <div class="wrap footer-credit">
+    <div class="credit-l">
+      <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+        <span class="bs-tag" aria-hidden="true">{bs}</span> BuildspaceLabs
+      </a>
+      <span class="credit-text"><b>Designed &amp; engineered by BuildspaceLabs.</b></span>
+    </div>
+    <p class="credit-line">We design and ship AI-native products like this one.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

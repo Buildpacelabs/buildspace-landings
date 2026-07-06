@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focuscare — AI Physiotherapy Notes &amp; Consultation Automation</title>
+<meta name="description" content="Focuscare automates physiotherapy consultations end to end — one-click start, real-time transcription, AI SOAP notes and auto-scheduled follow-ups. Built by BuildspaceLabs.">
+<link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/focuscare/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#F26D5B">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BuildspaceLabs">
+<meta property="og:title" content="Focuscare — AI Physiotherapy Notes &amp; Consultation Automation">
+<meta property="og:description" content="Automate physiotherapy consultations end to end — one-click start, real-time transcription, AI SOAP notes and auto-scheduled follow-ups.">
+<meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/focuscare/">
+<meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/focuscare/assets/dashboard.webp">
+<meta property="og:image:alt" content="Focuscare Today view turning live transcription into a structured SOAP note.">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Focuscare — AI Physiotherapy Notes &amp; Consultation Automation">
+<meta name="twitter:description" content="Automate physiotherapy consultations end to end — one-click start, real-time transcription, AI SOAP notes and auto-scheduled follow-ups.">
+<meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/focuscare/assets/dashboard.webp">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23F26D5B'/%3E%3Cpath d='M11 16.5l3.2 3.2L21 12.8' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Focuscare",
+  "description": "End-to-end physiotherapy consultation automation — one-click start, real-time transcription with speaker identification, GPT-4 SOAP-format clinical notes, and follow-up scheduling generated automatically from the treatment plan.",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "creator": {
+    "@type": "Organization",
+    "name": "BuildspaceLabs",
+    "url": "https://buildspacelabs.com"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Focuscare home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 12.5l2.6 2.6L16 9.4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Focuscare
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#followups">Follow-ups</a></li>
+        <li><a href="#tour">Product tour</a></li>
+        <li><a href="#features">Features</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-right">
+      <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+        Built by <span class="built-full">BuildspaceLabs</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="hero-badge"><span class="dot"></span> Built for physiotherapy clinics</span>
+        <h1 class="hero-title">From hello to <span class="accent">follow-up</span>, handled.</h1>
+        <p class="hero-lead">One click starts the session — Focuscare listens, writes the SOAP note, and schedules the next visit. The clinician stays with the patient; the paperwork takes care of itself.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+          <a class="btn btn-ghost btn-lg" href="#how">See how a session runs</a>
+        </div>
+        <p class="hero-note">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Client-side audio, structured notes — nothing typed by hand.
+        </p>
+      </div>
+
+      <!-- Signature consultation-flow visual -->
+      <div class="flow" id="flow" aria-label="Animated demonstration of a Focuscare session: start, transcribe, note, schedule">
+        <div class="flow-head" aria-hidden="true">
+          <span class="lbl">Live consultation</span>
+          <span class="flow-timer">00:00 · recording</span>
+        </div>
+
+        <!-- Step 1: Start -->
+        <div class="flow-step" data-step="1">
+          <div class="step-start">
+            <span class="ripple" aria-hidden="true"></span>
+            <span class="play-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+            <span>One-click consultation started</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Transcribe -->
+        <div class="flow-step" data-step="2">
+          <div class="step-transcript">
+            <div class="cap">
+              Live transcript
+              <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+            </div>
+            <div class="tline"><span class="who">Clinician</span><span class="txt">Where does it feel tight when you reach overhead?</span></div>
+            <div class="tline pt"><span class="who">Patient</span><span class="txt">Right shoulder, mostly the last few degrees.</span></div>
+          </div>
+        </div>
+
+        <!-- Step 3: SOAP note -->
+        <div class="flow-step" data-step="3">
+          <div class="step-soap">
+            <div class="cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 4h8a2 2 0 0 1 2 2v13a1 1 0 0 1-1.5.9L12 18l-4.5 1.9A1 1 0 0 1 6 19V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg> SOAP note · auto-drafted</div>
+            <div class="soap-rows">
+              <div class="soap-row"><span class="k">S</span><span class="v">Right shoulder tightness at end-range abduction.</span></div>
+              <div class="soap-row"><span class="k">O</span><span class="v">Painful arc 90–120°, GH mobility reduced.</span></div>
+              <div class="soap-row"><span class="k">A</span><span class="v">Subacromial impingement, improving.</span></div>
+              <div class="soap-row"><span class="k">P</span><span class="v">Progress loading; review in 7 days.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Follow-up -->
+        <div class="flow-step" data-step="4">
+          <div class="step-followup">
+            <span class="fu-ico"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 3v4M16 3v4M9 14l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="fu-txt"><strong>Follow-up booked · in 7 days</strong><span>Reminders queued from the plan</span></span>
+            <span class="fu-channels" aria-hidden="true">
+              <i title="SMS"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 3V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>
+              <i title="Email"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 5 8-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST BAND ============ -->
+  <section class="band" aria-label="What Focuscare handles">
+    <div class="wrap band-grid">
+      <div class="band-item reveal">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+        <div><h3>One-click start</h3><p>Open the room and press once. No setup, no forms — recording and transcription begin instantly.</p></div>
+      </div>
+      <div class="band-item reveal d1">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8a2 2 0 0 1 2 2v13a1 1 0 0 1-1.5.9L12 18l-4.5 1.9A1 1 0 0 1 6 19V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9h6M9 12h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <div><h3>SOAP notes, written for you</h3><p>GPT-4 with physiotherapy-specific prompts turns the conversation into a structured, editable SOAP note.</p></div>
+      </div>
+      <div class="band-item reveal d2">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 13v3l2 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <div><h3>Follow-ups that happen on their own</h3><p>Treatment plans trigger appointment workflows — SMS and email reminders, with missed-visit detection.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW A SESSION RUNS ============ -->
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How a session runs</span>
+        <h2>Four steps. One of them is a click.</h2>
+        <p>Focuscare runs the flow from the moment the patient sits down to the reminder that brings them back — so the clinician can stay present the whole way through.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step-card reveal">
+          <span class="num">Start</span>
+          <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>
+          <h3>Press start</h3>
+          <p>One click opens the session. Client-side audio streams over WebSocket to the transcription backend.</p>
+        </article>
+        <article class="step-card reveal d1">
+          <span class="num">Transcribe</span>
+          <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V7a3 3 0 0 1 3-3z" stroke="currentColor" stroke-width="1.8"/><path d="M6 11a6 6 0 0 0 12 0M12 17v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Transcribe live</h3>
+          <p>OpenAI Whisper captures the conversation in real time, with speaker identification for clinician and patient.</p>
+        </article>
+        <article class="step-card reveal d2">
+          <span class="num">Note</span>
+          <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 10h8M8 14h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Draft the note</h3>
+          <p>GPT-4 shapes the transcript into a SOAP-format clinical note — ready to review and sign, not to write.</p>
+        </article>
+        <article class="step-card reveal d3">
+          <span class="num">Schedule</span>
+          <span class="s-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 3v4M16 3v4M9 14l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Schedule the return</h3>
+          <p>The treatment plan sets the next visit automatically and queues the reminders that get the patient back.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOLLOW-UPS ============ -->
+  <section class="section" id="followups" style="padding-top:0;">
+    <div class="wrap split">
+      <div class="split-copy reveal">
+        <span class="eyebrow">Follow-ups on autopilot</span>
+        <h2>The next appointment books itself.</h2>
+        <p>Every treatment plan is a schedule waiting to happen. Focuscare reads the plan, sets the return visit, and keeps the patient on track — without anyone chasing a calendar.</p>
+        <ul class="feature-list">
+          <li>
+            <span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Plans that trigger workflows</strong><span>Treatment plans automatically start the appointment workflow — no manual booking step.</span></span>
+          </li>
+          <li>
+            <span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Multi-channel reminders</strong><span>Patients get SMS and email nudges timed to their plan, so fewer visits slip through.</span></span>
+          </li>
+          <li>
+            <span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4 10-10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span><strong>Missed-appointment detection</strong><span>When someone doesn't show, Focuscare flags it and re-engages instead of letting them lapse.</span></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="split-media reveal d1">
+        <div class="reminder-card">
+          <div class="rc-head">
+            <span class="plan-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 11h8M8 15h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div><h3>Treatment plan · 6-week program</h3><p>Reminders generated automatically</p></div>
+          </div>
+          <div class="chips">
+            <div class="chip sms">
+              <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 3V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+              <span class="c-body"><strong>SMS reminder</strong><span>“See you Thursday at 10:00 — reply C to confirm.”</span></span>
+              <span class="c-tag">Sent</span>
+            </div>
+            <div class="chip email">
+              <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 5 8-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span class="c-body"><strong>Email · session recap</strong><span>Exercises and next visit, straight to the patient.</span></span>
+              <span class="c-tag">Queued</span>
+            </div>
+            <div class="chip miss">
+              <span class="c-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v4M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <span class="c-body"><strong>Missed appointment</strong><span>No-show detected — re-engagement started.</span></span>
+              <span class="c-tag">Flagged</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT TOUR ============ -->
+  <section class="tour section" id="tour">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Product tour</span>
+        <h2>Inside the clinician's screen.</h2>
+        <p>Two views from Focuscare in a live clinic — the day at a glance, and a single consultation from transcript to booked follow-up.</p>
+      </div>
+
+      <!-- Shot 1 -->
+      <div class="shot reveal">
+        <div class="shot-grid">
+          <div class="shot-frame">
+            <div class="browser-bar" aria-hidden="true">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url"><svg viewBox="0 0 24 24" fill="none"><path d="M6 10V8a6 6 0 0 1 12 0v2" stroke="currentColor" stroke-width="1.8"/><rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/></svg> app.focuscare.health/today</span>
+            </div>
+            <img src="assets/dashboard.webp" alt="Focuscare Today view: a live consultation with real-time transcription on the left being turned into a structured SOAP note on the right." loading="lazy" width="1200" height="800">
+          </div>
+          <div class="shot-cap-block">
+            <span class="eyebrow">Today</span>
+            <h3>The session, becoming a note in real time</h3>
+            <div class="shot-cap"><span class="cap-num">01</span><p><strong>Live transcription turning into a structured SOAP note</strong> — the clinician talks with the patient while Focuscare captures every line and drafts the note alongside.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot 2 -->
+      <div class="shot reveal">
+        <div class="shot-grid rev">
+          <div class="shot-cap-block">
+            <span class="eyebrow">Consultation</span>
+            <h3>Transcript, note, and the next visit — in one place</h3>
+            <div class="shot-cap"><span class="cap-num">02</span><p><strong>A consultation end to end:</strong> the full transcript, the finished SOAP note, and the follow-up already scheduled from the treatment plan — nothing left to type or book.</p></div>
+          </div>
+          <div class="shot-frame">
+            <div class="browser-bar" aria-hidden="true">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url"><svg viewBox="0 0 24 24" fill="none"><path d="M6 10V8a6 6 0 0 1 12 0v2" stroke="currentColor" stroke-width="1.8"/><rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/></svg> app.focuscare.health/consult</span>
+            </div>
+            <img src="assets/detail.webp" alt="A single Focuscare consultation: the conversation transcript, the generated SOAP note, and the auto-scheduled follow-up appointment shown together." loading="lazy" width="1200" height="800">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE GRID ============ -->
+  <section class="section" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What's under the hood</span>
+        <h2>Everything a physio visit needs, automated.</h2>
+        <p>Focuscare handles the whole consultation loop — capture, notes, and the follow-through — grounded in tooling built for clinical accuracy.</p>
+      </div>
+
+      <div class="fgrid">
+        <article class="fcard reveal">
+          <span class="f-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V7a3 3 0 0 1 3-3z" stroke="currentColor" stroke-width="1.8"/><path d="M6 11a6 6 0 0 0 12 0M12 17v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Real-time transcription</h3>
+          <p>Client-side audio streams over WebSocket to a Python/Whisper backend and comes back as live text.</p>
+        </article>
+        <article class="fcard reveal d1">
+          <span class="f-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M3 19a5 5 0 0 1 10 0M11 19a5 5 0 0 1 10 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Speaker identification</h3>
+          <p>The transcript separates clinician from patient, so the record reads the way the conversation happened.</p>
+        </article>
+        <article class="fcard reveal d2">
+          <span class="f-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8a2 2 0 0 1 2 2v13a1 1 0 0 1-1.5.9L12 18l-4.5 1.9A1 1 0 0 1 6 19V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9h6M9 12h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>SOAP-format notes</h3>
+          <p>GPT-4 runs physiotherapy-specific prompts to structure notes in the S-O-A-P format clinicians already use.</p>
+        </article>
+        <article class="fcard reveal">
+          <span class="f-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h11l3 3v13H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 13l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Plan-driven scheduling</h3>
+          <p>Treatment plans trigger appointment workflows automatically — the next visit is set before the patient leaves.</p>
+        </article>
+        <article class="fcard reveal d1">
+          <span class="f-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v11H8l-4 3V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Multi-channel reminders</h3>
+          <p>SMS and email reminders go out on schedule, keeping patients engaged between visits.</p>
+        </article>
+        <article class="fcard reveal d2">
+          <span class="f-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l9 16H3L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v4M12 16h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Missed-appointment detection</h3>
+          <p>No-shows are caught and re-engaged automatically, so gaps in care don't go unnoticed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DAY BAND ============ -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="day reveal">
+        <div class="day-inner">
+          <span class="eyebrow">Built around the clinician's day</span>
+          <h2>Less screen time. More patient time.</h2>
+          <p>Focuscare was shaped around how a physiotherapy clinic actually runs — the goal isn't more software to manage, it's less between the clinician and the person in front of them.</p>
+          <div class="day-points">
+            <div class="day-point">
+              <span class="dp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3>Start in one click</h3>
+              <p>No forms before a session — press once and Focuscare is already listening.</p>
+            </div>
+            <div class="day-point">
+              <span class="dp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <h3>No notes to write</h3>
+              <p>Structured SOAP notes arrive drafted — review and sign instead of typing from memory.</p>
+            </div>
+            <div class="day-point">
+              <span class="dp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5l2-2v6h-6l2.3-2.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12a8 8 0 0 1-14 5l-2 2v-6h6l-2.3 2.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <h3>Follow-ups handled</h3>
+              <p>Scheduling and reminders run themselves from the treatment plan — no chasing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TECH ============ -->
+  <section class="section tech" style="padding-top:0;">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Under the hood</span>
+        <h2>Built on tooling that clinicians can trust.</h2>
+        <p>A focused stack — real-time audio, proven speech and language models, and a fast API layer to tie it together.</p>
+      </div>
+      <div class="chip-row reveal d1">
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> Python</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V7a3 3 0 0 1 3-3z" stroke="currentColor" stroke-width="1.8"/><path d="M6 11a6 6 0 0 0 12 0M12 17v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> OpenAI Whisper</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8a2 2 0 0 1 2 2v13a1 1 0 0 1-1.5.9L12 18l-4.5 1.9A1 1 0 0 1 6 19V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> GPT-4</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.2" stroke="currentColor" stroke-width="1.8"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="1.8"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="1.8" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" stroke="currentColor" stroke-width="1.8" transform="rotate(120 12 12)"/></svg> React</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none"><path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg> FastAPI</span>
+        <span class="tchip"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 12h.01M11 12h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> WebSocket audio</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta-wrap reveal">
+        <span class="eyebrow">See it in your clinic</span>
+        <h2>One click to start. We'll show you the rest.</h2>
+        <p>Walk through a live Focuscare session with the team that built it — from the first click to the follow-up that books itself.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+          <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+        </div>
+        <p class="cta-alt">Prefer email? <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" aria-label="Focuscare home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12.5l2.6 2.6L16 9.4" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          Focuscare
+        </a>
+        <p>End-to-end physiotherapy consultation automation — from one-click start to notes and follow-ups that handle themselves.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#followups">Follow-ups</a></li>
+          <li><a href="#tour">Product tour</a></li>
+          <li><a href="#features">Features</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo <svg class="ext" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-credit">
+        <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener" aria-label="BuildspaceLabs home"><span class="bs">{bs}</span> BuildspaceLabs</a>
+        <span>Designed &amp; engineered by BuildspaceLabs</span>
+      </div>
+      <p class="footer-tag">We design and ship AI-native products like this one.</p>
+      <p class="footer-legal">© 2026 Focuscare. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

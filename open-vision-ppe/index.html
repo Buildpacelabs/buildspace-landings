@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Vision PPE — On-Prem PPE Detection &amp; Intrusion Monitoring</title>
+  <meta name="description" content="Real-time PPE compliance, restricted-zone monitoring and person counting from your cameras — fully on-premise, no cloud. Computer-vision safety by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/open-vision-ppe/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0A0A0B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="Open Vision PPE — On-Prem PPE Detection &amp; Intrusion Monitoring">
+  <meta property="og:description" content="Real-time PPE compliance, restricted-zone monitoring and person counting from your cameras — fully on-premise, no cloud.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/open-vision-ppe/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/open-vision-ppe/assets/dashboard.webp">
+  <meta property="og:image:alt" content="Open Vision PPE safety monitor showing live camera feeds with PPE and restricted-zone detection.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Open Vision PPE — On-Prem PPE Detection &amp; Intrusion Monitoring">
+  <meta name="twitter:description" content="Real-time PPE compliance, restricted-zone monitoring and person counting from your cameras — fully on-premise, no cloud.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/open-vision-ppe/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0A0B'/%3E%3Cpath d='M7 7h5M20 7h5M7 25h5M20 25h5M7 7v5M25 7v5M7 20v5M25 20v5' stroke='%23CCFF00' stroke-width='2' fill='none'/%3E%3Ccircle cx='16' cy='16' r='4' fill='none' stroke='%2322D3EE' stroke-width='2'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Open Vision PPE Monitoring",
+    "description": "Boundary surveillance, PPE compliance monitoring and intrusion detection via real-time video analytics — fully on-premise, no cloud required. PPE detection, restricted-zone monitoring and person tracking with IN/OUT counting; data stored in SQLite with auto-emailed PDF and Excel reports.",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Open Vision PPE home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M5 5h5M22 5h5M5 27h5M22 27h5M5 5v5M27 5v5M5 22v5M27 22v5" stroke="#CCFF00" stroke-width="2"/><circle cx="16" cy="16" r="4.5" stroke="#22D3EE" stroke-width="2"/></svg>
+        </span>
+        <span class="brand-name">Open Vision <b>PPE</b></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a class="navlink" href="#watches">What it watches</a>
+        <a class="navlink" href="#runs">How it runs</a>
+        <a class="navlink" href="#onprem">On-prem</a>
+        <a class="navlink" href="#tour">Product tour</a>
+      </nav>
+
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          <span>Built by BuildspaceLabs</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Safety &amp; Compliance · Computer Vision</span>
+          <h1>Safety monitoring that runs <span class="hl">on-prem</span>.</h1>
+          <p class="hero-sub">
+            Boundary surveillance, PPE compliance and intrusion detection from your existing cameras —
+            real-time video analytics that never leave the building. No cloud, no servers, no internet required.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#watches">See what it watches</a>
+          </div>
+          <div class="hero-meta">
+            <div class="item">
+              <span class="num"><span class="tag-lime">50%+</span></span>
+              <span class="lbl">Confidence threshold</span>
+            </div>
+            <div class="item">
+              <span class="num">Zero</span>
+              <span class="lbl">Cloud required</span>
+            </div>
+            <div class="item">
+              <span class="num">100%</span>
+              <span class="lbl">Runs offline</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIGNATURE HERO HUD (CSS/SVG only, no screenshot) -->
+        <div class="hud" role="img" aria-label="Stylised camera HUD: bounding boxes drawing around three people. Two are tagged helmet and vest OK, one is flagged no-vest inside a restricted zone, with a live IN/OUT counter.">
+          <div class="hud-bar">
+            <span class="rec"><span class="dot"></span> REC</span>
+            <span>CAM-04 · GATE-B</span>
+            <span class="right">YOLOv8n · 320×320</span>
+          </div>
+
+          <span class="corner tl" aria-hidden="true"></span>
+          <span class="corner tr" aria-hidden="true"></span>
+          <span class="corner bl" aria-hidden="true"></span>
+          <span class="corner br" aria-hidden="true"></span>
+
+          <div class="scanline" aria-hidden="true"></div>
+
+          <div class="zone" aria-hidden="true"></div>
+
+          <div class="figures" aria-hidden="true">
+            <div class="fig f1">
+              <div class="bbox">
+                <div class="tagline">
+                  <span class="chip ok">HELMET OK</span>
+                  <span class="chip ok">VEST OK</span>
+                </div>
+              </div>
+              <div class="body"></div>
+            </div>
+            <div class="fig f2">
+              <div class="bbox">
+                <div class="tagline">
+                  <span class="chip trk">ID #217 · TRACK</span>
+                </div>
+              </div>
+              <div class="body"></div>
+            </div>
+            <div class="fig f3">
+              <div class="bbox">
+                <div class="tagline">
+                  <span class="chip bad">NO-VEST · ZONE BREACH</span>
+                </div>
+              </div>
+              <div class="body"></div>
+            </div>
+          </div>
+
+          <div class="counter" aria-hidden="true">
+            <div class="cell in"><span class="k">IN</span><span class="v" data-count-to="14">0</span></div>
+            <div class="cell out"><span class="k">OUT</span><span class="v" data-count-to="9">0</span></div>
+          </div>
+          <div class="readout" aria-hidden="true">
+            conf <b>0.87</b><br>tracks 3 · violations 1
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAT BAND -->
+    <section class="band" aria-label="Key facts">
+      <div class="wrap">
+        <div class="band-grid">
+          <div class="band-cell reveal">
+            <div class="big" data-count-to="50" data-suffix="%+">0</div>
+            <p class="lbl">Detection confidence threshold on every person and PPE call.</p>
+          </div>
+          <div class="band-cell reveal" data-d="1">
+            <div class="big cyan">Zero cloud</div>
+            <p class="lbl">Nothing is uploaded. All inference and storage stay on your hardware.</p>
+          </div>
+          <div class="band-cell reveal" data-d="2">
+            <div class="big">Runs offline</div>
+            <p class="lbl">No servers, no internet. Deploys as a desktop application on-site.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IT WATCHES -->
+    <section class="section" id="watches">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What it watches</span>
+          <h2>Three jobs, running on every frame.</h2>
+          <p>Open Vision PPE watches your cameras for the specific things that get someone hurt — missing gear, people in places they shouldn't be, and headcount through a boundary.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal" style="--accent: var(--lime)">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a7 7 0 0 0-7 7v3h14v-3a7 7 0 0 0-7-7Z"/><path d="M4 13h16v2H4z"/><path d="M9 20h6"/><path d="M12 6v3"/></svg>
+            </div>
+            <span class="kicker">PPE Compliance</span>
+            <h3>Helmet &amp; vest, every person</h3>
+            <p>Detects hard hats and hi-vis vests on each tracked person and flags anyone missing gear the moment they enter frame.</p>
+            <ul>
+              <li>Helmet detection</li>
+              <li>Hi-vis vest detection</li>
+              <li>Per-person compliance state</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-d="1" style="--accent: var(--red)">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h6v6H3zM15 4h6v6h-6zM3 14h6v6H3zM15 14h6v6h-6z" opacity=".5"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <span class="kicker">Restricted Zones</span>
+            <h3>Intrusion into no-go areas</h3>
+            <p>Draw a boundary once. Any person crossing into a restricted zone raises a violation and is logged with the frame and track.</p>
+            <ul>
+              <li>Boundary surveillance</li>
+              <li>Zone-violation detection</li>
+              <li>Instant breach flags</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-d="2" style="--accent: var(--cyan)">
+            <div class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h7M20 12h-4M13 8l4 4-4 4"/><circle cx="7" cy="6" r="2.5"/><path d="M3 20c0-2.5 1.8-4 4-4s4 1.5 4 4"/></svg>
+            </div>
+            <span class="kicker">IN / OUT Counting</span>
+            <h3>Headcount across a line</h3>
+            <p>ByteTrack follows each person across frames and counts direction of travel — a live, auditable tally of who went in and out.</p>
+            <ul>
+              <li>Multi-person tracking</li>
+              <li>Direction-aware counting</li>
+              <li>Live bounding boxes</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT RUNS -->
+    <section class="section" id="runs" style="border-top:1px solid var(--line); background: var(--base-2);">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">How it runs</span>
+          <h2>Detect → Track → Report.</h2>
+          <p>A single pipeline turns raw camera frames into compliance events, tracked identities, and a report in your inbox — all on the same machine.</p>
+        </div>
+
+        <div class="pipe">
+          <div class="stage reveal">
+            <div class="step-n">STEP <b>01</b></div>
+            <h3>Detect</h3>
+            <p>YOLOv8n runs person detection at 320×320 with a 50% confidence threshold, then evaluates PPE and restricted-zone state on each detection.</p>
+            <div class="flow-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 3v2M16 3v2"/><rect x="9" y="10" width="6" height="6" rx="1" stroke="#CCFF00"/></svg>
+            </div>
+            <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </div>
+
+          <div class="stage reveal" data-d="1">
+            <div class="step-n">STEP <b>02</b></div>
+            <h3>Track</h3>
+            <p>ByteTrack assigns a stable ID to every person using IoU and a 30-frame history, while InsightFace 512-dim embeddings support face recognition where needed.</p>
+            <div class="flow-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="8" r="2.5"/><circle cx="17" cy="16" r="2.5"/><path d="M7 10.5v3M9.5 8h5M17 13.5v-3" stroke-dasharray="2 2"/><path d="M9 13l6-3" stroke="#22D3EE"/></svg>
+            </div>
+            <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          </div>
+
+          <div class="stage reveal" data-d="2">
+            <div class="step-n">STEP <b>03</b></div>
+            <h3>Report</h3>
+            <p>Events and counts land in a local SQLite database. Daily PDF and Excel safety reports are generated and delivered over SMTP — no dashboard login required.</p>
+            <div class="flow-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 9l8 5 8-5" stroke="#CCFF00"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ON-PREM REASSURANCE -->
+    <section class="section onprem" id="onprem">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="wrap onprem-grid">
+        <div class="reveal">
+          <span class="eyebrow tag-lime">No cloud · No servers · No internet</span>
+          <h2>Your footage never leaves the building.</h2>
+          <p class="lead">
+            Open Vision PPE is a desktop application. Inference, tracking and storage all run locally,
+            so there is no upstream to secure, no bandwidth bill, and nothing to breach off-site.
+          </p>
+          <ul class="privacy-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+              <span class="t"><b>All data in SQLite, on-site</b><span>Events, tracks and counts persist in a single local database file.</span></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 9l8 5 8-5"/></svg>
+              <span class="t"><b>Reports auto-emailed over SMTP</b><span>Daily PDF and Excel summaries reach the safety team automatically.</span></span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
+              <span class="t"><b>Runs on existing cameras</b><span>Works from the RTSP feeds you already have — no new hardware to certify.</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flowbox reveal" data-d="1" aria-label="Data flow diagram: camera to on-site processing to local SQLite and emailed reports, with no cloud upload.">
+          <div class="fb-head">
+            <span class="mono tag-lime">DATA FLOW · ON-PREM</span>
+            <span class="mono">LOCAL ONLY</span>
+          </div>
+          <div class="fb-node">
+            <span class="fb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l14-3v14L3 16z"/><path d="M17 9l4-2v10l-4-2z"/></svg></span>
+            <span class="fb-t"><b>Existing camera</b><span>RTSP video feed</span></span>
+          </div>
+          <div class="fb-connector" aria-hidden="true"></div>
+          <div class="fb-node">
+            <span class="fb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M4 9h2M4 15h2M18 9h2M18 15h2M9 4v2M15 4v2M9 18v2M15 18v2"/></svg></span>
+            <span class="fb-t"><b>On-site desktop app</b><span>YOLOv8 · ByteTrack · InsightFace</span></span>
+          </div>
+          <div class="fb-connector" aria-hidden="true"></div>
+          <div class="fb-node term">
+            <span class="fb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg></span>
+            <span class="fb-t"><b>Local SQLite + reports</b><span>PDF / Excel, auto-emailed</span></span>
+          </div>
+          <div class="fb-cross" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10a6 6 0 0 0-11.5-2M4 10h3M4 10v-3"/><path d="M20 14a6 6 0 0 1-11.5 2M20 14h-3M20 14v3"/><path d="M4 20 20 4"/></svg>
+            NO CLOUD UPLOAD · NO INTERNET
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT TOUR -->
+    <section class="section tour" id="tour" style="border-top:1px solid var(--line);">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Product tour</span>
+          <h2>What the safety team actually sees.</h2>
+          <p>A live monitor for the floor, and a full trail behind every violation — from the detection box to the auto-generated report.</p>
+        </div>
+
+        <div class="shots">
+          <div class="shot">
+            <div class="shot-copy reveal">
+              <span class="num">01 · LIVE MONITOR</span>
+              <h3>Every camera on one wall</h3>
+              <p>The safety monitor shows live feeds side by side, with PPE state and restricted-zone overlays drawn on each person in real time.</p>
+              <ul class="cap-list">
+                <li>Live PPE and zone detection</li>
+                <li>Per-camera IN / OUT counts</li>
+                <li>Violations surfaced as they happen</li>
+              </ul>
+            </div>
+            <figure class="reveal" data-d="1" style="margin:0">
+              <div class="monitor">
+                <div class="m-bar">
+                  <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="m-title">Safety Monitor</span>
+                  <span class="live">LIVE</span>
+                </div>
+                <img src="assets/dashboard.webp" alt="Open Vision PPE safety monitor showing a grid of live camera feeds with PPE compliance and restricted-zone detection boxes drawn on people." loading="lazy" width="1600" height="1000">
+              </div>
+              <figcaption class="figcap">Safety monitor — live camera feeds with PPE and zone detection.</figcaption>
+            </figure>
+          </div>
+
+          <div class="shot rev">
+            <div class="shot-copy reveal">
+              <span class="num">02 · VIOLATION TRAIL</span>
+              <h3>Every flag, fully traceable</h3>
+              <p>Open a violation to see the detection boxes, the track filmstrip that identifies the person across frames, and the auto-report trail that gets emailed out.</p>
+              <ul class="cap-list">
+                <li>Detection boxes on the flagged frame</li>
+                <li>Track filmstrip across 30 frames</li>
+                <li>Auto-report trail to the safety team</li>
+              </ul>
+            </div>
+            <figure class="reveal" data-d="1" style="margin:0">
+              <div class="monitor">
+                <div class="m-bar">
+                  <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="m-title">Violation Detail</span>
+                  <span class="live" style="color:var(--red)">FLAGGED</span>
+                </div>
+                <img src="assets/detail.webp" alt="Open Vision PPE violation detail view showing detection boxes on a flagged person, a track filmstrip across frames, and the auto-generated report trail." loading="lazy" width="1600" height="1000">
+              </div>
+              <figcaption class="figcap">Violation detail — detection boxes, track filmstrip and the auto-report trail.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH CHIPS -->
+    <section class="section tech" aria-label="Technology">
+      <div class="wrap tech-grid">
+        <div class="reveal">
+          <span class="eyebrow">Under the hood</span>
+          <h2 style="font-size:clamp(24px,3.4vw,34px);margin-top:16px;">Open vision models, wired for the floor.</h2>
+          <p style="color:var(--muted);margin-top:14px;font-size:15px;">Built in Python on proven open-source detection and tracking — no proprietary black box, no vendor lock-in.</p>
+        </div>
+        <div class="chips reveal" data-d="1">
+          <span class="chip-tech"><span class="cdot"></span>Python</span>
+          <span class="chip-tech"><span class="cdot"></span>YOLOv8n <span class="ver">320×320</span></span>
+          <span class="chip-tech c2"><span class="cdot"></span>ByteTrack <span class="ver">IoU · 30f</span></span>
+          <span class="chip-tech c2"><span class="cdot"></span>InsightFace <span class="ver">512-dim</span></span>
+          <span class="chip-tech c3"><span class="cdot"></span>SQLite</span>
+          <span class="chip-tech"><span class="cdot"></span>SMTP <span class="ver">PDF · Excel</span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="cta-frame" aria-hidden="true"><span class="c tl"></span><span class="c tr"></span><span class="c bl"></span><span class="c br"></span></div>
+      <div class="wrap cta-inner reveal">
+        <span class="eyebrow" style="justify-content:center;">Deployed for an industrial safety client</span>
+        <h2>Put every camera to work on safety.</h2>
+        <p>See Open Vision PPE running on feeds like yours — PPE compliance, restricted zones and IN/OUT counting, entirely on-prem.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">
+            Book a demo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="contact.html">Talk to us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Open Vision PPE home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M5 5h5M22 5h5M5 27h5M22 27h5M5 5v5M27 5v5M5 22v5M27 22v5" stroke="#CCFF00" stroke-width="2"/><circle cx="16" cy="16" r="4.5" stroke="#22D3EE" stroke-width="2"/></svg>
+            </span>
+            <span class="brand-name">Open Vision <b>PPE</b></span>
+          </a>
+          <p>Boundary surveillance, PPE compliance and intrusion detection via real-time video analytics — fully on-premise, no cloud required.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#watches">What it watches</a>
+          <a href="#runs">How it runs</a>
+          <a href="#onprem">On-prem &amp; privacy</a>
+          <a href="#tour">Product tour</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Open Vision PPE Monitoring. On-prem computer-vision safety.</p>
+        <div class="footer-credit">
+          <a href="https://buildspacelabs.com" target="_blank" rel="noopener" aria-label="BuildspaceLabs">
+            <span class="bs-lock" aria-hidden="true">{bs}</span>
+          </a>
+          <a href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one. ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

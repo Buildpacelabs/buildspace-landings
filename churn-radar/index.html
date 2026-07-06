@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Churn Radar — AI Customer Success & Churn Prediction for B2B SaaS</title>
+  <meta name="description" content="Churn Radar flags at-risk B2B accounts before they churn and prescribes the save-play — health scores, risk drivers and net revenue retention in one board. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/churn-radar/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#059669">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="Churn Radar — See churn coming before it happens">
+  <meta property="og:description" content="An AI customer-success platform that flags at-risk B2B accounts before they churn and prescribes the save-play to run.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/churn-radar/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/churn-radar/assets/dashboard.webp">
+  <meta property="og:image:alt" content="Churn Radar Account Health board showing net revenue retention and at-risk accounts.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Churn Radar — See churn coming before it happens">
+  <meta name="twitter:description" content="Flag at-risk B2B accounts before they churn and get the prescribed save-play. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/churn-radar/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F172A'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23059669' stroke-width='1.4' opacity='0.5'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='none' stroke='%23059669' stroke-width='1.4' opacity='0.7'/%3E%3Cpath d='M16 16 L24 10' stroke='%23059669' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='1.6' fill='%23059669'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Churn Radar",
+    "description": "An AI customer-success platform that flags at-risk B2B accounts before they churn and prescribes the save-play to run — with 0–100 health scores, risk-driver attribution and net revenue retention in one board.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Churn Radar home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#059669" stroke-width="1.4" opacity="0.55"/><circle cx="12" cy="12" r="4" stroke="#34D399" stroke-width="1.4" opacity="0.8"/><path d="M12 12 20 6" stroke="#34D399" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="#34D399"/></svg>
+        </span>
+        Churn Radar
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#drivers">Why churn</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live account monitoring
+          </span>
+          <h1>Know which accounts are&nbsp;leaving — <span class="accent">before they do</span></h1>
+          <p class="hero-sub">Churn Radar scores every B2B account 0–100, tells you exactly why it's slipping, and hands your CSM the save-play to run — with a confidence estimate attached.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 238 accounts monitored</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Explainable, not black-box</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One CSM workflow</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: radar + NRR -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="Account Health preview: a radar sweep highlighting accounts by risk colour, and a net revenue retention line rising from 98% to 112%.">
+            <div class="viz-topbar">
+              <span class="lbl">Account Health · live</span>
+              <span class="viz-live"><span class="dot"></span> scanning</span>
+            </div>
+            <div class="viz-body">
+              <!-- Radar -->
+              <div class="radar">
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="sweepGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#059669" stop-opacity="0"/>
+                      <stop offset="100%" stop-color="#059669" stop-opacity="0.28"/>
+                    </linearGradient>
+                  </defs>
+                  <g class="radar-grid">
+                    <circle cx="100" cy="100" r="82"/>
+                    <circle cx="100" cy="100" r="56"/>
+                    <circle cx="100" cy="100" r="30"/>
+                    <line class="axis" x1="18" y1="100" x2="182" y2="100"/>
+                    <line class="axis" x1="100" y1="18" x2="100" y2="182"/>
+                  </g>
+                  <!-- sweep -->
+                  <g class="sweep">
+                    <path d="M100 100 L100 18 A82 82 0 0 1 158 42 Z" fill="url(#sweepGrad)"/>
+                    <line x1="100" y1="100" x2="100" y2="18" stroke="#059669" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
+                  </g>
+                  <!-- pips -->
+                  <g>
+                    <circle class="pip-halo" style="animation-delay:-0.2s" cx="150" cy="70" r="9" fill="#059669" opacity="0"/>
+                    <circle class="pip" cx="150" cy="70" r="3.4" fill="#059669"/>
+                    <circle class="pip" cx="72" cy="62" r="3.4" fill="#059669"/>
+                    <circle class="pip-halo" style="animation-delay:-3.4s" cx="128" cy="138" r="9" fill="#D97706" opacity="0"/>
+                    <circle class="pip" cx="128" cy="138" r="3.6" fill="#D97706"/>
+                    <circle class="pip" cx="60" cy="128" r="3.4" fill="#059669"/>
+                    <circle class="pip-halo" style="animation-delay:-1.1s" cx="110" cy="45" r="10" fill="#E11D48" opacity="0"/>
+                    <circle class="pip" cx="110" cy="45" r="3.8" fill="#E11D48"/>
+                    <circle class="pip" cx="155" cy="132" r="3.6" fill="#D97706"/>
+                    <circle class="pip" cx="48" cy="95" r="3.4" fill="#059669"/>
+                    <circle class="pip" cx="95" cy="158" r="3.4" fill="#059669"/>
+                    <circle class="pip" cx="140" cy="100" r="3.4" fill="#059669"/>
+                    <circle cx="100" cy="100" r="2.6" fill="#0F172A"/>
+                  </g>
+                </svg>
+                <span class="radar-caption">238 accounts</span>
+              </div>
+
+              <!-- NRR chart -->
+              <div class="nrr">
+                <div>
+                  <div class="nrr-head">
+                    <span class="val mono">112<small>%</small></span>
+                    <span class="delta mono">
+                      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      +14 pts
+                    </span>
+                  </div>
+                  <div class="nrr-chart">
+                    <svg viewBox="0 0 260 132" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="nrrFill" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#059669" stop-opacity="0.22"/>
+                          <stop offset="100%" stop-color="#059669" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <line class="nrr-baseline" x1="0" y1="80" x2="260" y2="80"/>
+                      <path class="nrr-area" d="M10 88 L32 82 L54 84 L76 78 L98 72 L120 68 L142 62 L164 56 L186 48 L208 42 L228 36 L250 32 L250 120 L10 120 Z"/>
+                      <path class="nrr-line" d="M10 88 L32 82 L54 84 L76 78 L98 72 L120 68 L142 62 L164 56 L186 48 L208 42 L228 36 L250 32"/>
+                      <circle class="nrr-dot" cx="250" cy="32" r="4.5"/>
+                    </svg>
+                  </div>
+                  <div class="nrr-foot"><span>NRR · 12 mo</span><span>98% → 112%</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="viz-legend">
+              <span class="lg"><span class="sw h"></span> Healthy</span>
+              <span class="lg"><span class="sw r"></span> At-risk</span>
+              <span class="lg"><span class="sw c"></span> Critical</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Portfolio at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="238" data-decimals="0">0</span></div><div class="lbl">Accounts monitored</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="112" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Net revenue retention</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="18" data-decimals="0">0</span></div><div class="lbl">At-risk accounts</div><div class="tag risk"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> flagged now</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="9" data-decimals="0">0</span></div><div class="lbl">Saves this quarter</div><div class="tag save"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> retained</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DRIVERS ============ -->
+    <section class="section" id="drivers">
+      <div class="wrap drivers-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Why accounts churn</span>
+            <h2>Churn is never a mystery. It's a weighted sum of signals.</h2>
+            <p>Churn Radar attributes every at-risk score to the behaviour behind it — so the number always comes with a reason your team can act on.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 14l4-4 4 3 5-6 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Usage decline</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="86"><i></i></div>
+              <p class="driver-desc">Falling logins, seats and core-action volume — the earliest tell that value is fading.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Support strain</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="64"><i></i></div>
+              <p class="driver-desc">Ticket spikes, unresolved escalations and slipping sentiment across recent conversations.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Renewal proximity</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="78"><i></i></div>
+              <p class="driver-desc">Contract windows closing without expansion signals or an engaged buying committee.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.4" stroke="currentColor" stroke-width="2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 9l4 4M21 9l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Champion departure</span>
+                <span class="driver-weight mono">Critical</span>
+              </div>
+              <div class="driver-bar" data-pct="92"><i></i></div>
+              <p class="driver-desc">Your internal advocate goes quiet or leaves — the single sharpest predictor of a lost account.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="drivers-note reveal" data-delay="1">
+          <h3>One account, fully attributed</h3>
+          <p>Every score decomposes into the drivers that produced it — with weights, not vibes. Here's how one at-risk account breaks down.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="205"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">42</span>
+                <span class="of mono">/ 100</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#E11D48"></span> Champion departure <span class="k mono">36%</span></li>
+              <li><span class="d" style="background:#059669"></span> Usage decline <span class="k mono">31%</span></li>
+              <li><span class="d" style="background:#D97706"></span> Renewal proximity <span class="k mono">22%</span></li>
+              <li><span class="d" style="background:#94A3B8"></span> Support strain <span class="k mono">11%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW: signal -> save-play ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">From signal to save-play</span>
+          <h2>Score it. Explain it. Prescribe the save.</h2>
+          <p>Churn Radar closes the loop from raw behaviour to the next action a CSM should take — no spreadsheet archaeology in between.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 13a8 8 0 1 0 16 0 8 8 0 0 0-16 0z" stroke="currentColor" stroke-width="2"/><path d="M12 13l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="13" r="1.6" fill="currentColor"/></svg></span>
+            <h3>Score</h3>
+            <p>An XGBoost churn model turns usage, support, renewal and champion signals into a live 0–100 health score and churn-risk % for every account.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 18v-6M11 18V6M17 18v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Explain</h3>
+            <p>Each score is decomposed into weighted drivers, so the CSM sees why an account is at risk — not just a number to distrust.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.2 4.8 5.3.6-3.9 3.6 1 5.2L12 15.4 7.4 17.8l1-5.2L4.5 9l5.3-.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3>Prescribe</h3>
+            <p>A sequenced save-play lands with owners, steps and a confidence estimate — the exact play to run to keep the account.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The command centre and the account file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a portfolio-triage Account Health board and a per-account detail view for the CSM.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Account Health board</span>
+              <h3>Triage the whole portfolio in one glance.</h3>
+              <p>Live NRR, at-risk and saves KPIs sit above a colour-coded, sortable table — so the accounts that need a human are always on top.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 12-month net-revenue-retention trend rising to 112%</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> At-risk accounts colour-coded by severity</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Top risk drivers surfaced across the book</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.churnradar.io/health</span>
+                </div>
+                <img src="assets/dashboard.webp" alt="Churn Radar Account Health board: a 12-month net-revenue-retention line rising to 112%, a colour-coded table of at-risk accounts, and the top risk drivers.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Account Health board — portfolio triage with live NRR, at-risk and saves KPIs.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Account detail</span>
+              <h3>Everything a CSM needs on one account file.</h3>
+              <p>A health ring, weighted why-at-risk drivers, usage sparklines and an activity timeline — capped by an AI save-play with its confidence score.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 42/100 health ring with churn-risk context</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Weighted risk drivers and usage sparklines</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> An 84%-confidence AI save-play, sequenced</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.churnradar.io/account</span>
+                </div>
+                <img src="assets/detail.webp" alt="Churn Radar account detail: a 42/100 health ring, weighted why-at-risk drivers, usage sparklines, an activity timeline and an 84%-confidence AI save-play.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Account detail — the score, its drivers, and the save-play to run.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the customer-success workflow, end to end.</h2>
+          <p>Health scoring, risk drivers and save-plays consolidated into one CSM surface — nothing left in a spreadsheet.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 20V9" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Account Health board</h3>
+            <p>Live NRR, at-risk and saves KPIs above a triage-ready, colour-coded portfolio table.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 8.5 6" stroke="#D97706" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/></svg></span>
+            <h3>0–100 health score</h3>
+            <p>A predictive score and churn-risk % per account, refreshed as behaviour changes.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.2 4.8 5.3.6-3.9 3.6 1 5.2L12 15.4 7.4 17.8l1-5.2L4.5 9l5.3-.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3>AI save-plays</h3>
+            <p>Sequenced steps with owners and a confidence score — the recommended play to keep the account.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 18v-6M11 18V6M17 18v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Risk-driver attribution</h3>
+            <p>Every score decomposed across usage, support, renewal and champion-departure signals.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16l4-5 4 3 5-7 3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>12-month NRR trend</h3>
+            <p>Net revenue retention charted over a rolling year, from 98% up to 112%.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Account detail file</h3>
+            <p>Usage sparklines, why-at-risk driver weights and an activity timeline on one screen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPLAINABLE BAND ============ -->
+    <section class="explain section">
+      <div class="wrap explain-inner">
+        <div class="reveal">
+          <span class="eyebrow">Explainable, not black-box</span>
+          <h2>A number your CSM will actually trust.</h2>
+          <p>A score nobody understands gets ignored. Churn Radar shows the weighted drivers behind every health score — so the recommendation carries its own justification.</p>
+          <ul class="explain-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every score decomposes into named, weighted drivers.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Save-plays ship with a confidence estimate, not false certainty.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Real-time NRR and MRR exposure across all 238 accounts.</li>
+          </ul>
+        </div>
+        <div class="explain-card reveal" data-delay="1" role="img" aria-label="Score breakdown: a 42 out of 100 health score attributed to champion departure 36%, usage decline 31%, renewal proximity 22% and support strain 11%.">
+          <div class="head">
+            <span class="t">Health score · account #A-118</span>
+            <span class="s mono">42</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#E11D48"></span> Champion departure</span>
+            <span class="mini-bar" data-pct="36"><i style="background:#E11D48"></i></span>
+            <span class="wt mono">36%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#059669"></span> Usage decline</span>
+            <span class="mini-bar" data-pct="31"><i style="background:#34D399"></i></span>
+            <span class="wt mono">31%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#D97706"></span> Renewal proximity</span>
+            <span class="mini-bar" data-pct="22"><i style="background:#F5A742"></i></span>
+            <span class="wt mono">22%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#94A3B8"></span> Support strain</span>
+            <span class="mini-bar" data-pct="11"><i style="background:#94A3B8"></i></span>
+            <span class="wt mono">11%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern data stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in an eight-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Python · XGBoost</span>
+          <span class="chip">dbt + BigQuery</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>See churn coming — for your book of business.</h2>
+            <p>We build AI-native products like Churn Radar. Tell us about your customer-success motion and we'll show you what an explainable health system looks like on your data.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Churn Radar home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#059669" stroke-width="1.4" opacity="0.55"/><circle cx="12" cy="12" r="4" stroke="#34D399" stroke-width="1.4" opacity="0.8"/><path d="M12 12 20 6" stroke="#34D399" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="1.5" fill="#34D399"/></svg>
+            </span>
+            Churn Radar
+          </a>
+          <p>An AI customer-success platform that flags at-risk B2B accounts before they churn — and prescribes the save-play to run.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#drivers">Why accounts churn</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> Churn Radar</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

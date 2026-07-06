@@ -1,0 +1,122 @@
+/* Churn Radar — interactions
+   IntersectionObserver reveals, count-ups, self-drawing NRR line,
+   driver bars, health ring. All motion-safe. */
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var onScroll = function () {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  /* ---- Count-up helper ---- */
+  function countUp(el, done) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var dur = 1400;
+    if (reduceMotion) {
+      el.textContent = target.toFixed(decimals);
+      if (done) done();
+      return;
+    }
+    var start = null;
+    function frame(t) {
+      if (start === null) start = t;
+      var p = Math.min((t - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(decimals);
+      if (p < 1) requestAnimationFrame(frame);
+      else { el.textContent = target.toFixed(decimals); if (done) done(); }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  /* ---- Self-drawing NRR line ---- */
+  function drawNrr(scope) {
+    var line = scope.querySelector('.nrr-line');
+    var area = scope.querySelector('.nrr-area');
+    var dot = scope.querySelector('.nrr-dot');
+    if (!line) return;
+    var len = line.getTotalLength();
+    if (reduceMotion) {
+      line.style.strokeDasharray = 'none';
+      if (area) area.style.opacity = '1';
+      if (dot) dot.style.opacity = '1';
+      return;
+    }
+    line.style.strokeDasharray = len;
+    line.style.strokeDashoffset = len;
+    if (dot) dot.style.opacity = '0';
+    // force reflow then animate
+    line.getBoundingClientRect();
+    line.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(0.22,0.61,0.36,1)';
+    line.style.strokeDashoffset = '0';
+    if (area) { area.style.transition = 'opacity 1.4s ease 0.5s'; area.style.opacity = '1'; }
+    if (dot) { dot.style.transition = 'opacity 0.5s ease 1.4s'; dot.style.opacity = '1'; }
+  }
+
+  /* ---- Generic reveal observer ---- */
+  var revObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        revObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { revObserver.observe(el); });
+
+  /* ---- One-shot activators (count, bars, ring, chart) ---- */
+  var activators = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      if (el.hasAttribute('data-count')) countUp(el);
+      if (el.classList.contains('driver-bar')) {
+        var pct = el.getAttribute('data-pct');
+        var i = el.querySelector('i');
+        if (i) i.style.width = pct + '%';
+      }
+      if (el.classList.contains('ring-fill')) {
+        var dash = el.getAttribute('data-dash');
+        el.style.strokeDasharray = dash + ' 999';
+      }
+      if (el.classList.contains('mini-bar')) {
+        var mp = el.getAttribute('data-pct');
+        var mi = el.querySelector('i');
+        if (mi) mi.style.width = mp + '%';
+      }
+      if (el.classList.contains('nrr-chart')) drawNrr(el);
+      activators.unobserve(el);
+    });
+  }, { threshold: 0.35 });
+
+  document.querySelectorAll('[data-count], .driver-bar, .ring-fill, .mini-bar, .nrr-chart')
+    .forEach(function (el) { activators.observe(el); });
+
+  /* ---- Hero NRR draws on load (above the fold) ---- */
+  var heroChart = document.querySelector('.hero .nrr-chart');
+  if (heroChart) {
+    window.addEventListener('load', function () { setTimeout(function () { drawNrr(heroChart); }, 300); });
+  }
+
+  /* ---- Contact form: gentle "Sending…" (never preventDefault) ---- */
+  var form = document.querySelector('form[action*="web3forms"]');
+  if (form) {
+    form.addEventListener('submit', function () {
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.dataset.label = btn.textContent; btn.textContent = 'Sending…'; btn.style.opacity = '0.8'; }
+    });
+  }
+
+  /* ---- Current year ---- */
+  var yr = document.querySelectorAll('[data-year]');
+  yr.forEach(function (n) { n.textContent = new Date().getFullYear(); });
+})();

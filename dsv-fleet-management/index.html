@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSV Fleet Management — Real-Time Fleet Tracking & Dispatch</title>
+<meta name="description" content="Live GPS tracking, geofencing, traffic-aware routing and driver scoring across your whole fleet — a web dashboard plus a driver app. Built by BuildspaceLabs.">
+<link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/dsv-fleet-management/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0B1220">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BuildspaceLabs">
+<meta property="og:title" content="DSV Fleet Management — Real-Time Fleet Tracking & Dispatch">
+<meta property="og:description" content="Live GPS tracking, geofencing, traffic-aware routing and driver scoring across your whole fleet — a web dashboard plus a driver app.">
+<meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/dsv-fleet-management/">
+<meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/dsv-fleet-management/assets/dashboard.webp">
+<meta property="og:image:alt" content="DSV Fleet Management live operations dashboard showing every vehicle on one map.">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DSV Fleet Management — Real-Time Fleet Tracking & Dispatch">
+<meta name="twitter:description" content="Live GPS tracking, geofencing, traffic-aware routing and driver scoring across your whole fleet.">
+<meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/dsv-fleet-management/assets/dashboard.webp">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B1220'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23F59E0B'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23F59E0B' stroke-width='1.5' stroke-opacity='.5'/%3E%3Cpath d='M16 3v4M16 25v4M3 16h4M25 16h4' stroke='%2338BDF8' stroke-width='1.6'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DSV Fleet Management",
+  "description": "Real-time fleet tracking and dispatching with full visibility over every vehicle, driver and route — a web dashboard with a live map, a route-optimization engine, and a mobile driver app.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "creator": {
+    "@type": "Organization",
+    "name": "BuildspaceLabs",
+    "url": "https://buildspacelabs.com"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html" aria-label="DSV Fleet Management home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.6" fill="#F59E0B"/><circle cx="12" cy="12" r="6.4" stroke="#F59E0B" stroke-width="1.3" stroke-opacity=".5"/><path d="M12 2.4v3M12 18.6v3M2.4 12h3M18.6 12h3" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </span>
+      <span class="brand__name">DSV <span>Fleet</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#platform">Platform</a>
+      <a href="#dispatch">How it works</a>
+      <a href="#tour">Product tour</a>
+      <a href="#features">Features</a>
+    </nav>
+
+    <div class="header__actions">
+      <a class="builtby" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+        Built by BuildspaceLabs
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+      <a class="btn btn--primary" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <span class="hero__status">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        Live ops · GPS streaming every 15s
+      </span>
+
+      <h1>Dispatch with <span class="amber">full visibility.</span></h1>
+
+      <p class="hero__sub">
+        Real-time fleet tracking and dispatching — every vehicle, driver and route on one screen.
+        Track live, route around traffic, and optimize for capacity and time windows.
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">
+          Book a demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#tour">See the dashboard</a>
+      </div>
+
+      <dl class="hero__meta">
+        <div>
+          <dt class="count" data-to="15" data-suffix="s">0s</dt>
+          <dd>GPS update interval</dd>
+        </div>
+        <div>
+          <dt class="count" data-to="60" data-prefix="−" data-suffix="%">0%</dt>
+          <dd>Fewer support tickets</dd>
+        </div>
+        <div>
+          <dt>1 map</dt>
+          <dd>Whole fleet, live</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- SIGNATURE: live-ops map -->
+    <div class="opsmap" role="img" aria-label="A live operations map with vehicle markers moving along drawn routes, a pulsing delivery geofence, and a telemetry ticker showing speed, ETA and fuel.">
+      <span class="opsmap__hud" aria-hidden="true"><span class="dot"></span>Sector 4 · North depot</span>
+      <span class="opsmap__coord" aria-hidden="true" id="coordReadout">28.6139°N<br>77.2090°E</span>
+
+      <svg class="opsmap__svg" viewBox="0 0 560 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="terr" cx="50%" cy="18%" r="90%">
+            <stop offset="0%" stop-color="#12203a"/>
+            <stop offset="100%" stop-color="#0a1120"/>
+          </radialGradient>
+          <pattern id="roadgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.045)" stroke-width="1"/>
+          </pattern>
+          <filter id="soft"><feGaussianBlur stdDeviation="3"/></filter>
+        </defs>
+
+        <rect width="560" height="460" fill="url(#terr)"/>
+        <rect width="560" height="460" fill="url(#roadgrid)"/>
+
+        <!-- terrain contour hints -->
+        <g stroke="rgba(56,189,248,.10)" fill="none" stroke-width="1">
+          <path d="M-20 90 C120 60 200 140 330 110 460 84 520 150 600 120"/>
+          <path d="M-20 300 C130 340 220 270 340 300 470 332 520 280 600 310"/>
+        </g>
+
+        <!-- arterial roads -->
+        <g stroke="rgba(255,255,255,.09)" fill="none" stroke-width="7" stroke-linecap="round">
+          <path d="M40 400 L180 250 L320 250 L520 60"/>
+          <path d="M20 120 L200 150 L360 120 L540 200"/>
+          <path d="M120 40 L150 220 L260 360 L470 400"/>
+        </g>
+
+        <!-- delivery geofence -->
+        <polygon class="geofence" points="300,190 400,170 430,250 360,300 290,270"/>
+
+        <!-- ROUTES (self-drawing) -->
+        <path id="route1" class="route-line" stroke="#F59E0B" d="M46 396 C130 320 150 270 182 252 C240 250 280 250 322 250 C420 170 470 120 516 64" style="--len:640"/>
+        <path id="route2" class="route-line" stroke="#38BDF8" d="M24 122 C120 138 170 150 202 150 C300 132 330 124 360 120 C450 150 500 178 538 200" style="--len:560" data-delay="1"/>
+        <path id="route3" class="route-line" stroke="#22C55E" d="M122 42 C140 130 148 190 152 222 C210 300 240 340 262 360 C380 384 430 396 468 400" style="--len:600" data-delay="2"/>
+
+        <!-- vehicle markers (positioned by JS along their route) -->
+        <g class="veh" data-route="route1" data-color="#F59E0B">
+          <circle class="veh__glow" r="7" fill="#F59E0B" opacity=".35" filter="url(#soft)"/>
+          <circle r="4.5" fill="#F59E0B"/>
+          <circle r="4.5" fill="none" stroke="#0B1220" stroke-width="1.4"/>
+        </g>
+        <g class="veh" data-route="route2" data-color="#38BDF8" data-offset="0.35">
+          <circle class="veh__glow" r="7" fill="#38BDF8" opacity=".35" filter="url(#soft)"/>
+          <circle r="4.5" fill="#38BDF8"/>
+          <circle r="4.5" fill="none" stroke="#0B1220" stroke-width="1.4"/>
+        </g>
+        <g class="veh" data-route="route3" data-color="#22C55E" data-offset="0.6">
+          <circle class="veh__glow" r="7" fill="#22C55E" opacity=".35" filter="url(#soft)"/>
+          <circle r="4.5" fill="#22C55E"/>
+          <circle r="4.5" fill="none" stroke="#0B1220" stroke-width="1.4"/>
+        </g>
+        <g class="veh" data-route="route1" data-color="#F59E0B" data-offset="0.55">
+          <circle r="4" fill="#F59E0B"/>
+          <circle r="4" fill="none" stroke="#0B1220" stroke-width="1.4"/>
+        </g>
+
+        <!-- depot -->
+        <g>
+          <rect x="42" y="392" width="10" height="10" rx="2" fill="#E8EDF5"/>
+        </g>
+      </svg>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__row">
+          <span class="ticker__unit"><span class="chip" style="background:#F59E0B"></span>DSV-1042</span>
+          <span class="ticker__stats"><span><b class="js-speed">54</b> km/h</span><span>ETA <b class="js-eta">08:42</b></span><span class="go">● en route</span></span>
+        </div>
+        <div class="ticker__row">
+          <span class="ticker__unit"><span class="chip" style="background:#38BDF8"></span>DSV-0787</span>
+          <span class="ticker__stats"><span><b class="js-fuel">71</b>% fuel</span><span class="route">geofence · entry</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAT BAND ===================== -->
+<section class="statband section--tight">
+  <div class="wrap">
+    <div class="statband__grid">
+      <div class="stat" data-reveal>
+        <div class="stat__num"><span class="count" data-to="15">0</span><span class="u">s</span></div>
+        <p class="stat__label">GPS position pushed from the driver app on Firebase Realtime Database.</p>
+      </div>
+      <div class="stat" data-reveal style="--d:100ms">
+        <div class="stat__num neg">−<span class="count" data-to="60">0</span><span class="u">%</span></div>
+        <p class="stat__label">Drop in “where's my driver?” support tickets after go-live.</p>
+      </div>
+      <div class="stat" data-reveal style="--d:200ms">
+        <div class="stat__num">1<span class="u"> map</span></div>
+        <p class="stat__label">Every vehicle, driver and route on a single live operations view.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LAYERS ===================== -->
+<section class="section" id="platform">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">The platform</p>
+      <h2>Three layers, one platform.</h2>
+      <p>Field, planning and control run on the same real-time data. What a driver taps in the cab, dispatch sees on the map — and the routing engine plans against it.</p>
+    </div>
+
+    <div class="layers__grid">
+      <article class="layer" data-reveal style="--lc:var(--amber)">
+        <span class="layer__idx">LAYER 01</span>
+        <span class="layer__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 9h18M8 21h8M12 17v4"/></svg>
+        </span>
+        <h3>Web dashboard</h3>
+        <p>A live map with custom vehicle markers, fleet performance dashboards and geofence event feeds — the control room for dispatch.</p>
+        <div class="layer__tags"><span class="tag">Live map</span><span class="tag">Analytics</span><span class="tag">Geofences</span></div>
+      </article>
+
+      <article class="layer" data-reveal style="--lc:var(--cyan); --d:100ms">
+        <span class="layer__idx">LAYER 02</span>
+        <span class="layer__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H15a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6.5"/></svg>
+        </span>
+        <h3>Optimization engine</h3>
+        <p>Traffic-aware route planning that respects vehicle capacity and delivery time windows, then sequences stops for the shortest viable run.</p>
+        <div class="layer__tags"><span class="tag">Capacity</span><span class="tag">Time windows</span><span class="tag">Traffic-aware</span></div>
+      </article>
+
+      <article class="layer" data-reveal style="--lc:var(--green); --d:200ms">
+        <span class="layer__idx">LAYER 03</span>
+        <span class="layer__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+        </span>
+        <h3>Driver app</h3>
+        <p>A Flutter app in the cab that streams GPS every 15 seconds, carries the day's stops, and keeps the field and dispatch on the same page.</p>
+        <div class="layer__tags"><span class="tag">GPS 15s</span><span class="tag">Stops</span><span class="tag">Field comms</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW DISPATCH WORKS ===================== -->
+<section class="section" id="dispatch" style="background:var(--base-2);border-block:1px solid var(--hair)">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">How dispatch works</p>
+      <h2>Track → Route → Optimize.</h2>
+      <p>The same loop runs all day. Positions come in, plans go out, and every run gets tighter than the last.</p>
+    </div>
+
+    <div class="flow">
+      <div class="step" data-reveal>
+        <span class="step__no">STEP 01</span>
+        <h3>Track</h3>
+        <p>The driver app streams GPS every 15 seconds to Firebase. Dispatch watches the whole fleet move on one live map, with geofence entry and exit events firing in real time.</p>
+      </div>
+      <div class="step" data-reveal style="--d:120ms">
+        <span class="step__no">STEP 02</span>
+        <h3>Route</h3>
+        <p>Plan runs against live traffic on Google Maps, honoring each vehicle's capacity and every stop's delivery time window — no route that can't actually be driven.</p>
+      </div>
+      <div class="step" data-reveal style="--d:240ms">
+        <span class="step__no">STEP 03</span>
+        <h3>Optimize</h3>
+        <p>Fuel monitoring and driver-behavior scoring feed back into planning, while maintenance is scheduled by mileage and engine-hours so vehicles stay on the road.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCT TOUR ===================== -->
+<section class="section" id="tour">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Product tour</p>
+      <h2>Built for the control room.</h2>
+      <p>Two views, one source of truth. The map for the whole fleet, the detail panel for a single vehicle.</p>
+    </div>
+
+    <!-- Item 1 -->
+    <div class="tour__item">
+      <div class="tour__grid">
+        <div class="tour__copy" data-reveal>
+          <h3>Live operations map</h3>
+          <p>Every vehicle, driver and route on one screen. Custom markers move with each 15-second update, geofences light up on entry and exit, and dispatch never has to ask where a driver is.</p>
+          <ul class="tour__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Whole-fleet view with custom vehicle markers</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Geofence polygons with entry / exit events</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fleet performance dashboards at a glance</li>
+          </ul>
+        </div>
+        <div data-reveal style="--d:120ms">
+          <figure class="monitor">
+            <div class="monitor__bar">
+              <span class="monitor__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="monitor__title">operations · live map</span>
+              <span class="monitor__live"><span class="pulse-dot" aria-hidden="true"></span>LIVE</span>
+            </div>
+            <img src="assets/dashboard.webp" width="1280" height="800" loading="lazy" decoding="async"
+                 alt="DSV Fleet Management dashboard showing every vehicle, driver and route plotted on one live map.">
+          </figure>
+          <p class="tour__cap">Live operations — every vehicle, driver and route on one map.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 (reversed) -->
+    <div class="tour__item tour__item--rev">
+      <div class="tour__grid">
+        <div class="tour__copy" data-reveal>
+          <h3>Vehicle detail</h3>
+          <p>Drill into a single vehicle for live location and telemetry, its route and stops, and the geofence events it has crossed — everything dispatch needs to answer a question without a phone call.</p>
+          <ul class="tour__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Live location and telemetry stream</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Route stops in planned sequence</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Geofence event history per vehicle</li>
+          </ul>
+        </div>
+        <div data-reveal style="--d:120ms">
+          <figure class="monitor">
+            <div class="monitor__bar">
+              <span class="monitor__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="monitor__title">vehicle · DSV-1042</span>
+              <span class="monitor__live"><span class="pulse-dot" aria-hidden="true"></span>LIVE</span>
+            </div>
+            <img src="assets/detail.webp" width="1280" height="800" loading="lazy" decoding="async"
+                 alt="Vehicle detail panel showing live location, telemetry, route stops and geofence events for a single truck.">
+          </figure>
+          <p class="tour__cap">Vehicle detail — live location, telemetry, route stops and geofence events.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section class="section" id="features" style="background:var(--base-2);border-block:1px solid var(--hair)">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Capabilities</p>
+      <h2>Everything dispatch runs on.</h2>
+      <p>The operational detail that keeps a fleet moving — tracking, routing, scoring and upkeep, in one system.</p>
+    </div>
+
+    <div class="features__grid">
+      <article class="feature" data-reveal>
+        <div class="feature__top">
+          <span class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.5 7-11a7 7 0 0 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          </span>
+          <h3>Geofencing</h3>
+        </div>
+        <p>Draw geofence polygons on Google Maps and fire entry and exit events the moment a vehicle crosses — arrivals, departures and dwell, tracked automatically.</p>
+      </article>
+
+      <article class="feature" data-reveal style="--d:80ms">
+        <div class="feature__top">
+          <span class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 10 6l4 8 3-5 3 9"/><path d="M2 21h20"/></svg>
+          </span>
+          <h3>Traffic-aware routing</h3>
+        </div>
+        <p>Plans route around live traffic while respecting vehicle capacity and delivery time windows, so the sequence you dispatch is one a driver can actually run.</p>
+      </article>
+
+      <article class="feature" data-reveal style="--d:160ms">
+        <div class="feature__top">
+          <span class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg>
+          </span>
+          <h3>Fuel & driver scoring</h3>
+        </div>
+        <p>Fleet performance dashboards with fuel monitoring and driver-behavior scoring — spot heavy consumption and harsh driving before they cost you.</p>
+      </article>
+
+      <article class="feature" data-reveal style="--d:240ms">
+        <div class="feature__top">
+          <span class="feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/><path d="M12 3v2M12 19v2"/></svg>
+          </span>
+          <h3>Maintenance scheduling</h3>
+        </div>
+        <p>Schedule service by mileage and engine-hours so preventive work lands before a breakdown does, and vehicles stay on the road and on plan.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PLATFORM STRIP ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="platform" data-reveal>
+      <div>
+        <p class="eyebrow">One system, two surfaces</p>
+        <h3>A web control room and a driver app in the cab.</h3>
+        <p>Dispatch runs the web dashboard; drivers carry a Flutter app that streams position and their day's stops. Both read and write the same real-time data.</p>
+      </div>
+      <div class="platform__cards">
+        <div class="pcard pcard--amber">
+          <svg class="pcard__icon" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M3 9h18M8 21h8"/></svg>
+          <h4>Web dashboard</h4>
+          <p>Live map, analytics and dispatch — built on Next.js and React.</p>
+        </div>
+        <div class="pcard">
+          <svg class="pcard__icon" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          <h4>Driver app</h4>
+          <p>Flutter app streaming GPS every 15s with the day's stops.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech">
+      <p class="tech__label">Built with</p>
+      <div class="chips">
+        <span class="chip">Next.js</span>
+        <span class="chip">React</span>
+        <span class="chip">Flutter</span>
+        <span class="chip">Firebase Realtime DB</span>
+        <span class="chip">Google Maps API</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="section">
+  <div class="wrap">
+    <div class="cta" data-reveal>
+      <div class="cta__scan" aria-hidden="true"></div>
+      <h2>Put your whole fleet on one screen.</h2>
+      <p>See DSV Fleet Management running on a live map — tracking, routing and driver scoring, end to end. Built for a leading logistics operator, ready to build for you.</p>
+      <div class="cta__actions">
+        <a class="btn btn--primary" href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">
+          Book a demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="contact.html">Talk to us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <a class="brand" href="index.html" aria-label="DSV Fleet Management home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.6" fill="#F59E0B"/><circle cx="12" cy="12" r="6.4" stroke="#F59E0B" stroke-width="1.3" stroke-opacity=".5"/><path d="M12 2.4v3M12 18.6v3M2.4 12h3M18.6 12h3" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand__name">DSV <span>Fleet</span></span>
+        </a>
+        <p class="footer__blurb">Real-time fleet tracking and dispatching — every vehicle, driver and route on one screen.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Product">
+        <h5>Product</h5>
+        <a href="#platform">Platform</a>
+        <a href="#dispatch">How it works</a>
+        <a href="#tour">Product tour</a>
+        <a href="#features">Features</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Company">
+        <h5>Get in touch</h5>
+        <a href="contact.html">Contact</a>
+        <a href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo ↗</a>
+        <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+      </nav>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="credit">
+        <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          <span class="bs-mark">{bs}</span>
+          <span>Designed &amp; engineered by BuildspaceLabs</span>
+        </a>
+      </div>
+      <p class="footer__meta">We design and ship AI-native products like this one.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

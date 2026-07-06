@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient Front Desk — AI Intake, Scheduling &amp; Insurance Checks</title>
+  <meta name="description" content="An AI clinic receptionist that pre-fills intake, suggests scheduling slots and verifies insurance before the patient arrives — the front desk handles only exceptions. By BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/patient-front-desk/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#2563EB">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="Patient Front Desk — AI Intake, Scheduling &amp; Insurance Checks">
+  <meta property="og:description" content="An AI clinic receptionist that pre-fills intake, suggests scheduling slots and verifies insurance before the patient arrives — the front desk handles only exceptions.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/patient-front-desk/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/patient-front-desk/assets/dashboard.png">
+  <meta property="og:image:alt" content="Patient Front Desk calendar across providers with scheduling and insurance queues.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Patient Front Desk — AI Intake, Scheduling &amp; Insurance Checks">
+  <meta name="twitter:description" content="An AI clinic receptionist that pre-fills intake, suggests scheduling slots and verifies insurance before the patient arrives.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/patient-front-desk/assets/dashboard.png">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;550;600;650&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Patient Front Desk",
+    "description": "An AI receptionist for clinics — auto intake, smart scheduling and insurance verification before the patient walks in. Pre-fills intake from prior charts and insurance databases, suggests scheduling slots by visit type and provider availability, and runs eligibility checks overnight so the front desk handles exceptions instead of paperwork.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Patient Front Desk home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5l3.5 3.5L18 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span>Patient Front Desk<small>Clinic operations, automated</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#handles">What it handles</a>
+      <a href="#day">How the day runs</a>
+      <a href="#tour">Product tour</a>
+      <a href="#exceptions">Exceptions</a>
+    </nav>
+
+    <div class="nav-right">
+      <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+        Built by BuildspaceLabs
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-primary" href="https://buildspacelabs.com/contact-us" style="display:none">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="pill">
+        <span class="dot" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5l3.5 3.5L18 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><b>Healthcare AI</b> · front-desk operations</span>
+      </span>
+
+      <h1 class="hero-title">Your front desk, <span class="accent">minus the paperwork.</span></h1>
+
+      <p class="hero-sub">
+        Patient Front Desk pre-fills intake, suggests scheduling slots and verifies insurance
+        <strong>before the patient walks in</strong> — so your team handles exceptions, not forms.
+      </p>
+
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+          Book a demo
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost btn-lg" href="#tour">See the product tour</a>
+      </div>
+
+      <div class="hero-trust">
+        <span><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Overnight eligibility checks</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> Intake pre-filled from prior charts</span>
+      </div>
+    </div>
+
+    <!-- SIGNATURE: today's waiting-room board -->
+    <div class="board-wrap reveal">
+      <span class="board-chip c-ins" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Insurance verified
+      </span>
+      <span class="board-chip c-time" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/></svg>
+        Front-desk time saved
+      </span>
+
+      <div class="board" role="img" aria-label="Today's waiting-room board: 18 appointments, 14 automatically handled by AI with intake pre-filled and insurance verified, and 2 exceptions routed to a person.">
+        <div class="board-top">
+          <div class="board-title">
+            <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <div>
+              <h3>Today &middot; Waiting room</h3>
+              <p>Tue 6 Jul &middot; 4 providers</p>
+            </div>
+          </div>
+          <div class="board-counter">
+            <span class="big num"><span data-target="14">0</span><em>/18</em></span>
+            <small>AI-handled</small>
+          </div>
+        </div>
+
+        <div class="board-progress" aria-hidden="true"><i id="boardBar"></i></div>
+
+        <div class="board-cols">
+          <div class="col-handled">
+            <div class="col-head"><span class="tag">Handled by AI</span><span class="cnt num" id="handledCnt">0</span></div>
+            <div class="queue" id="queueHandled"></div>
+          </div>
+          <div class="col-exceptions">
+            <div class="col-head"><span class="tag">Needs review</span><span class="cnt num" id="excCnt">0</span></div>
+            <div class="queue" id="queueExc"></div>
+          </div>
+        </div>
+
+        <div class="board-foot">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5l3.5 3.5L18 7.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><b>Intake + insurance</b> completed overnight for every green row.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<section class="band">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal">
+        <div class="k"><span class="num" data-count="18">0</span><span class="sm">+</span></div>
+        <div class="lbl">Appointments a day</div>
+        <div class="sub">A typical clinic schedule, prepped before doors open.</div>
+      </div>
+      <div class="stat green reveal" data-d="1">
+        <div class="k"><span class="num" data-count="14">0</span> of 18</div>
+        <div class="lbl">Handled autonomously</div>
+        <div class="sub">Intake pre-filled and insurance verified, no staff touch.</div>
+      </div>
+      <div class="stat reveal" data-d="2">
+        <div class="k">Pre&#8209;done</div>
+        <div class="lbl">Intake &amp; insurance</div>
+        <div class="sub">Completed overnight — the day starts on exceptions, not forms.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT IT HANDLES ============ -->
+<section class="section" id="handles">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Before arrival</span>
+      <h2>What it handles before the patient walks in</h2>
+      <p>Three jobs the front desk used to do by hand — now done by an AI receptionist working from prior charts, provider calendars and insurance databases.</p>
+    </div>
+
+    <div class="features-grid">
+      <article class="feature reveal">
+        <div class="ficon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8a2 2 0 0 1 2 2v13a1 1 0 0 1-1.5.87L12 17l-4.5 2.87A1 1 0 0 1 6 19V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 9h6M9 12.5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Auto-filled intake</h3>
+        <p>Forms populate from prior charts and insurance records, each field carrying a confidence ring and a "verified by patient" badge.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Confidence rings on every field</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> "Verified by patient" badges</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Per-patient AI summary from history</li>
+        </ul>
+      </article>
+
+      <article class="feature reveal" data-d="1">
+        <div class="ficon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 14l2 2 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Smart scheduling</h3>
+        <p>A calendar across every provider suggests slots by visit type and availability — and snaps the right patient into the right opening.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI-suggested slots by visit type</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One calendar across providers</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> SLA-at-risk visits surfaced early</li>
+        </ul>
+      </article>
+
+      <article class="feature reveal" data-d="2">
+        <div class="ficon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Insurance verification</h3>
+        <p>Eligibility runs overnight in a dedicated queue, with AI-drafted phone scripts ready for the tricky calls that still need a human voice.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Overnight eligibility checks</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI-drafted scripts for hard calls</li>
+          <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Denials caught the day before</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW THE DAY RUNS ============ -->
+<section class="section flow-section" id="day">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How the day runs</span>
+      <h2>Four steps, three of them automatic</h2>
+      <p>Every appointment moves through the same pipeline overnight. By morning, only the fourth step needs a person.</p>
+    </div>
+
+    <div class="flow">
+      <div class="step reveal">
+        <span class="snum">Intake</span>
+        <div class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4h8a2 2 0 0 1 2 2v13a1 1 0 0 1-1.5.87L12 17l-4.5 2.87A1 1 0 0 1 6 19V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 9h6M9 12.5h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Pre-fill the form</h3>
+        <p>Prior charts and insurance records populate intake, each field scored with a confidence ring.</p>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+
+      <div class="step reveal" data-d="1">
+        <span class="snum">Schedule</span>
+        <div class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M3 9h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Suggest the slot</h3>
+        <p>The right opening is proposed by visit type and provider availability, then snapped onto the calendar.</p>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+
+      <div class="step reveal" data-d="2">
+        <span class="snum">Verify</span>
+        <div class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Check the coverage</h3>
+        <p>Eligibility runs overnight, so denials surface the day before check-in — not at the front desk.</p>
+        <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+
+      <div class="step last reveal" data-d="3">
+        <span class="snum">Exceptions</span>
+        <div class="sic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.1" fill="currentColor"/><path d="M10.3 3.9L2.5 18a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3>Route to a person</h3>
+        <p>The handful that need judgement — a denial, a mismatch — reach a person with an AI-drafted script ready.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT TOUR ============ -->
+<section class="section" id="tour">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Product tour</span>
+      <h2>The morning, already prepared</h2>
+      <p>Three views from the product: the waiting room for today, the calendar across providers, and a single patient's auto-filled record.</p>
+    </div>
+
+    <div class="tour">
+      <!-- Shot 1: hero / waiting room -->
+      <div class="shot-row reveal">
+        <div class="shot-copy">
+          <span class="knum num">01 — Waiting room</span>
+          <h3>Today at a glance, sorted by what needs you</h3>
+          <p>Eighteen appointments, with the fourteen AI-handled ones already green. Status and SLA-at-risk visits surface first, so the queue reads as a to-do list — not a wall of forms.</p>
+          <div class="feat-line"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 14 of 18 handled &middot; exception queue on the right</div>
+        </div>
+        <figure style="margin:0">
+          <div class="frame">
+            <div class="frame-bar" aria-hidden="true">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url">app.patientfrontdesk.io/today</span>
+              <span class="live"><i></i>Live</span>
+            </div>
+            <img src="assets/hero.png" alt="The Patient Front Desk waiting-room screen for today, showing 18 appointments with AI-handled statistics and an exception queue.">
+          </div>
+          <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg> The waiting room for today: AI-handled counts and the exception queue.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Shot 2: dashboard / calendar -->
+      <div class="shot-row flip reveal">
+        <div class="shot-copy">
+          <span class="knum num">02 — Calendar</span>
+          <h3>One schedule across every provider</h3>
+          <p>The calendar spans providers with AI-suggested slots by visit type, alongside the insurance-verification queue. Overnight eligibility results land here, ready before the first patient checks in.</p>
+          <div class="feat-line"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI-suggested slots &middot; insurance queue in view</div>
+        </div>
+        <figure style="margin:0">
+          <div class="frame">
+            <div class="frame-bar" aria-hidden="true">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url">app.patientfrontdesk.io/calendar</span>
+              <span class="live"><i></i>Live</span>
+            </div>
+            <img src="assets/dashboard.png" alt="The Patient Front Desk calendar across multiple providers with AI-suggested scheduling slots and an insurance-verification queue.">
+          </div>
+          <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg> The calendar across providers, with scheduling and insurance queues.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Shot 3: detail / patient -->
+      <div class="shot-row reveal">
+        <div class="shot-copy">
+          <span class="knum num">03 — Patient detail</span>
+          <h3>Every field, pre-filled and scored</h3>
+          <p>A single patient's record with auto-filled intake, confidence rings on each answer and an AI summary pulled from prior history. What the patient confirms carries a "verified by patient" badge.</p>
+          <div class="feat-line"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Confidence rings &middot; AI summary from prior charts</div>
+        </div>
+        <figure style="margin:0">
+          <div class="frame">
+            <div class="frame-bar" aria-hidden="true">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="url">app.patientfrontdesk.io/patient</span>
+              <span class="live"><i></i>Live</span>
+            </div>
+            <img src="assets/detail.png" alt="A Patient Front Desk patient detail view with auto-filled intake fields, confidence rings and an AI-generated summary.">
+          </div>
+          <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg> A patient detail: auto-filled intake, confidence rings and an AI summary.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXCEPTIONS BAND ============ -->
+<section class="section exc-band" id="exceptions">
+  <div class="wrap exc-grid">
+    <div class="exc-copy reveal">
+      <span class="eyebrow">The whole idea</span>
+      <h2>Only exceptions reach a human</h2>
+      <p>The majority of intake runs autonomously. Your team's day starts on the few visits that genuinely need judgement — with the context already gathered.</p>
+      <ul class="exc-points">
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Front-desk time per patient cut sharply — paperwork done before arrival.</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Insurance denials caught the day before, not at check-in.</li>
+        <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Tricky calls arrive with an AI-drafted script already written.</li>
+      </ul>
+    </div>
+
+    <div class="funnel reveal" data-d="1" role="img" aria-label="Of 18 appointments a day, 14 are handled autonomously by AI and only the remaining few reach a person.">
+      <div class="funnel-row f1"><span class="fnum num">18</span><span class="flbl">appointments enter overnight</span></div>
+      <div class="funnel-row f2"><span class="fnum g num">14</span><span class="flbl">handled autonomously by AI</span></div>
+      <div class="funnel-row f3"><span class="fnum a num">4</span><span class="flbl">exceptions routed to a person</span></div>
+      <p class="funnel-cap">Illustrative of a typical clinic day — 14 of 18 AI-handled.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH CHIPS ============ -->
+<section class="section">
+  <div class="wrap tech-inner">
+    <div class="reveal">
+      <span class="eyebrow" style="justify-content:center">Built with</span>
+      <h2 style="font-size:clamp(24px,3.6vw,34px);margin-top:14px">A modern, AI-native stack</h2>
+    </div>
+    <div class="chips reveal" data-d="1">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6l8 12M12 6v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg> Next.js</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13c2-4 4-4 8-2s6 2 8-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 18c2-4 4-4 8-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity=".5"/></svg> Tailwind</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none"><path d="M6 4l4 8-4 8M18 4l-4 8 4 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Framer Motion</span>
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.7"/><path d="M8 12h4m-2 0v5M14 9.5c0-.8.9-1.5 2-1.5s2 .7 2 1.5-1 1.3-2 1.7-2 .9-2 1.8.9 1.5 2 1.5 2-.7 2-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> TypeScript</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section cta-section">
+  <div class="wrap">
+    <div class="cta-card reveal">
+      <div class="inner">
+        <h2>See a day handled before it starts.</h2>
+        <p>Walk through your own schedule with us — intake, scheduling and insurance, prepped overnight so your front desk works exceptions, not forms.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+            Book a demo
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+        </div>
+        <span class="cta-note"><svg viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/></svg> Built for multi-clinic groups — we usually reply within one business day.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Patient Front Desk home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 12.5l3.5 3.5L18 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Patient Front Desk<small>Clinic operations, automated</small></span>
+        </a>
+        <p>An AI receptionist for clinics — auto intake, smart scheduling and insurance verification before the patient walks in.</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="#handles">What it handles</a>
+        <a href="#day">How the day runs</a>
+        <a href="#tour">Product tour</a>
+        <a href="#exceptions">Only exceptions</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="contact.html">Contact</a>
+        <a href="https://buildspacelabs.com" target="_blank" rel="noopener">BuildspaceLabs &#8599;</a>
+        <a href="https://buildspacelabs.com/contact-us" target="_blank" rel="noopener">Book a demo &#8599;</a>
+        <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div class="credit">
+        <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          <span class="bs">{bs}</span> BuildspaceLabs
+        </a>
+        <span class="credit-line">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+      </div>
+      <span class="legal">&copy; 2026 Patient Front Desk. Client under NDA.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

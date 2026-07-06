@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Factory OS — Production Planning &amp; SOP Gate Enforcement</title>
+  <meta name="description" content="Factory OS replaces Excel with automated milestone planning, nine SOP quality gates, capacity simulation and a live Gantt across the production line. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/factory-os/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#EA580C">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="Factory OS — Production Planning &amp; SOP Gate Enforcement">
+  <meta property="og:description" content="Factory OS replaces Excel with automated milestone planning, nine SOP quality gates, capacity simulation and a live Gantt across the production line.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/factory-os/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/factory-os/assets/dashboard.webp">
+  <meta property="og:image:alt" content="Factory OS production planning dashboard showing a milestone timeline, SOP gates and live capacity.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Factory OS — Production Planning &amp; SOP Gate Enforcement">
+  <meta name="twitter:description" content="Automated milestone planning, nine SOP quality gates, capacity simulation and a live Gantt across the production line.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/factory-os/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23EA580C'/%3E%3Crect x='7' y='9' width='14' height='3.4' rx='1.7' fill='%23fff'/%3E%3Crect x='7' y='15' width='18' height='3.4' rx='1.7' fill='%23fff'/%3E%3Crect x='7' y='21' width='9' height='3.4' rx='1.7' fill='%23fff'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Factory OS",
+    "description": "Production planning and task management for apparel manufacturing — replacing Excel with automated milestone planning, nine SOP quality gates, capacity simulation and a live Gantt across the production line.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Factory OS home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+            <rect width="32" height="32" rx="7" fill="var(--orange)"/>
+            <rect x="7" y="9" width="14" height="3.4" rx="1.7" fill="#fff"/>
+            <rect x="7" y="15" width="18" height="3.4" rx="1.7" fill="#fff"/>
+            <rect x="7" y="21" width="9" height="3.4" rx="1.7" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="brand-word">Factory&nbsp;OS</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#milestones">Milestones</a>
+        <a href="#gates">SOP gates</a>
+        <a href="#capacity">Capacity</a>
+        <a href="#tour">Product tour</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">Built by BuildspaceLabs <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-primary btn-sm" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Production planning · Apparel manufacturing</p>
+          <h1 id="hero-title">Milestones, gates and capacity&nbsp;— <span class="hl">automated.</span></h1>
+          <p class="lede">Factory OS takes the production line off the spreadsheet. A dual-track milestone engine schedules every order, nine SOP gates hold the line before cutting, and a capacity engine tells you what the floor can actually take.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+            <a class="btn btn-ghost" href="#milestones">See how it plans <span aria-hidden="true">→</span></a>
+          </div>
+          <p class="hero-note"><span class="mono">295</span> live production orders across nine departments — Adidas, Nike and Reebok programmes.</p>
+        </div>
+
+        <!-- SIGNATURE: animated production Gantt -->
+        <div class="hero-visual">
+          <div class="gantt" id="gantt" role="img" aria-label="Animated production schedule: Track A date-triggered milestone bars and Track B event-triggered bars drawing across an eight-week timeline, nine SOP gate nodes locking in sequence, and a capacity meter filling to 82 percent.">
+            <div class="gantt-head">
+              <span class="mono gantt-po">PO&#8209;4821 · Men's Knit Tee</span>
+              <span class="gantt-tag">Live schedule</span>
+            </div>
+
+            <div class="gantt-scale mono" aria-hidden="true">
+              <span>04 MAR</span><span>18 MAR</span><span>01 APR</span><span>15 APR</span>
+            </div>
+
+            <div class="gantt-plot">
+              <div class="gantt-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+              <div class="track">
+                <span class="track-name mono">TRK&nbsp;A · date</span>
+                <div class="track-lane">
+                  <span class="bar bar-steel" style="--c1:1;--c2:3;--d:.05s"><span class="bar-label">Fabric CRD</span></span>
+                  <span class="bar bar-orange" style="--c1:3;--c2:5;--d:.20s"><span class="bar-label">Cut plan</span></span>
+                  <span class="bar bar-orange" style="--c1:5;--c2:7;--d:.35s"><span class="bar-label">Sew</span></span>
+                  <span class="bar bar-steel" style="--c1:7;--c2:9;--d:.50s"><span class="bar-label">Finish &amp; pack</span></span>
+                </div>
+              </div>
+
+              <div class="track">
+                <span class="track-name mono">TRK&nbsp;B · event</span>
+                <div class="track-lane">
+                  <span class="trigger" style="--c1:2;--d:.55s" aria-hidden="true"></span>
+                  <span class="bar bar-green" style="--c1:2;--c2:4;--d:.62s"><span class="bar-label">Fabric GRN → QC</span></span>
+                  <span class="trigger" style="--c1:4;--d:.72s" aria-hidden="true"></span>
+                  <span class="bar bar-green" style="--c1:4;--c2:6;--d:.80s"><span class="bar-label">Trims GRN → kit</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gantt-gates" aria-hidden="true">
+              <span class="gates-label mono">9 SOP GATES</span>
+              <div class="gates-row" id="gates">
+                <span class="gate" style="--gd:.9s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+                <span class="gate" style="--gd:1.0s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+                <span class="gate" style="--gd:1.1s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+                <span class="gate" style="--gd:1.2s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+                <span class="gate" style="--gd:1.3s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+                <span class="gate" style="--gd:1.4s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+                <span class="gate" style="--gd:1.5s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+                <span class="gate" style="--gd:1.6s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+                <span class="gate" style="--gd:1.7s"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+              </div>
+            </div>
+
+            <div class="gantt-cap">
+              <div class="cap-top">
+                <span class="cap-name mono">LINE CAPACITY</span>
+                <span class="cap-val mono"><span id="capNum" data-count="82">0</span>%</span>
+              </div>
+              <div class="cap-track" aria-hidden="true"><span class="cap-fill" id="capFill"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAT BAND -->
+    <section class="band" aria-label="Factory OS by the numbers">
+      <div class="wrap band-inner">
+        <div class="stat">
+          <span class="stat-num mono"><span data-count="295">0</span><span class="plus">+</span></span>
+          <span class="stat-label">Live production orders</span>
+          <span class="stat-sub">Seeded across nine departments</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num mono"><span data-count="31">0</span><span class="plus">+</span></span>
+          <span class="stat-label">API endpoints</span>
+          <span class="stat-sub">Across 14 application routes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num mono"><span data-count="9">0</span></span>
+          <span class="stat-label">Mandatory SOP gates</span>
+          <span class="stat-sub">Enforced before any cutting</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DUAL-TRACK MILESTONES -->
+    <section class="section" id="milestones" aria-labelledby="ms-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Dual-track milestone engine</p>
+          <h2 id="ms-title">One order, two clocks — both kept honest.</h2>
+          <p class="section-lede">Real production doesn't run on a single deadline. Factory OS schedules each order on two tracks at once, so a slipped delivery date and a late goods receipt are handled by different logic instead of the same overworked spreadsheet.</p>
+        </div>
+
+        <div class="split">
+          <article class="track-card">
+            <div class="track-card-head">
+              <span class="track-chip chip-steel mono">TRACK&nbsp;A</span>
+              <h3>Date-triggered</h3>
+            </div>
+            <p>Milestones are calculated as offsets from the customer request date. Change the CRD once and every downstream step — fabric, cut, sew, finish — recalculates against it. No more re-keying a column of dates by hand.</p>
+            <ul class="ticks">
+              <li>CRD offset dates for every milestone</li>
+              <li>One edit cascades down the whole order</li>
+              <li>Planned-versus-actual visible per step</li>
+            </ul>
+          </article>
+
+          <article class="track-card">
+            <div class="track-card-head">
+              <span class="track-chip chip-green mono">TRACK&nbsp;B</span>
+              <h3>Event-triggered</h3>
+            </div>
+            <p>Some steps can't start until material physically lands. Track B milestones fire on the goods receipt (GRN) event — inspection, kitting and everything gated behind them start their clock the moment stock is received, not a day the planner guessed.</p>
+            <ul class="ticks">
+              <li>Triggered by GRN receipt, not a fixed date</li>
+              <li>Keeps material-blocked steps truthful</li>
+              <li>Reconciles against the Track A plan</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- NINE GATES -->
+    <section class="section section-alt" id="gates-sec" aria-labelledby="gate-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>SOP quality gates</p>
+          <h2 id="gate-title">Nine gates before a single roll is cut.</h2>
+          <p class="section-lede">Cutting is the point of no return. Factory OS makes the nine standard-operating-procedure checks mandatory: the order cannot advance until each gate is signed off, with evidence attached and every override logged against a name.</p>
+        </div>
+
+        <div class="gate-grid">
+          <article class="feature-card">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.2-2.9 7.6-7 8.6C7.9 18.6 5 15.2 5 11V6l7-3z" stroke-width="1.6"/><path d="M9 11.5l2 2 4-4" stroke-width="1.6"/></svg>
+            </span>
+            <h3>Mandatory sign-off</h3>
+            <p>An order is blocked from progressing until all nine gates pass. The workflow enforces the sequence — no skipping ahead to keep a ship date.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8l-5-5z" stroke-width="1.6"/><path d="M14 3v5h5" stroke-width="1.6"/><path d="M9 14l2 2 4-4" stroke-width="1.6"/></svg>
+            </span>
+            <h3>Evidence uploads</h3>
+            <p>Each gate carries its proof — attach the photo, spec or lab result at the point of sign-off so the record travels with the order, not a separate folder.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke-width="1.6"/><path d="M12 8v4l2.6 1.6" stroke-width="1.6"/></svg>
+            </span>
+            <h3>Tracked overrides</h3>
+            <p>When production has to move under exception, the override is captured — who authorised it and why — so nothing bypasses the gate silently.</p>
+          </article>
+        </div>
+
+        <p class="gate-caption mono">GATE&nbsp;01 → GATE&nbsp;09 · each step is auditable, each override is named.</p>
+      </div>
+    </section>
+
+    <!-- CAPACITY -->
+    <section class="section" id="capacity" aria-labelledby="cap-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Capacity engine</p>
+          <h2 id="cap-title">Plan capacity, not guesses.</h2>
+          <p class="section-lede">Every commitment eventually meets the same question — can the floor actually make it in time? Factory OS answers with real production-day maths and lets planners test the answer before they promise it.</p>
+        </div>
+
+        <div class="cap-layout">
+          <div class="cap-features">
+            <article class="cap-item">
+              <span class="cap-idx mono">01</span>
+              <div>
+                <h3>Production-day calculation</h3>
+                <p>Load is worked out in real production days, so a plan reflects the working calendar of the line rather than raw days on a Gantt.</p>
+              </div>
+            </article>
+            <article class="cap-item">
+              <span class="cap-idx mono">02</span>
+              <div>
+                <h3>Lines-per-calendar-day (LPCD)</h3>
+                <p>Throughput is measured as LPCD across the floor, giving a consistent unit to plan and compare orders against.</p>
+              </div>
+            </article>
+            <article class="cap-item">
+              <span class="cap-idx mono">03</span>
+              <div>
+                <h3>What-if with overtime</h3>
+                <p>Simulate an overtime scenario and see how the schedule flexes before committing — pressure-test a date instead of finding out on the floor.</p>
+              </div>
+            </article>
+          </div>
+
+          <aside class="cap-panel reveal" aria-label="Capacity what-if illustration">
+            <div class="panel-top">
+              <span class="mono">WHAT-IF · +1 OT SHIFT</span>
+              <span class="panel-pill chip-green mono">FEASIBLE</span>
+            </div>
+            <div class="meter">
+              <div class="meter-row">
+                <span class="meter-label mono">BASELINE</span>
+                <span class="meter-bar"><span class="meter-fill" style="--w:68%"></span></span>
+                <span class="meter-num mono">68%</span>
+              </div>
+              <div class="meter-row">
+                <span class="meter-label mono">+ OVERTIME</span>
+                <span class="meter-bar"><span class="meter-fill meter-fill-ot" style="--w:91%"></span></span>
+                <span class="meter-num mono">91%</span>
+              </div>
+            </div>
+            <p class="panel-foot">Adding one overtime shift lifts the line from <span class="mono">68%</span> to <span class="mono">91%</span> against the plan — enough to hold the ship date.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT TOUR -->
+    <section class="section section-alt" id="tour" aria-labelledby="tour-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Product tour</p>
+          <h2 id="tour-title">Built for the floor and the planning room.</h2>
+          <p class="section-lede">Role-adaptive dashboards, a custom Gantt, FullCalendar and Kanban plus table views — the same order, seen the way each team needs to see it.</p>
+        </div>
+
+        <figure class="shot reveal">
+          <div class="shot-frame">
+            <div class="shot-bar" aria-hidden="true">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="shot-url mono">factory-os · production planning</span>
+            </div>
+            <img src="assets/dashboard.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="Factory OS production-planning dashboard: a milestone timeline across the top, SOP gate status indicators, and live line capacity for open orders.">
+          </div>
+          <figcaption>Production planning — the milestone timeline, SOP gates and live capacity in one view.</figcaption>
+        </figure>
+
+        <figure class="shot reveal">
+          <div class="shot-frame">
+            <div class="shot-bar" aria-hidden="true">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="shot-url mono">factory-os · production order</span>
+            </div>
+            <img src="assets/detail.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="A single Factory OS production order showing dual-track milestones on two rows and the nine SOP quality gates listed with their sign-off status.">
+          </div>
+          <figcaption>A production order — the dual-track milestones and the nine SOP quality gates.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TECH -->
+    <section class="section" id="tech" aria-labelledby="tech-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Under the hood</p>
+          <h2 id="tech-title">A full-stack system, not a spreadsheet macro.</h2>
+          <p class="section-lede">Fourteen routes, thirty-one-plus API endpoints, Excel import so no one loses their existing data, and analytics that read straight off the live order book.</p>
+        </div>
+        <ul class="chips" aria-label="Technology stack">
+          <li class="chip">Next.js</li>
+          <li class="chip">PostgreSQL</li>
+          <li class="chip">Prisma</li>
+          <li class="chip">SheetJS · Excel import</li>
+          <li class="chip">Recharts analytics</li>
+          <li class="chip">Custom Gantt</li>
+          <li class="chip">FullCalendar</li>
+          <li class="chip">Kanban &amp; table views</li>
+          <li class="chip">GitHub Actions CI</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap cta-inner">
+        <div class="cta-grid" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="cta-copy">
+          <h2 id="cta-title">Get the line off the spreadsheet.</h2>
+          <p>See Factory OS run a real order end to end — dual-track milestones, nine SOP gates and a what-if capacity plan. We'll walk your team through it.</p>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+            <a class="btn btn-ghost btn-ghost-dark" href="contact.html">Talk to us <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Factory OS home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+              <rect width="32" height="32" rx="7" fill="var(--orange)"/>
+              <rect x="7" y="9" width="14" height="3.4" rx="1.7" fill="#fff"/>
+              <rect x="7" y="15" width="18" height="3.4" rx="1.7" fill="#fff"/>
+              <rect x="7" y="21" width="9" height="3.4" rx="1.7" fill="#fff"/>
+            </svg>
+          </span>
+          <span class="brand-word">Factory&nbsp;OS</span>
+        </a>
+        <p class="footer-tag">The production line, off the spreadsheet. Built for apparel manufacturing under NDA.</p>
+      </div>
+
+      <div class="footer-credit">
+        <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener" aria-label="BuildspaceLabs">
+          <span class="bs-mark" aria-hidden="true">{bs}</span>
+          <span>Designed &amp; engineered by <strong>BuildspaceLabs</strong></span>
+        </a>
+        <p class="footer-note">We design and ship AI-native products like this one.</p>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <span>&copy; <span id="year">2026</span> Factory OS. Seeded with 295 real production orders.</span>
+      <a href="https://buildspacelabs.com" target="_blank" rel="noopener">buildspacelabs.com ↗</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
