@@ -96,49 +96,20 @@
     }
   }
 
-  /* ---------- Contact form -> Web3Forms (AJAX) ---------- */
-  /* Submissions email our team directly; the access key lives in the form's
-     hidden `access_key` field. */
+  /* ---------- Contact form -> native Web3Forms POST ----------
+     The free plan blocks cross-origin AJAX, so we let the form POST natively;
+     on success Web3Forms redirects to the hidden `redirect` (thank-you.html).
+     We only add a light "Sending…" label — never preventDefault — so the
+     browser's required-field validation runs first. */
   var form = document.getElementById('contactForm');
   if (form) {
-    var note = document.getElementById('formSuccess');
-    var noteSpan = note ? note.querySelector('span') : null;
-    var btn = form.querySelector('button[type="submit"]');
-    var btnLabel = btn ? btn.innerHTML : '';
-
-    var showNote = function (msg, ok) {
-      if (!note) return;
-      if (noteSpan) { noteSpan.textContent = msg; } else { note.textContent = msg; }
-      note.style.color = ok ? '' : '#FCA5A5';
-      note.classList.add('show');
-      note.focus();
-    };
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      if (btn) { btn.disabled = true; btn.innerHTML = 'Sending…'; }
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form)
-      })
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (data.success) {
-            form.reset();
-            showNote("Thanks — we've got it. We'll be in touch within one business day.", true);
-          } else {
-            showNote((data.message || 'Something went wrong.') + ' You can also email buildspacelabs@vruoom.com.', false);
-          }
-        })
-        .catch(function () {
-          showNote("Network error — please email buildspacelabs@vruoom.com and we'll pick it up.", false);
-        })
-        .finally(function () {
-          if (btn) { btn.disabled = false; btn.innerHTML = btnLabel; }
-        });
+    form.addEventListener('submit', function () {
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn && form.checkValidity()) {
+        btn.setAttribute('aria-busy', 'true');
+        var lbl = btn.querySelector('span, .btn-label');
+        if (lbl) { lbl.textContent = 'Sending…'; } else { btn.childNodes[0] && (btn.childNodes[0].nodeValue = 'Sending… '); }
+      }
     });
   }
 })();

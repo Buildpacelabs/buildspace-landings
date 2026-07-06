@@ -85,8 +85,9 @@
           <span id="form-success-msg">Thank you — we've got your note and will be in touch within one business day.</span>
         </p>
 
-        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="22e61215-5db1-4922-82d8-af16ec5a17e4">
+          <input type="hidden" name="redirect" value="https://buildpacelabs.github.io/buildspace-landings/brief-forge/thank-you.html">
           <input type="hidden" name="subject" value="New Brief Forge access request">
           <input type="hidden" name="from_name" value="Brief Forge — landing page">
           <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">

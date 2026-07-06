@@ -30,49 +30,19 @@
     });
   }
 
-  /* ---------- Contact form (contact.html) -> Web3Forms (AJAX) ----------
-     Submissions email our team directly; the access key lives in the form's
-     hidden `access_key` field. */
+  /* ---------- Contact form (contact.html) -> native Web3Forms POST ----------
+     The free plan blocks cross-origin AJAX, so we let the form POST natively;
+     on success Web3Forms redirects to the hidden `redirect` (thank-you.html).
+     We only add a light "Sending…" label — never preventDefault — so the
+     browser's required-field validation runs first. */
   var contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    var successNote = document.getElementById('form-success');
-    var successMsg = document.getElementById('form-success-msg');
-    var submitBtn = contactForm.querySelector('button[type="submit"]');
-    var submitLabel = submitBtn ? submitBtn.innerHTML : '';
-
-    var flag = function (msg, ok) {
-      if (!successNote) return;
-      if (successMsg) { successMsg.textContent = msg; }
-      successNote.style.color = ok ? '' : '#B4382E';
-      successNote.hidden = false;
-      successNote.focus();
-    };
-
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
-      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Sending…'; }
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(contactForm)
-      })
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (data.success) {
-            contactForm.reset();
-            flag("Thank you — we've got your note and will be in touch within one business day.", true);
-          } else {
-            flag((data.message || 'Something went wrong') + ' — you can also email buildspacelabs@vruoom.com.', false);
-          }
-        })
-        .catch(function () {
-          flag("Network error — please email buildspacelabs@vruoom.com and we'll pick it up.", false);
-        })
-        .finally(function () {
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = submitLabel; }
-        });
+    contactForm.addEventListener('submit', function () {
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      if (submitBtn && contactForm.checkValidity()) {
+        submitBtn.setAttribute('aria-busy', 'true');
+        submitBtn.textContent = 'Sending…';
+      }
     });
   }
 

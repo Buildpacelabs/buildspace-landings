@@ -85,8 +85,9 @@
         </div>
 
         <div class="contact-card">
-          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="22e61215-5db1-4922-82d8-af16ec5a17e4" />
+            <input type="hidden" name="redirect" value="https://buildpacelabs.github.io/buildspace-landings/ap-copilot/thank-you.html" />
             <input type="hidden" name="subject" value="New AP Copilot enquiry" />
             <input type="hidden" name="from_name" value="AP Copilot — landing page" />
             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
@@ -145,48 +146,19 @@
 
   <script src="script.js" defer></script>
   <script>
-    /* Contact form -> Web3Forms (AJAX). Submissions email our team directly;
-       the access key lives in the form's hidden `access_key` field. */
+    /* Native Web3Forms POST (no fetch — the free plan blocks cross-origin AJAX).
+       On success Web3Forms redirects to the hidden `redirect` (thank-you.html).
+       We only add a light "Sending…" label; we never preventDefault, so the
+       browser's own required-field validation runs first. */
     (function () {
       var form = document.getElementById("contact-form");
-      var note = document.getElementById("form-note");
       if (!form) return;
-      var btn = form.querySelector('button[type="submit"]');
-      var btnLabel = btn ? btn.innerHTML : "";
-
-      function show(msg, ok) {
-        if (!note) return;
-        note.hidden = false;
-        note.className = "form-note " + (ok ? "ok" : "err");
-        note.style.color = ok ? "" : "#B42318";
-        note.textContent = msg;
-      }
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-        if (btn) { btn.disabled = true; btn.innerHTML = "Sending…"; }
-
-        fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: new FormData(form)
-        })
-          .then(function (r) { return r.json(); })
-          .then(function (data) {
-            if (data.success) {
-              form.reset();
-              show("Thanks — we've got it. We'll be in touch within one business day.", true);
-            } else {
-              show((data.message || "Something went wrong.") + " You can also email buildspacelabs@vruoom.com.", false);
-            }
-          })
-          .catch(function () {
-            show("Network error — please email buildspacelabs@vruoom.com and we'll pick it up.", false);
-          })
-          .finally(function () {
-            if (btn) { btn.disabled = false; btn.innerHTML = btnLabel; }
-          });
+      form.addEventListener("submit", function () {
+        var btn = form.querySelector('button[type="submit"]');
+        if (btn && form.checkValidity()) {
+          btn.setAttribute("aria-busy", "true");
+          btn.textContent = "Sending…";
+        }
       });
     })();
   </script>
