@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HaulBoard — AI Freight Load-Matching & Spot-Rate Pricing for Brokers</title>
+  <meta name="description" content="HaulBoard matches every open load to the best-fit carrier, prices each lane on live spot-rate data, and tracks broker margin on every move — one AI load board for freight brokerages. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/haul-board/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#1D4ED8">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="HaulBoard — Match every load. Price every lane.">
+  <meta property="og:description" content="An AI freight load board that matches loads to the best carrier, prices lanes on live spot data, and defends broker margin on every move.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/haul-board/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/haul-board/assets/dashboard.webp">
+  <meta property="og:image:alt" content="HaulBoard Load Board showing open loads with AI spot rates, best-match carriers, and a spot-rate trend chart.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HaulBoard — Match every load. Price every lane.">
+  <meta name="twitter:description" content="AI load-matching and live spot-rate pricing for freight brokers, with broker margin on every move. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/haul-board/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1220'/%3E%3Ccircle cx='9' cy='12' r='2.4' fill='%233B82F6'/%3E%3Crect x='19' y='18' width='5' height='5' rx='1.5' fill='%23ffffff'/%3E%3Cpath d='M9 12h6a3 3 0 0 1 3 3v5' stroke='%231D4ED8' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "HaulBoard",
+    "description": "An AI freight load board for brokers that matches open loads to the best-fit carrier, prices each lane on live spot-rate data, and tracks broker margin on every move.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="HaulBoard home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="5" cy="7" r="2.2" fill="#3B82F6"/><rect x="15" y="15" width="5" height="5" rx="1.4" fill="#fff"/><path d="M7 7h6a3 3 0 0 1 3 3v7" stroke="#7FB0FF" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </span>
+        Haul<span class="brand-b">Board</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why HaulBoard</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live load board · 128 open
+          </span>
+          <h1>Match every load to <span class="accent">the right carrier</span> — at a rate the market backs.</h1>
+          <p class="hero-sub">HaulBoard scores every open load against your carrier network, prices the lane on live spot-rate data, and shows the margin on each move — so your desk covers freight faster without giving away the spread.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI spot-rate pricing</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Best-match carrier scores</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Margin on every move</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: load-match card -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="Load-matching preview: the Chicago to Dallas lane priced at $2.74 per mile, with three carriers ranked by match score of 96, 91 and 84.">
+            <div class="viz-topbar">
+              <span class="lbl">Load HB-24817 · matching</span>
+              <span class="viz-live"><span class="dot"></span> live</span>
+            </div>
+
+            <!-- route -->
+            <div class="viz-route">
+              <div class="rt-cities">
+                <span class="rt-o">Chicago, IL</span>
+                <span class="rt-mi mono">925 mi</span>
+                <span class="rt-d">Dallas, TX</span>
+              </div>
+              <svg class="rt-svg" viewBox="0 0 320 34" preserveAspectRatio="none" aria-hidden="true">
+                <line class="rt-base" x1="12" y1="17" x2="308" y2="17"/>
+                <line class="rt-flow" x1="12" y1="17" x2="308" y2="17"/>
+                <circle class="rt-origin" cx="12" cy="17" r="6"/>
+                <circle class="rt-mid" cx="120" cy="17" r="3.4"/>
+                <circle class="rt-mid" cx="215" cy="17" r="3.4"/>
+                <rect class="rt-dest" x="301" y="10" width="14" height="14" rx="3"/>
+                <circle class="rt-truck" cx="12" cy="17" r="4.4"/>
+              </svg>
+              <div class="rt-rate">
+                <span class="rate mono">$2.74<small>/mi</small></span>
+                <span class="rate-tag">+3% vs market</span>
+              </div>
+            </div>
+
+            <!-- carrier matches -->
+            <div class="viz-matches">
+              <div class="vm-row">
+                <span class="vm-badge">RC</span>
+                <div class="vm-info">
+                  <span class="vm-name">Ridgeline Carriers <span class="vm-best">Best</span></span>
+                  <span class="vm-bar fill-bar" data-pct="96"><i></i></span>
+                </div>
+                <span class="vm-score mono">96</span>
+              </div>
+              <div class="vm-row">
+                <span class="vm-badge b2">PL</span>
+                <div class="vm-info">
+                  <span class="vm-name">Prairie Line Logistics</span>
+                  <span class="vm-bar fill-bar" data-pct="91"><i></i></span>
+                </div>
+                <span class="vm-score mono">91</span>
+              </div>
+              <div class="vm-row">
+                <span class="vm-badge b3">MD</span>
+                <div class="vm-info">
+                  <span class="vm-name">Midwest Drayage Co</span>
+                  <span class="vm-bar fill-bar" data-pct="84"><i></i></span>
+                </div>
+                <span class="vm-score mono">84</span>
+              </div>
+            </div>
+
+            <div class="viz-foot">
+              <span class="vf-item"><span class="sw van"></span> Dry Van · 42,400 lb</span>
+              <span class="vf-item"><span class="sw good"></span> Margin 14.0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Board at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="128" data-decimals="0">0</span></div><div class="lbl">Open loads on the board</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="74" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Covered today</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="14.8" data-decimals="1">0</span><span class="unit">%</span></div><div class="lbl">Avg broker margin</div><div class="tag up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 1.2 pts WoW</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="96.2" data-decimals="1">0</span><span class="unit">%</span></div><div class="lbl">Carrier on-time</div><div class="tag ok"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> network avg</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="section" id="why">
+      <div class="wrap drivers-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Where the margin goes</span>
+            <h2>Freight margin leaks between the load and the cover.</h2>
+            <p>Every hour a load sits, the market moves against you. HaulBoard scores the four things that decide whether a move is covered on time — and at the spread you meant to keep.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 14l4-4 4 3 5-6 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Blind pricing</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="fill-bar driver-bar" data-pct="82"><i></i></div>
+              <p class="driver-desc">Quoting off stale rate sheets instead of live spot data — money left on the table, or loads that never cover.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.4" stroke="currentColor" stroke-width="2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 10l2 2 3-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Carrier guesswork</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="fill-bar driver-bar" data-pct="74"><i></i></div>
+              <p class="driver-desc">Coverage by phone tag and gut feel, not by lane history, equipment fit or reliability on the move.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Slow coverage</span>
+                <span class="driver-weight mono">Critical</span>
+              </div>
+              <div class="fill-bar driver-bar" data-pct="90"><i></i></div>
+              <p class="driver-desc">Loads age on the board while spot rates climb — the longer to cover, the thinner the spread.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Margin leakage</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="fill-bar driver-bar" data-pct="78"><i></i></div>
+              <p class="driver-desc">No line of sight on carrier pay vs. shipper rate per move — the spread slips, load by load.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="drivers-note reveal" data-delay="1">
+          <h3>One load, fully scored</h3>
+          <p>Every best-match carrier comes with the weights behind the score — lane history, equipment fit, deadhead and reliability, not a black box.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="332"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">96</span>
+                <span class="of mono">match</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#1D4ED8"></span> Lane history <span class="k mono">34%</span></li>
+              <li><span class="d" style="background:#3B82F6"></span> Equipment fit <span class="k mono">24%</span></li>
+              <li><span class="d" style="background:#0E7490"></span> Deadhead <span class="k mono">22%</span></li>
+              <li><span class="d" style="background:#0F7A4D"></span> Reliability <span class="k mono">20%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW ============ -->
+    <section class="section band-soft" id="how">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Post → price → cover</span>
+          <h2>From open load to booked carrier, in one pass.</h2>
+          <p>HaulBoard closes the loop from a posted load to the carrier who should haul it — with the rate and the margin decided before you pick up the phone.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Post</h3>
+            <p>Loads land from your TMS or a quick post. HaulBoard reads the lane, equipment, weight and dates and puts them on a live board.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15l5-5 4 3 7-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <span class="step-n mono">STEP 02</span>
+            <h3>Price</h3>
+            <p>The spot-rate engine prices each lane on live market data — with a target margin and a floor, so nothing gets quoted below the line.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="7" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20a4 4 0 0 1 8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Match &amp; cover</h3>
+            <p>Carriers are ranked by fit and reliability. The desk books the best match in a click — and the margin is locked before the truck rolls.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The load board and the load file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a live Load Board for the whole desk and a per-load detail view for pricing and covering a single move.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Load Board</span>
+              <h3>Triage the whole board in one glance.</h3>
+              <p>Open loads sit above a spot-rate trend and a carrier reliability rail — each row carrying its AI rate, best-match carrier and coverage status.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 128 open loads with AI rate and best-match carrier</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Spot-rate trend with a live market band per lane</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Top lanes by volume and carrier reliability scores</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.haulboard.io/board</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="HaulBoard Load Board: 128 open loads with AI rates and best-match carriers, a Chicago to Dallas spot-rate trend with a market band, top lanes by volume, and carrier reliability scores.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Load Board — open loads, AI spot rates and best-match carriers in one view.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Load detail</span>
+              <h3>The lane, the rate, and the carrier to book.</h3>
+              <p>A route line with mile markers, a full rate breakdown down to margin, and AI carrier matches ranked by on-time and reliability — with a one-click book.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Lane on a route line with mile markers and stops</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Rate breakdown: linehaul, fuel, accessorials and margin</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ranked carrier matches with on-time % and a book action</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.haulboard.io/load/HB-24817</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="HaulBoard load detail for HB-24817 Chicago to Dallas: a route line with mile markers, a rate breakdown of linehaul, fuel, accessorials and margin, and four AI carrier matches ranked with on-time percentages.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Load detail — the route, the rate build, and the carrier to book.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section band-fade" id="features">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the brokerage desk, load to cover.</h2>
+          <p>Pricing, matching and margin consolidated onto one board — nothing left in a spreadsheet or a phone call.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 20V9" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Live load board</h3>
+            <p>Open and in-progress loads with status, AI rate and best-match carrier on every row.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 15l5-5 4 3 7-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 5v4h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>AI spot-rate pricing</h3>
+            <p>Every lane priced on live market data, with a target margin and a floor you set.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="7" cy="8" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20a4 4 0 0 1 8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Best-match carrier ranking</h3>
+            <p>Carriers scored on lane history, equipment fit, deadhead and reliability — ranked to book.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="5" cy="6" r="2" stroke="currentColor" stroke-width="2"/><circle cx="19" cy="18" r="2" stroke="currentColor" stroke-width="2"/><path d="M7 6h6a4 4 0 0 1 4 4v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Lane rate trends</h3>
+            <p>A $/mile spot trend with a market band per lane, so you price against the market, not a memory.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Margin visibility</h3>
+            <p>Carrier pay, shipper rate and broker spread on every move — the margin is never a surprise.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Carrier reliability scores</h3>
+            <p>On-time %, letter grades and volume across your network — kept current, load after load.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIFFERENTIATOR BAND ============ -->
+    <section class="explain section">
+      <div class="wrap explain-inner">
+        <div class="reveal">
+          <span class="eyebrow">Priced on the market, not a gut feel</span>
+          <h2>A rate your desk — and your carrier — will both trust.</h2>
+          <p>A number nobody can defend gets negotiated away. HaulBoard shows the build behind every rate, so the quote carries its own justification into the call.</p>
+          <ul class="explain-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every rate breaks down into linehaul, fuel, accessorials and margin.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Matches ship with a confidence score, not a lucky guess.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Real-time margin and coverage across all 128 loads on the board.</li>
+          </ul>
+        </div>
+        <div class="explain-card reveal" data-delay="1" role="img" aria-label="Rate build for load HB-24817: a $2,720 shipper rate made of linehaul 72%, fuel 12%, accessorials 2% and broker margin 14%.">
+          <div class="head">
+            <span class="t">Rate build · load HB-24817</span>
+            <span class="s mono">$2,720</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#3B82F6"></span> Linehaul</span>
+            <span class="mini-bar fill-bar" data-pct="72"><i style="background:#3B82F6"></i></span>
+            <span class="wt mono">$1,955</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#0E7490"></span> Fuel surcharge</span>
+            <span class="mini-bar fill-bar" data-pct="30"><i style="background:#22B8CF"></i></span>
+            <span class="wt mono">$324</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#8A96AD"></span> Accessorials</span>
+            <span class="mini-bar fill-bar" data-pct="10"><i style="background:#8A96AD"></i></span>
+            <span class="wt mono">$61</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#34D399"></span> Broker margin</span>
+            <span class="mini-bar fill-bar" data-pct="34"><i style="background:#34D399"></i></span>
+            <span class="wt mono">$380</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern data stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in an eight-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Python · spot-rate model</span>
+          <span class="chip">FastAPI</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Cover more freight, at the margin you priced.</h2>
+            <p>We build AI-native products like HaulBoard. Tell us about your lanes and your carrier network, and we'll show you what a self-pricing load board looks like on your freight.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="HaulBoard home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="5" cy="7" r="2.2" fill="#3B82F6"/><rect x="15" y="15" width="5" height="5" rx="1.4" fill="#fff"/><path d="M7 7h6a3 3 0 0 1 3 3v7" stroke="#7FB0FF" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            Haul<span class="brand-b">Board</span>
+          </a>
+          <p>An AI freight load board that matches loads to the best-fit carrier, prices lanes on live spot data, and defends broker margin on every move.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#why">Why HaulBoard</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> HaulBoard</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

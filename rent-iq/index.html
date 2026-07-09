@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RentIQ — AI Rent & Revenue Management for Multifamily</title>
+  <meta name="description" content="RentIQ recommends the optimal rent for every unit from demand, comps, seasonality and exposure — and guides renewal offers. Explainable revenue management for multifamily operators. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/rent-iq/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#7C3AED">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="RentIQ — Price every unit like your best analyst would">
+  <meta property="og:description" content="An AI revenue-management platform that recommends the optimal rent per unit from demand, comps, seasonality and exposure — and guides renewal offers.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/rent-iq/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/rent-iq/assets/dashboard.webp">
+  <meta property="og:image:alt" content="RentIQ Revenue Management dashboard showing an effective-rent trend, a unit-pricing table and comp set.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RentIQ — Price every unit like your best analyst would">
+  <meta name="twitter:description" content="AI rent & revenue management for multifamily: optimal rent per unit and guided renewals, with every recommendation explained. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/rent-iq/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231A1626'/%3E%3Cpath d='M5 21c5-1.5 6.5-11 12-11s6.5 6 10 5' fill='none' stroke='%23A78BFA' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='17' cy='10' r='2' fill='%237C3AED'/%3E%3Cpath d='M5 25h22' stroke='%237C3AED' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "RentIQ",
+    "description": "An AI rent and revenue-management platform for multifamily operators that recommends the optimal rent for every unit from demand, comps, seasonality and exposure, and guides renewal offers — with every recommendation attributed to weighted drivers.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="RentIQ home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 17c4-1 5.5-9 9-9s5 5 9 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="1.6" fill="#fff"/></svg>
+        </span>
+        RentIQ
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#drivers">How pricing works</a>
+        <a href="#how">The engine</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Prices refreshed 2h ago
+          </span>
+          <h1>Price every unit like your&nbsp;best <span class="accent">revenue analyst</span></h1>
+          <p class="hero-sub">RentIQ recommends the optimal rent for every floor plan from live demand, comps, seasonality and exposure — then guides each renewal offer. Every price comes with the reasons behind it.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 1,240 units priced</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Explainable, not black-box</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Occupancy-aware</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: pricing engine + demand curve -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="RentIQ pricing engine preview for floor plan A1: a recommended rent of $1,775, up 3.2% from $1,720, with a demand curve marking the revenue-optimal price and the weighted drivers behind it.">
+            <div class="viz-topbar">
+              <span class="lbl">Pricing engine · 1&nbsp;Bed A1</span>
+              <span class="viz-live"><span class="dot"></span> optimizing</span>
+            </div>
+
+            <div class="viz-price">
+              <div class="vp-l">
+                <div class="k">Recommended rent</div>
+                <div class="v mono">$1,775<small>/mo</small></div>
+              </div>
+              <span class="viz-delta mono">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                +3.2%
+              </span>
+            </div>
+
+            <div class="viz-curve">
+              <svg viewBox="0 0 320 168" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="heroCurveFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.20"/>
+                    <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g class="curve-grid">
+                  <line x1="14" y1="26" x2="306" y2="26"/>
+                  <line x1="14" y1="70" x2="306" y2="70"/>
+                  <line x1="14" y1="114" x2="306" y2="114"/>
+                </g>
+                <!-- recommended band -->
+                <rect x="150" y="20" width="34" height="120" fill="#7C3AED" opacity="0.06"/>
+                <path class="curve-area" d="M16 34 L70 48 L120 62 L166 74 L210 90 L260 110 L304 130 L304 140 L16 140 Z"/>
+                <path class="curve-line" d="M16 34 L70 48 L120 62 L166 74 L210 90 L260 110 L304 130"/>
+                <!-- current price guide + marker -->
+                <line class="curve-guide" x1="120" y1="62" x2="120" y2="140"/>
+                <circle class="curve-cur" cx="120" cy="62" r="5"/>
+                <!-- recommended price guide + marker -->
+                <line class="curve-guide rec" x1="166" y1="74" x2="166" y2="140"/>
+                <circle class="curve-rec" cx="166" cy="74" r="5.6"/>
+                <text class="curve-cap" x="16" y="156">$1,650</text>
+                <text class="curve-cap" x="304" y="156" text-anchor="end">$1,900</text>
+              </svg>
+            </div>
+
+            <div class="viz-drivers">
+              <div class="viz-drv"><span class="dn">Demand</span><span class="db"><i data-w="86"></i></span><span class="dv">34%</span></div>
+              <div class="viz-drv"><span class="dn">Comp position</span><span class="db"><i data-w="72"></i></span><span class="dv">28%</span></div>
+              <div class="viz-drv"><span class="dn">Seasonality</span><span class="db"><i data-w="58"></i></span><span class="dv">22%</span></div>
+              <div class="viz-drv"><span class="dn">Exposure</span><span class="db warm"><i data-w="42"></i></span><span class="dv">16%</span></div>
+            </div>
+
+            <div class="viz-legend">
+              <span class="lg"><span class="m-cur"></span> Current $1,720</span>
+              <span class="lg"><span class="m-rec"></span> Recommended $1,775</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Portfolio at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="1240" data-decimals="0">0</span></div><div class="lbl">Units priced</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span class="pre">$</span><span data-count="1842" data-decimals="0">0</span></div><div class="lbl">Effective rent</div><div class="tag up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> +4.5% TTM</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="95.4" data-decimals="1">0</span><span class="unit">%</span></div><div class="lbl">Occupancy</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span class="pre">+</span><span data-count="2.8" data-decimals="1">0</span><span class="unit">%</span></div><div class="lbl">Revenue vs budget</div><div class="tag up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> ahead of plan</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DRIVERS ============ -->
+    <section class="section" id="drivers">
+      <div class="wrap drivers-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">How a rent is decided</span>
+            <h2>A rent isn't a guess. It's a weighted read of the market.</h2>
+            <p>RentIQ decomposes every recommended price into the forces behind it — so the number always arrives with a reason your revenue team can defend.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 14l4-4 4 3 5-6 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Demand strength</span>
+                <span class="driver-weight mono">34%</span>
+              </div>
+              <div class="driver-bar" data-pct="86"><i></i></div>
+              <p class="driver-desc">Live tour requests, leads-per-unit and search velocity by floor plan — the clearest signal of what a unit can command.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Comp position</span>
+                <span class="driver-weight mono">28%</span>
+              </div>
+              <div class="driver-bar" data-pct="72"><i></i></div>
+              <p class="driver-desc">Where you sit against the nearby comp set — headroom below market, or a premium you're already earning.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 9h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Seasonality</span>
+                <span class="driver-weight mono">22%</span>
+              </div>
+              <div class="driver-bar" data-pct="58"><i></i></div>
+              <p class="driver-desc">Peak versus off-peak leasing windows, modeled per market so you push in-season and protect velocity out of it.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10.3 3.9 1.8 18a1.7 1.7 0 0 0 1.5 2.6h17.4a1.7 1.7 0 0 0 1.5-2.6L13.7 3.9a1.7 1.7 0 0 0-3 0z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Exposure &amp; vacancy</span>
+                <span class="driver-weight mono">16%</span>
+              </div>
+              <div class="driver-bar" data-pct="42"><i></i></div>
+              <p class="driver-desc">Units available and leases expiring soon — the brake that keeps an aggressive price from stalling lease-up.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="drivers-note reveal" data-delay="1">
+          <h3>One floor plan, fully attributed</h3>
+          <p>Every recommended rent breaks down into the drivers that produced it — with weights, not vibes. Here's how the A1 one-bedroom recommendation splits.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="304"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">$1,775</span>
+                <span class="of mono">+3.2%</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#7C3AED"></span> Demand strength <span class="k mono">34%</span></li>
+              <li><span class="d" style="background:#A78BFA"></span> Comp position <span class="k mono">28%</span></li>
+              <li><span class="d" style="background:#C4B5FD"></span> Seasonality <span class="k mono">22%</span></li>
+              <li><span class="d" style="background:#C07A16"></span> Exposure &amp; vacancy <span class="k mono">16%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW: the engine ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the engine</span>
+          <h2>Sense the demand. Set the price. Guide the renewal.</h2>
+          <p>RentIQ closes the loop from raw market signals to the exact rent to publish and the renewal offer to send — no spreadsheet gymnastics in between.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 13a8 8 0 1 0 16 0 8 8 0 0 0-16 0z" stroke="currentColor" stroke-width="2"/><path d="M12 13l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="13" r="1.6" fill="currentColor"/></svg></span>
+            <h3>Sense demand</h3>
+            <p>A demand model reads tours, leads, comp movement, seasonality and exposure for every floor plan — refreshed daily into a 0–100 demand score.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5v14h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 8c-5 0-6 9-14 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="step-n mono">STEP 02</span>
+            <h3>Set the price</h3>
+            <p>A demand curve locates the revenue-optimal rent — the point that captures the most rent before lease-up velocity drops below your absorption target.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Guide the renewal</h3>
+            <p>For every expiring lease, RentIQ proposes an offer balanced against move-out risk — with a projected acceptance rate before you send it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The revenue board and the floor-plan file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a portfolio Revenue Management board and a per-floor-plan pricing view for the revenue manager.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Revenue Management board</span>
+              <h3>Price the whole property in one pass.</h3>
+              <p>Effective rent, occupancy and revenue-vs-budget sit above a floor-plan pricing table — current rent, the AI recommendation, demand and exposure, all in one view.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A 12-month effective-rent trend rising to $1,842</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Per-floor-plan recommended rents and change %</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Comp set and renewal recommendations on the rail</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.rentiq.io/revenue</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="RentIQ Revenue Management board: an effective-rent trend line rising to $1,842, a unit-pricing table with AI-recommended rents and demand scores, a comp set and renewal recommendations.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Revenue Management board — portfolio KPIs, floor-plan pricing, comps and renewals.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Floor-plan pricing</span>
+              <h3>Everything behind one recommended rent.</h3>
+              <p>A recommendation card with weighted drivers, a comp set, a demand curve and a renewal-offer builder — capped by a one-click Approve price.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> $1,775 recommended, +3.2%, at 88% confidence</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A demand curve marking the revenue-optimal price</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A renewal-offer builder with projected acceptance</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.rentiq.io/plan/a1</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="RentIQ floor-plan pricing detail: a recommended rent of $1,775 with weighted drivers, a comp set, a demand curve marking the revenue-optimal price, and a renewal-offer builder.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Floor-plan pricing — the recommendation, its drivers, the demand curve, and the renewal builder.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the revenue-management workflow, end to end.</h2>
+          <p>Unit pricing, comp intelligence and renewal offers consolidated into one revenue-manager surface — nothing left in a spreadsheet.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 12h4M10 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Unit-level pricing</h3>
+            <p>An AI-recommended rent for every floor plan, with change %, demand score and days on market in one table.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5v14h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 8c-5 0-6 9-14 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Demand curves</h3>
+            <p>Projected lease-up plotted against rent, so you can see the revenue-optimal price rather than a single number.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Comp intelligence</h3>
+            <p>Nearby properties tracked by distance and effective rent, so every price is grounded in the live market.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v6h6M9 15l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Renewal offer builder</h3>
+            <p>Balanced offers for every expiring lease, weighed against move-out risk with a projected acceptance rate.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16l4-5 4 3 5-7 3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Effective-rent trends</h3>
+            <p>Net effective rent charted over a rolling year and measured against your budget, portfolio-wide.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.2 4.8 5.3.6-3.9 3.6 1 5.2L12 15.4 7.4 17.8l1-5.2L4.5 9l5.3-.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3>Driver attribution</h3>
+            <p>Every recommendation decomposed across demand, comp position, seasonality and exposure — with weights.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPLAINABLE BAND ============ -->
+    <section class="explain section">
+      <div class="wrap explain-inner">
+        <div class="reveal">
+          <span class="eyebrow">Explainable, not black-box</span>
+          <h2>A price your ops team will actually publish.</h2>
+          <p>A rent nobody can explain gets overridden. RentIQ shows the weighted drivers behind every recommendation — so the number carries its own justification into the pricing call.</p>
+          <ul class="explain-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every recommendation decomposes into named, weighted drivers.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Prices ship with a confidence estimate and an occupancy projection.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Real-time effective rent and revenue-vs-budget across 1,240 units.</li>
+          </ul>
+        </div>
+        <div class="explain-card reveal" data-delay="1" role="img" aria-label="Recommendation breakdown: a $1,775 rent attributed to demand strength 34%, comp position 28%, seasonality 22% and exposure and vacancy 16%.">
+          <div class="head">
+            <span class="t">Recommended rent · plan A1</span>
+            <span class="s mono">$1,775</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#7C3AED"></span> Demand strength</span>
+            <span class="mini-bar" data-pct="34"><i style="background:#7C3AED"></i></span>
+            <span class="wt mono">34%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#A78BFA"></span> Comp position</span>
+            <span class="mini-bar" data-pct="28"><i style="background:#A78BFA"></i></span>
+            <span class="wt mono">28%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#C4B5FD"></span> Seasonality</span>
+            <span class="mini-bar" data-pct="22"><i style="background:#C4B5FD"></i></span>
+            <span class="wt mono">22%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#C07A16"></span> Exposure &amp; vacancy</span>
+            <span class="mini-bar" data-pct="16"><i style="background:#E7A83C"></i></span>
+            <span class="wt mono">16%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern data stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in a nine-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Python · FastAPI</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Gradient-boosted demand model</span>
+          <span class="chip">dbt + Snowflake</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Price your portfolio like your best analyst would.</h2>
+            <p>We build AI-native products like RentIQ. Tell us about your properties and your pricing motion, and we'll show you what explainable revenue management looks like on your own units.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="RentIQ home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 17c4-1 5.5-9 9-9s5 5 9 4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="1.6" fill="#fff"/></svg>
+            </span>
+            RentIQ
+          </a>
+          <p>An AI rent &amp; revenue-management platform that recommends the optimal rent for every multifamily unit — and guides the renewal offer.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#drivers">How pricing works</a>
+          <a href="#how">The engine</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> RentIQ</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

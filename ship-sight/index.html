@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShipSight — AI Supply-Chain Control Tower & Predictive ETA for Logistics</title>
+  <meta name="description" content="ShipSight is a supply-chain control tower that tracks every shipment across ocean, air and ground, predicts each ETA with confidence, and flags at-risk shipments before they slip. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/ship-sight/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0EA5E9">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="ShipSight — See every shipment coming, before it slips">
+  <meta property="og:description" content="A supply-chain control tower that tracks every shipment across ocean, air and ground, predicts ETA with confidence, and flags at-risk shipments before they slip.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/ship-sight/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/ship-sight/assets/dashboard.webp">
+  <meta property="og:image:alt" content="ShipSight Control Tower board showing on-time delivery trend, a live shipments table and exception types.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ShipSight — See every shipment coming, before it slips">
+  <meta name="twitter:description" content="Track every shipment across ocean, air and ground, predict ETA with confidence, and flag at-risk shipments before they slip. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/ship-sight/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B1B34'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%230EA5E9' stroke-width='1.3' opacity='0.55'/%3E%3Cpath d='M7 16h18M16 7c2 2.4 3 5.5 3 9s-1 6.6-3 9c-2-2.4-3-5.5-3-9s1-6.6 3-9z' fill='none' stroke='%2338BDF8' stroke-width='1.3' opacity='0.85'/%3E%3Ccircle cx='16' cy='16' r='1.7' fill='%2338BDF8'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ShipSight",
+    "description": "A supply-chain control tower that tracks every shipment across ocean, air and ground, predicts each ETA with a confidence score, and flags at-risk shipments — port congestion, customs holds, weather — before they slip.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="ShipSight home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.4" stroke="#fff" stroke-width="1.5" opacity="0.6"/><path d="M3.6 12h16.8M12 3.6c2.3 2.2 3.5 5.2 3.5 8.4s-1.2 6.2-3.5 8.4c-2.3-2.2-3.5-5.2-3.5-8.4S9.7 5.8 12 3.6z" stroke="#fff" stroke-width="1.5"/></svg>
+        </span>
+        ShipSight
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why slips happen</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="status-chip">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live · 3,410 shipments tracked
+          </span>
+          <h1>Know where every shipment is — <span class="accent">and when it'll really arrive</span></h1>
+          <p class="hero-sub">ShipSight is a supply-chain control tower for ocean, air and ground. It tracks every milestone, predicts each ETA with a confidence score, and flags the at-risk shipments — port congestion, customs holds — before they slip.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ocean · air · ground in one view</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Predicted, not just tracked</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Flags risk before the slip</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: route / globe -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="globe-card" role="img" aria-label="A stylized globe with a shipping route from origin through a transshipment hub to destination, a live vessel position on the route, a predicted ETA of July 20 (two days late), and an on-time trend rising to 87%.">
+            <div class="globe-top">
+              <span class="lbl">Shanghai → Los Angeles · live</span>
+              <span class="globe-live"><span class="dot"></span> tracking</span>
+            </div>
+            <div class="globe-body">
+              <!-- Globe + route -->
+              <div class="globe">
+                <svg viewBox="0 0 220 220" aria-hidden="true">
+                  <g class="globe-grid">
+                    <circle class="globe-grid rim" cx="110" cy="110" r="88"/>
+                    <ellipse cx="110" cy="110" rx="88" ry="30"/>
+                    <ellipse cx="110" cy="110" rx="30" ry="88"/>
+                    <ellipse cx="110" cy="110" rx="60" ry="88"/>
+                    <ellipse cx="110" cy="80" rx="82" ry="20"/>
+                    <ellipse cx="110" cy="140" rx="82" ry="20"/>
+                  </g>
+                  <!-- remaining route (dashed) -->
+                  <path class="route-remain" d="M152,84 C158,96 168,108 176,120"/>
+                  <!-- completed route (solid) -->
+                  <path class="route-path" d="M52,92 C74,50 104,44 128,58 C142,66 148,74 152,84"/>
+                  <!-- waypoints -->
+                  <circle class="wp done" cx="52" cy="92" r="5"/>
+                  <circle class="wp done" cx="128" cy="58" r="5"/>
+                  <circle class="wp" cx="176" cy="120" r="5"/>
+                  <!-- vessel -->
+                  <circle class="vessel-halo" cx="152" cy="84" r="10"/>
+                  <circle class="vessel" cx="152" cy="84" r="5.5"/>
+                </svg>
+                <span class="globe-legend" style="margin-top:8px">
+                  <span class="lg"><span class="sw origin"></span> Origin</span>
+                  <span class="lg"><span class="sw transit"></span> In transit</span>
+                  <span class="lg"><span class="sw dest"></span> Destination</span>
+                </span>
+              </div>
+
+              <!-- Readouts -->
+              <div class="globe-read">
+                <div class="gr-card">
+                  <div class="k">Predicted ETA</div>
+                  <div class="v">Jul 20 <small>+2d vs plan</small></div>
+                </div>
+                <div class="gr-card">
+                  <div class="k">On-time · 12 mo</div>
+                  <div class="v">87<small>%</small> <small class="up">▲ 3</small></div>
+                  <div class="draw-chart">
+                    <svg viewBox="0 0 200 58" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="otFill" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.28"/>
+                          <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path class="draw-area" d="M6,44 L28,40 L50,42 L72,34 L94,30 L116,24 L138,20 L160,15 L182,12 L196,10 L196,54 L6,54 Z"/>
+                      <path class="draw-line" d="M6,44 L28,40 L50,42 L72,34 L94,30 L116,24 L138,20 L160,15 L182,12 L196,10"/>
+                      <circle class="draw-dot" cx="196" cy="10" r="4"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Network at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="3410" data-decimals="0">0</span></div><div class="lbl">Active shipments</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="87" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">On-time delivery</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> +3 pts MoM</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="42" data-decimals="0">0</span></div><div class="lbl">At-risk shipments</div><div class="tag risk"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> flagged now</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="1.2" data-decimals="1">0</span><span class="unit">d</span></div><div class="lbl">Avg delay</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 0.4d shorter</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY SHIPMENTS SLIP ============ -->
+    <section class="section" id="why">
+      <div class="wrap why-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Why shipments slip</span>
+            <h2>An ETA is never a surprise. It's a stack of signals.</h2>
+            <p>ShipSight attributes every predicted delay to the conditions behind it — so the arrival estimate always comes with a reason your team can act on.</p>
+          </div>
+          <div class="cause-list">
+            <div class="cause c1">
+              <div class="cause-top">
+                <span class="cause-name"><span class="cause-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 18l1.5-5h15L21 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 13V8h6l3 5M9 8V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Port congestion</span>
+                <span class="cause-weight mono">High</span>
+              </div>
+              <div class="meter" data-pct="88"><i></i></div>
+              <p class="cause-desc">Berth queues and terminal dwell at gateway ports — the single biggest driver of ocean ETA slip.</p>
+            </div>
+            <div class="cause c2">
+              <div class="cause-top">
+                <span class="cause-name"><span class="cause-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7l8-4 8 4v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Customs holds</span>
+                <span class="cause-weight mono">Medium</span>
+              </div>
+              <div class="meter" data-pct="62"><i></i></div>
+              <p class="cause-desc">Documentation review, inspection and duty queries that stall cargo at the border.</p>
+            </div>
+            <div class="cause c3">
+              <div class="cause-top">
+                <span class="cause-name"><span class="cause-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 15a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.6 1.4A3.5 3.5 0 0 1 17 15z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 19l-1 2M12 19l-1 2M16 19l-1 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Weather &amp; routing</span>
+                <span class="cause-weight mono">Medium</span>
+              </div>
+              <div class="meter" data-pct="54"><i></i></div>
+              <p class="cause-desc">Storm windows and re-routing that cut service speed or force a longer sailing.</p>
+            </div>
+            <div class="cause c4">
+              <div class="cause-top">
+                <span class="cause-name"><span class="cause-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 10h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Rolled bookings</span>
+                <span class="cause-weight mono">Low</span>
+              </div>
+              <div class="meter" data-pct="34"><i></i></div>
+              <p class="cause-desc">Overbooked vessels that bump a container to the next sailing — days lost before departure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-panel reveal" data-delay="1">
+          <h3>One ETA, fully explained</h3>
+          <p>Every predicted arrival decomposes into the drivers that produced it — with weights, not guesswork. Here's how one at-risk shipment breaks down.</p>
+          <div class="eta-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="284"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">82</span>
+                <span class="of mono">% conf.</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#DC2626"></span> Port congestion <span class="k mono">62%</span></li>
+              <li><span class="d" style="background:#D97706"></span> Vessel slippage <span class="k mono">24%</span></li>
+              <li><span class="d" style="background:#8697B2"></span> Weather / routing <span class="k mono">14%</span></li>
+              <li><span class="d" style="background:#0EA5E9"></span> Predicted slip <span class="k mono">+2 days</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW: track -> predict -> act ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">From milestone to alert</span>
+          <h2>Track it. Predict it. Act before it slips.</h2>
+          <p>ShipSight closes the loop from a raw carrier scan to the notification a planner should send — no chasing carriers or refreshing portals in between.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Track</h3>
+            <p>Milestones from carriers, ports and EDI flow into one live timeline per shipment — ocean, air and ground, container to air waybill.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16l4-5 4 3 5-7 3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Predict</h3>
+            <p>An ETA model turns vessel telemetry, port dwell and customs signals into a live arrival estimate — with a confidence score, not false precision.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.7 21a2 2 0 0 1-3.4 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Act</h3>
+            <p>At-risk shipments surface before the ETA slips — with the driver named and a stakeholder notification ready to send in one click.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The control tower and the shipment file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a network-triage Control Tower board and a per-shipment detail view with a live route map.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Control Tower board</span>
+              <h3>Triage the whole network in one glance.</h3>
+              <p>Live on-time, at-risk and avg-delay KPIs sit above a status-coded, sortable shipments table — so the containers that need a human are always on top.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 12-month on-time delivery trend rising to 87%</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Shipments coloured on-time, at-risk or delayed</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Exception types and mode mix on the right rail</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.shipsight.io/control-tower</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="ShipSight Control Tower board: a 12-month on-time delivery line rising to 87%, a status-coded live shipments table across ocean, air and ground, and an exception-types and mode-mix rail.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Control Tower board — network triage with live on-time, at-risk and delay KPIs.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Shipment detail</span>
+              <h3>Every milestone, and the ETA behind it.</h3>
+              <p>A live route map from origin through transshipment to destination, a milestone timeline, and a predicted ETA with its confidence and delay drivers — all on one shipment file.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Route map with completed vs. pending legs and live position</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Milestone timeline with timestamps and scans</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> An 82%-confidence predicted ETA with weighted delay drivers</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.shipsight.io/shipment</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="ShipSight shipment detail: an inline route map from Shanghai through Busan to Los Angeles, a milestone timeline, and an 82%-confidence predicted ETA with port-congestion and vessel-slippage delay drivers.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Shipment detail — the route, its milestones, and the ETA behind them.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the logistics control desk, end to end.</h2>
+          <p>Tracking, prediction and exception alerts consolidated into one visibility surface — nothing left in a carrier portal.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="4" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="10" width="18" height="4" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="16" width="18" height="4" rx="1" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Control Tower board</h3>
+            <p>Live on-time, at-risk and avg-delay KPIs above a triage-ready, status-coded shipments table.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16l4-5 4 3 5-7 3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="11" r="1.6" fill="currentColor"/></svg></span>
+            <h3>Predictive ETA</h3>
+            <p>A live arrival estimate and confidence score per shipment, refreshed as it moves along its route.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12 9v4M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            <h3>Exception alerts</h3>
+            <p>Port congestion, customs holds, weather and rolled bookings flagged before the ETA slips.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="7" r="2.4" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="17" r="2.4" stroke="currentColor" stroke-width="2"/><path d="M6 9.5v3a3 3 0 0 0 3 3h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Milestone route map</h3>
+            <p>Origin, transshipment, destination and delivery on one inline route with live vessel position.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 18l1.5-5h15L21 18M6 13V8h6l3 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 15.5 17 14V11l-4-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></span>
+            <h3>Multi-modal tracking</h3>
+            <p>Ocean, air and ground in one timeline — container, trailer and air waybill under a single reference.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 18v-6M11 18V6M17 18v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Delay-driver attribution</h3>
+            <p>Every predicted slip decomposed into named, weighted causes — congestion, customs, weather, slippage.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PREDICT BAND ============ -->
+    <section class="predict section">
+      <div class="wrap predict-inner">
+        <div class="reveal">
+          <span class="eyebrow">Predict, don't just track</span>
+          <h2>A carrier scan tells you where it was. ShipSight tells you when it'll arrive.</h2>
+          <p>Status feeds are backward-looking. ShipSight turns the same signals into a forward ETA with its confidence — so the alert lands while there's still time to act.</p>
+          <ul class="predict-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every ETA carries a confidence score, not false precision.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> At-risk shipments surface before the slip, not after.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Each prediction decomposes into named, weighted delay drivers.</li>
+          </ul>
+        </div>
+        <div class="eta-card reveal" data-delay="1" role="img" aria-label="Predicted delay for shipment MSKU 748213-5 of plus two days, attributed to port congestion 62%, vessel slippage 24% and weather or routing 14%.">
+          <div class="head">
+            <span class="t">Predicted delay · MSKU 748213-5</span>
+            <span class="s mono">+2d</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#DC2626"></span> Port congestion</span>
+            <span class="mini-bar" data-pct="62"><i style="background:#F87171"></i></span>
+            <span class="wt mono">62%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#D97706"></span> Vessel slippage</span>
+            <span class="mini-bar" data-pct="24"><i style="background:#F5A742"></i></span>
+            <span class="wt mono">24%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#8697B2"></span> Weather / routing</span>
+            <span class="mini-bar" data-pct="14"><i style="background:#B4C1D4"></i></span>
+            <span class="wt mono">14%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern data stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in an eight-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Python · ETA model</span>
+          <span class="chip">Kafka + EDI ingest</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>See every shipment coming — across your whole network.</h2>
+            <p>We build AI-native products like ShipSight. Tell us how your freight moves and we'll show you what a predictive control tower looks like on your lanes and carriers.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="ShipSight home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.4" stroke="#fff" stroke-width="1.5" opacity="0.6"/><path d="M3.6 12h16.8M12 3.6c2.3 2.2 3.5 5.2 3.5 8.4s-1.2 6.2-3.5 8.4c-2.3-2.2-3.5-5.2-3.5-8.4S9.7 5.8 12 3.6z" stroke="#fff" stroke-width="1.5"/></svg>
+            </span>
+            ShipSight
+          </a>
+          <p>A supply-chain control tower that tracks every shipment across ocean, air and ground — and predicts each ETA before it slips.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#why">Why shipments slip</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> ShipSight</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

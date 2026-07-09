@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StowPilot — AI Warehouse Slotting &amp; Pick-Path Optimization for 3PLs</title>
+  <meta name="description" content="StowPilot re-slots SKUs by velocity, plans pick waves, and routes pickers on the shortest path — cutting walk distance per pick from 114 ft to 88 ft. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/stow-pilot/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#D97706">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="StowPilot — Every pick, the shortest path">
+  <meta property="og:description" content="An AI warehouse slotting and pick-path platform that re-slots SKUs by velocity, plans waves, and routes pickers to cut walk distance per pick.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/stow-pilot/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/stow-pilot/assets/dashboard.webp">
+  <meta property="og:image:alt" content="StowPilot Warehouse Control dashboard showing a falling walk-distance trend and a re-slotting recommendations table.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="StowPilot — Every pick, the shortest path">
+  <meta name="twitter:description" content="Re-slot SKUs by velocity, plan pick waves, and route pickers on the shortest path. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/stow-pilot/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231B2431'/%3E%3Cpath d='M8 13 16 8l8 5v8a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z' fill='none' stroke='%23D97706' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cpath d='M8 13h16' stroke='%23D97706' stroke-width='1.4'/%3E%3Cpath d='M13 22v-5h6v5' stroke='%23F59E0B' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "StowPilot",
+    "description": "An AI warehouse slotting and pick-path optimization platform for 3PLs. It re-slots SKUs by velocity, plans pick waves, and routes pickers on the shortest path — cutting walk distance per pick.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="StowPilot home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 10 12 5l8 5v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 10h16" stroke="#fff" stroke-width="1.4"/><path d="M9 20v-6h6v6" stroke="#FDE7C2" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        </span>
+        StowPilot
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why slotting</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live wave optimization
+          </span>
+          <h1>Stop walking the warehouse. <span class="accent">Start picking it.</span></h1>
+          <p class="hero-sub">StowPilot re-slots your SKUs by velocity, plans each pick wave, and routes pickers on the shortest path — so the same crew clears more orders without walking an extra mile per shift.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 88 ft avg walk / pick</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every move explained</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Runs on your WMS data</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: warehouse floor + optimized pick route -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="Warehouse floor preview: an optimized serpentine pick route threading six aisles between the dock and five pick locations, and a walk-distance trend falling from 114 ft to 88 ft.">
+            <div class="viz-topbar">
+              <span class="lbl">Wave B-14 · pick route</span>
+              <span class="viz-live"><span class="dot"></span> optimizing</span>
+            </div>
+            <div class="viz-body">
+              <!-- Floor plan -->
+              <div class="floor">
+                <svg viewBox="0 0 300 224" aria-hidden="true">
+                  <!-- racks -->
+                  <g>
+                    <rect class="rack" x="26" y="26" width="20" height="142" rx="3"/>
+                    <rect class="rack" x="70" y="26" width="20" height="142" rx="3"/>
+                    <rect class="rack" x="114" y="26" width="20" height="142" rx="3"/>
+                    <rect class="rack" x="158" y="26" width="20" height="142" rx="3"/>
+                    <rect class="rack" x="202" y="26" width="20" height="142" rx="3"/>
+                    <rect class="rack" x="246" y="26" width="20" height="142" rx="3"/>
+                  </g>
+                  <!-- rack shelf lines -->
+                  <g class="rack-line">
+                    <line x1="26" y1="61" x2="46" y2="61"/><line x1="26" y1="97" x2="46" y2="97"/><line x1="26" y1="133" x2="46" y2="133"/>
+                    <line x1="70" y1="61" x2="90" y2="61"/><line x1="70" y1="97" x2="90" y2="97"/><line x1="70" y1="133" x2="90" y2="133"/>
+                    <line x1="114" y1="61" x2="134" y2="61"/><line x1="114" y1="97" x2="134" y2="97"/><line x1="114" y1="133" x2="134" y2="133"/>
+                    <line x1="158" y1="61" x2="178" y2="61"/><line x1="158" y1="97" x2="178" y2="97"/><line x1="158" y1="133" x2="178" y2="133"/>
+                    <line x1="202" y1="61" x2="222" y2="61"/><line x1="202" y1="97" x2="222" y2="97"/><line x1="202" y1="133" x2="222" y2="133"/>
+                    <line x1="246" y1="61" x2="266" y2="61"/><line x1="246" y1="97" x2="266" y2="97"/><line x1="246" y1="133" x2="266" y2="133"/>
+                  </g>
+                  <!-- aisle labels -->
+                  <g class="aisle-label" text-anchor="middle">
+                    <text x="36" y="20">A</text><text x="80" y="20">B</text><text x="124" y="20">C</text>
+                    <text x="168" y="20">D</text><text x="212" y="20">E</text><text x="256" y="20">F</text>
+                  </g>
+                  <!-- dock -->
+                  <rect class="dock" x="20" y="190" width="252" height="20" rx="3"/>
+                  <text x="146" y="203" text-anchor="middle" class="aisle-label" font-size="7">DOCK / PACKOUT</text>
+                  <!-- OLD route (unoptimized, dashed) -->
+                  <path class="route-old" d="M48,201 L48,34 L264,34 L264,150 L92,150"/>
+                  <!-- OPTIMIZED route (amber, serpentine) -->
+                  <path id="pickRoute" class="route" d="M48,201 L48,150 L48,42 L92,42 L92,96 L92,150 L136,150 L136,120 L136,42 L180,42 L180,70"/>
+                  <!-- pick dots -->
+                  <circle class="pick-dot" cx="48" cy="150" r="4"/>
+                  <circle class="pick-dot" cx="92" cy="96" r="4"/>
+                  <circle class="pick-dot b" cx="136" cy="120" r="4"/>
+                  <circle class="pick-dot" cx="180" cy="70" r="4"/>
+                  <circle class="pick-dot b" cx="224" cy="110" r="4"/>
+                  <!-- entrance / picker start -->
+                  <circle cx="48" cy="201" r="4.6" fill="#1B2431"/>
+                  <!-- moving picker -->
+                  <circle class="picker" r="4.4">
+                    <animateMotion dur="7s" repeatCount="indefinite" rotate="0"
+                      path="M48,201 L48,150 L48,42 L92,42 L92,96 L92,150 L136,150 L136,120 L136,42 L180,42 L180,70"/>
+                  </circle>
+                </svg>
+                <span class="floor-cap">6 aisles · 5 picks</span>
+              </div>
+
+              <!-- Walk-distance chart -->
+              <div class="walk">
+                <div>
+                  <div class="walk-head">
+                    <div class="lbl">Walk / pick</div>
+                    <span class="val mono">88<small>ft</small></span>
+                    <span class="walk-delta mono">
+                      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      −26 ft
+                    </span>
+                  </div>
+                  <div class="walk-chart">
+                    <svg viewBox="0 0 200 116" preserveAspectRatio="none" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="walkFill" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#D97706" stop-opacity="0.22"/>
+                          <stop offset="100%" stop-color="#D97706" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <line class="walk-baseline" x1="0" y1="80" x2="200" y2="80"/>
+                      <path class="walk-area" d="M8 18 L28 26 L48 32 L68 40 L88 46 L108 54 L128 62 L148 70 L168 78 L192 84 L192 108 L8 108 Z"/>
+                      <path class="walk-line" d="M8 18 L28 26 L48 32 L68 40 L88 46 L108 54 L128 62 L148 70 L168 78 L192 84"/>
+                      <circle class="walk-dot" cx="192" cy="84" r="4.5"/>
+                    </svg>
+                  </div>
+                  <div class="walk-foot"><span>12 wk</span><span>114 → 88 ft</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="viz-legend">
+              <span class="lg"><span class="sw a"></span> Class A pick</span>
+              <span class="lg"><span class="sw b"></span> Class B pick</span>
+              <span class="lg"><span class="sw rt"></span> Picker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Facility at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="1842" data-decimals="0">0</span></div><div class="lbl">Orders in the wave</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="214" data-decimals="0">0</span></div><div class="lbl">Pick rate (lines/hr)</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> +9%</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="88" data-decimals="0">0</span><span class="unit">ft</span></div><div class="lbl">Avg walk / pick</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> −26 ft</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="91" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Slot utilization</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY SLOTTING ============ -->
+    <section class="section" id="why">
+      <div class="wrap why-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Why slotting decides the shift</span>
+            <h2>In a pick operation, walking is the job. Reduce the walk, everything else follows.</h2>
+            <p>More than half of a picker's shift is spent traveling — not picking. StowPilot attacks the four things that make that walk longer than it has to be.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 4v10.5a4 4 0 1 1-2-3.45" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M13 4l4 2M13 4l4-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fast movers, far bins</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="88"><i></i></div>
+              <p class="driver-desc">High-velocity SKUs stranded in back-wall reserve force the longest, most-repeated trips of the day.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Un-batched waves</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="74"><i></i></div>
+              <p class="driver-desc">Orders released one by one send pickers criss-crossing the same aisles instead of clearing them once.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4L20 8l-4-4L4 16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Aisle congestion</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="61"><i></i></div>
+              <p class="driver-desc">Too many pickers funneled into one hot zone means waiting, backtracking, and re-routing on the fly.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8 4 8-4M12 11v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Dead slot space</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="53"><i></i></div>
+              <p class="driver-desc">Half-empty golden-zone bins next to overflowing ones waste the shelf real estate closest to the dock.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-note reveal" data-delay="1">
+          <h3>Where a picker's hour really goes</h3>
+          <p>Cut the travel share and you add pick capacity without adding headcount. Here's a typical shift before StowPilot re-slots the building.</p>
+          <div class="split-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="197"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">57<small style="font-size:0.6em">%</small></span>
+                <span class="of mono">walking</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#D97706"></span> Travel between picks <span class="k mono">57%</span></li>
+              <li><span class="d" style="background:#0284C7"></span> Picking &amp; scanning <span class="k mono">28%</span></li>
+              <li><span class="d" style="background:#15803D"></span> Pack &amp; stage <span class="k mono">11%</span></li>
+              <li><span class="d" style="background:#94A0B0"></span> Wait &amp; search <span class="k mono">4%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Slot it. Wave it. Route it.</span>
+          <h2>From velocity signal to the exact path a picker walks.</h2>
+          <p>StowPilot closes the loop from demand data to the floor — re-slotting the building, batching the wave, and sequencing every stop so the walk is as short as physics allows.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 18v-6M11 18V4M17 18v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Rank by velocity</h3>
+            <p>Every SKU is scored on pick frequency, order affinity, and seasonality, then bucketed into A / B / C velocity classes that decide how close to the dock it belongs.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Re-slot the building</h3>
+            <p>Fast movers get pulled into golden-zone forward pick, each move ranked by the walk it saves and shipped as an explainable, one-click approval for your ops lead.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 20V9l6-4 6 4v11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 20h12M9 20v-4h6v4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Route the wave</h3>
+            <p>Orders are batched into a wave and each picker gets a serpentine route that visits every stop once — the shortest path across the aisles they're assigned.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The control room and the move, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a Warehouse Control dashboard for the whole facility and a single re-slotting recommendation the ops lead approves or rejects.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Warehouse Control</span>
+              <h3>Run the whole floor from one board.</h3>
+              <p>Live wave, pick rate, walk-per-pick and slot utilization sit above a falling walk-distance trend, a ranked re-slotting table, and zone-by-zone congestion.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 12-week walk-distance trend falling from 114 ft to 88 ft</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Re-slotting table ranked by walk saved, with A/B/C velocity pills</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Live zone congestion and labor balance across aisles A–E</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.stowpilot.io/control</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="StowPilot Warehouse Control dashboard: a walk-distance-per-pick trend falling to 88 ft, a re-slotting recommendations table with A/B/C velocity pills, and a zone-congestion rail.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Warehouse Control — facility KPIs, walk-distance trend, and the re-slotting queue.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Re-slot recommendation</span>
+              <h3>Every move, shown on the map before it happens.</h3>
+              <p>A single SKU's before/after bins are drawn on a warehouse aisle grid, with the walk saved, pick-frequency trend, and the AI rationale — then a one-tap approve or reject.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Current vs. suggested bin highlighted on an aisle map</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Projected 71 ft saved per pick and 1.9 hr/day back</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A 97%-confidence rationale with an approve / reject action</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.stowpilot.io/slot</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="StowPilot re-slotting detail: a warehouse aisle grid showing SKU-40763 moving from bin H27-11 to A02-06, projected walk savings, a pick-frequency sparkline, and an AI rationale with approve and reject actions.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Re-slot recommendation — the before/after bin, the savings, and the rationale.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the pick operation, end to end.</h2>
+          <p>Slotting, wave planning and pick routing consolidated into one control surface — nothing left to a whiteboard or a tribal-knowledge map.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Warehouse Control board</h3>
+            <p>Live wave, pick rate, walk-per-pick and slot utilization over a falling walk-distance trend.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="5" r="1.6" fill="currentColor"/><circle cx="15" cy="12" r="1.6" fill="currentColor"/><circle cx="11" cy="19" r="1.6" fill="currentColor"/></svg></span>
+            <h3>Velocity re-slotting</h3>
+            <p>A/B/C classes and ranked move suggestions that pull fast movers into golden-zone forward pick.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 20V9l6-4 6 4v11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Shortest-path routing</h3>
+            <p>Serpentine pick routes that visit every stop in a wave once, sequenced to minimize total travel.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 6v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6M3 6l2-3h14l2 3M9 11h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Wave planning</h3>
+            <p>Batch orders into balanced waves by zone and cart, so pickers clear an aisle instead of revisiting it.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h4L20 8l-4-4L4 16z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+            <h3>Zone congestion map</h3>
+            <p>Live pick density and labor balance by aisle zone, flagging the hot spots before they stall a wave.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.2 4.8 5.3.6-3.9 3.6 1 5.2L12 15.4 7.4 17.8l1-5.2L4.5 9l5.3-.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3>Explainable moves</h3>
+            <p>Every recommendation ships with its walk savings, a confidence score and a rationale you can audit.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIFFERENTIATOR BAND ============ -->
+    <section class="diff section">
+      <div class="wrap diff-inner">
+        <div class="reveal">
+          <span class="eyebrow">Physical, measurable, explained</span>
+          <h2>A slotting move your ops lead will actually approve.</h2>
+          <p>Warehouse teams have been burned by black-box slotting. StowPilot shows the feet saved, the bin it picked and why — so the floor trusts the move before the reach truck rolls.</p>
+          <ul class="diff-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every move quantified in feet saved per pick, not a vague score.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Before/after bins drawn on your real aisle map.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One-tap approve / reject, so nothing moves without a human.</li>
+          </ul>
+        </div>
+        <div class="diff-card reveal" data-delay="1" role="img" aria-label="Re-slot recommendation for SKU-40763: 97% confidence, saving 71 feet per pick, broken down by velocity jump, current-zone distance, golden-zone availability and move cost.">
+          <div class="head">
+            <span class="t">Move · SKU-40763 → A02-06</span>
+            <span class="s mono">97%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#D97706"></span> Velocity jumped to A</span>
+            <span class="mini-bar" data-pct="94"><i style="background:#D97706"></i></span>
+            <span class="wt mono">+41%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#0284C7"></span> Current-zone distance</span>
+            <span class="mini-bar" data-pct="82"><i style="background:#38BDF8"></i></span>
+            <span class="wt mono">108 ft</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#15803D"></span> Golden-zone bin open</span>
+            <span class="mini-bar" data-pct="70"><i style="background:#4ADE80"></i></span>
+            <span class="wt mono">A02-06</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#94A0B0"></span> Move cost</span>
+            <span class="mini-bar" data-pct="18"><i style="background:#94A0B0"></i></span>
+            <span class="wt mono">~8 min</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern data stack, production-grade floor UI.</h2>
+          <p>Delivered as a production-quality MVP in a nine-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Python · OR-Tools</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">dbt + Snowflake</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Cut the walk out of your warehouse.</h2>
+            <p>We build AI-native products like StowPilot. Tell us how your DC is laid out and where the walk piles up, and we'll show you what velocity re-slotting and shortest-path routing look like on your floor.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="StowPilot home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 10 12 5l8 5v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 10h16" stroke="#fff" stroke-width="1.4"/><path d="M9 20v-6h6v6" stroke="#FDE7C2" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </span>
+            StowPilot
+          </a>
+          <p>An AI warehouse slotting and pick-path platform that re-slots SKUs by velocity, plans waves, and routes pickers on the shortest path.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#why">Why slotting</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> StowPilot</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

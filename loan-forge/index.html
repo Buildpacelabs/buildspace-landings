@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoanForge — AI Mortgage Loan Origination & Underwriting Automation</title>
+  <meta name="description" content="LoanForge reads every borrower document, verifies income and assets against the file, and auto-clears underwriting conditions — moving loans to clear-to-close in days, not weeks. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/loan-forge/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#15803D">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="LoanForge — From document dump to clear-to-close">
+  <meta property="og:description" content="An AI loan-origination platform that extracts borrower data, auto-clears underwriting conditions and drives every loan to clear-to-close.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/loan-forge/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/loan-forge/assets/dashboard.webp">
+  <meta property="og:image:alt" content="LoanForge Loan Pipeline board showing cycle-time trend, active loans and outstanding conditions by category.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LoanForge — From document dump to clear-to-close">
+  <meta name="twitter:description" content="Extract borrower data, auto-clear underwriting conditions and drive loans to clear-to-close. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/loan-forge/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230C2740'/%3E%3Cpath d='M11 8h7l4 4v11a1 1 0 0 1-1 1H11a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z' fill='none' stroke='%2334D399' stroke-width='1.4'/%3E%3Cpath d='M18 8v4h4' fill='none' stroke='%2334D399' stroke-width='1.4'/%3E%3Cpath d='M13 18l2 2 4-4' fill='none' stroke='%2334D399' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LoanForge",
+    "description": "An AI mortgage loan-origination platform that extracts income and asset data from borrower documents, auto-clears underwriting conditions, and manages the loan pipeline to clear-to-close.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="LoanForge home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M8 3h7l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="#fff" stroke-width="1.5"/><path d="M15 3v4h4" stroke="#fff" stroke-width="1.5"/><path d="M10 14l2 2 3.5-3.5" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        LoanForge
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#stall">Where loans stall</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live loan pipeline
+          </span>
+          <h1>From document dump to <span class="accent">clear&nbsp;to&nbsp;close</span></h1>
+          <p class="hero-sub">LoanForge reads every borrower document, verifies income and assets against the file, and auto-clears the underwriting conditions that stall a loan — so your team closes in days, not weeks.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 68% of conditions auto-cleared</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every field cites its source doc</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 14-day median to CTC</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: loan file — scan + extract + clear-to-close -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="Loan file preview: a borrower document being scanned, income and asset fields extracted with confidence scores, and a clear-to-close meter at 88 percent.">
+            <div class="viz-topbar">
+              <span class="lbl">Loan file · #LF-24817</span>
+              <span class="viz-live"><span class="dot"></span> extracting</span>
+            </div>
+            <div class="viz-body">
+              <!-- Document being scanned -->
+              <div class="doc">
+                <svg viewBox="0 0 150 200" aria-hidden="true" preserveAspectRatio="none">
+                  <rect x="16" y="16" width="70" height="9" rx="2" fill="#0C2740" opacity="0.14"/>
+                  <rect x="16" y="34" width="118" height="5" rx="2" fill="#0C2740" opacity="0.09"/>
+                  <rect x="16" y="46" width="104" height="5" rx="2" fill="#0C2740" opacity="0.09"/>
+                  <rect x="16" y="58" width="112" height="5" rx="2" fill="#0C2740" opacity="0.09"/>
+                  <rect x="16" y="78" width="60" height="6" rx="2" fill="#15803D" opacity="0.5"/>
+                  <rect x="16" y="92" width="118" height="5" rx="2" fill="#0C2740" opacity="0.09"/>
+                  <rect x="16" y="104" width="96" height="5" rx="2" fill="#0C2740" opacity="0.09"/>
+                  <rect x="16" y="124" width="72" height="6" rx="2" fill="#15803D" opacity="0.5"/>
+                  <rect x="16" y="138" width="118" height="5" rx="2" fill="#0C2740" opacity="0.09"/>
+                  <rect x="16" y="150" width="88" height="5" rx="2" fill="#0C2740" opacity="0.09"/>
+                  <rect x="16" y="170" width="50" height="5" rx="2" fill="#0C2740" opacity="0.09"/>
+                </svg>
+                <span class="scan" aria-hidden="true"></span>
+                <span class="doc-tag">14 files</span>
+              </div>
+
+              <!-- Extracted fields + CTC meter -->
+              <div class="extract">
+                <div class="ex-row">
+                  <div class="ex-l">
+                    <div class="k">Gross monthly income</div>
+                    <div class="v">$18,542 / mo</div>
+                  </div>
+                  <span class="cf"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>97%</span>
+                </div>
+                <div class="ex-row">
+                  <div class="ex-l">
+                    <div class="k">Employment · 4.2 yrs</div>
+                    <div class="v">Verified — VOE</div>
+                  </div>
+                  <span class="cf"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>95%</span>
+                </div>
+                <div class="ex-row">
+                  <div class="ex-l">
+                    <div class="k">Liquid assets</div>
+                    <div class="v">$86,400 · sourced</div>
+                  </div>
+                  <span class="cf"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>92%</span>
+                </div>
+                <div class="ctc">
+                  <div class="ctc-top">
+                    <span class="lab">Clear-to-close</span>
+                    <span class="pct">88%</span>
+                  </div>
+                  <div class="meter"><i></i></div>
+                  <div class="ctc-foot"><span>15 / 17 conditions</span><span>2 outstanding</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="viz-legend">
+              <span class="lg"><span class="sw h"></span> Auto-cleared</span>
+              <span class="lg"><span class="sw c"></span> In review</span>
+              <span class="lg"><span class="sw r"></span> Requested</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Pipeline at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="312" data-decimals="0">0</span></div><div class="lbl">Loans in pipeline</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="14" data-decimals="0">0</span><span class="unit">days</span></div><div class="lbl">Median time to clear-to-close</div><div class="tag fast"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> 4 days faster</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="68" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Conditions auto-cleared</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="82" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Pull-through rate</div><div class="tag save"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> app → funded</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHERE LOANS STALL ============ -->
+    <section class="section" id="stall">
+      <div class="wrap drivers-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Where loans stall</span>
+            <h2>A loan doesn't get stuck on the rate. It gets stuck on the paperwork.</h2>
+            <p>Most cycle time hides in conditions — the documents an underwriter needs before a file can clear. LoanForge sees every open condition by category and knocks out the ones a rule can settle.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h8l4 4v14H5V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 13h6M9 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Income docs</span>
+                <span class="driver-weight mono">142 open</span>
+              </div>
+              <div class="driver-bar" data-pct="88"><i></i></div>
+              <p class="driver-desc">Paystubs, W-2s and tax returns — the biggest queue, and the one that auto-clears most: 61% settle without a touch.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M6 21V9l6-5 6 5v12M10 21v-5h4v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Appraisal</span>
+                <span class="driver-weight mono">98 open</span>
+              </div>
+              <div class="driver-bar" data-pct="62"><i></i></div>
+              <p class="driver-desc">Values arrive, then wait for review. LoanForge checks value against LTV and routes only the exceptions to a human.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.4-7 10-4-1.6-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Title &amp; escrow</span>
+                <span class="driver-weight mono">71 open</span>
+              </div>
+              <div class="driver-bar" data-pct="44"><i></i></div>
+              <p class="driver-desc">Title commitments and lien clearances, tracked to the day so nothing quietly ages past the rate lock.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10h18M6 6h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Assets &amp; reserves</span>
+                <span class="driver-weight mono">60 open</span>
+              </div>
+              <div class="driver-bar" data-pct="37"><i></i></div>
+              <p class="driver-desc">Bank statements and large-deposit sourcing — where a single unexplained gift can stall an otherwise clean file.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="drivers-note reveal" data-delay="1">
+          <h3>One file, fully sourced</h3>
+          <p>Every loan carries a live picture of what's cleared and what's left — decomposed by condition category, not buried in an email thread.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="304"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">88%</span>
+                <span class="of mono">cleared</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#15803D"></span> Income docs <span class="k mono">38%</span></li>
+              <li><span class="d" style="background:#B45309"></span> Appraisal <span class="k mono">26%</span></li>
+              <li><span class="d" style="background:#1D4ED8"></span> Title &amp; escrow <span class="k mono">19%</span></li>
+              <li><span class="d" style="background:#6d28d9"></span> Assets &amp; reserves <span class="k mono">17%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW: extract -> verify -> close ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--paper));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Extract · verify · close</span>
+          <h2>Read the file. Clear the conditions. Move to close.</h2>
+          <p>LoanForge closes the loop from a folder of borrower documents to a clear-to-close decision — without a processor re-typing a single field.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h8l4 4v14H5V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Extract</h3>
+            <p>The engine reads income, employment, assets and liabilities from W-2s, paystubs, bank statements and appraisals — each field tagged to its source page with a confidence score.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.4-7 10-4-1.6-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="step-n mono">STEP 02</span>
+            <h3>Verify &amp; auto-clear</h3>
+            <p>Extracted data is reconciled against the 1003 and agency guidelines, then the conditions that pass every rule clear themselves — 68% of them, untouched.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Draft &amp; close</h3>
+            <p>For what's left, LoanForge drafts the exact borrower request, recomputes DTI and LTV, and moves clean files straight to clear-to-close.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The pipeline board and the loan file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a Loan Pipeline board for the whole book, and a single loan file where extraction, conditions and ratios come together.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Loan Pipeline board</span>
+              <h3>See the whole book, worst-stuck first.</h3>
+              <p>Cycle-time, auto-clear and pull-through KPIs sit above a colour-coded loans table and a live read of outstanding conditions by category.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Cycle time to clear-to-close trending down to 14 days</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Loans typed by product with LTV, DTI and stage</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Outstanding conditions and a stage funnel in the rail</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.loanforge.io/pipeline</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="LoanForge Loan Pipeline board: four KPIs, a cycle-time-to-clear-to-close trend falling to 14 days, an active-loans table typed by product with LTV, DTI and stage, and outstanding conditions by category.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Loan Pipeline board — cycle-time, active loans and conditions by category.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Loan file</span>
+              <h3>Extraction, conditions and ratios on one file.</h3>
+              <p>AI-extracted income and assets — each with a confidence ring and its source document — sit beside the underwriting conditions checklist, recomputed DTI/LTV, and an AI-drafted condition request ready to send.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Extracted fields with confidence and source doc</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Auto-cleared vs. outstanding conditions, colour-coded</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Recomputed DTI/LTV and a drafted condition request</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.loanforge.io/loan/LF-24817</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="LoanForge loan file for Marcus and Elena Reyes: AI-extracted income, employment and assets each with a confidence ring and source document, an underwriting conditions checklist with 15 of 17 cleared, recomputed DTI and LTV, and an AI-drafted condition request.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Loan file — extracted data, conditions, ratios and the drafted request.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--paper),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the origination desk, end to end.</h2>
+          <p>Document extraction, condition-clearing and qualification consolidated into one loan-officer surface — nothing left in a shared inbox.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5h18M6 12h12M10 19h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Loan Pipeline board</h3>
+            <p>Cycle-time, auto-clear and pull-through KPIs above a triage-ready, colour-coded loans table.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3h8l4 4v14H5V5a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Document extraction</h3>
+            <p>Income, employment and assets read from borrower documents, each with a confidence score and source page.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 6v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6M8 11l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Auto-clearing conditions</h3>
+            <p>Conditions that pass every rule clear themselves — 68% untouched — with the rest routed to a human.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>AI condition requests</h3>
+            <p>The exact borrower email drafted for every outstanding item — with a confidence score, ready to send.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Ratios &amp; qualification</h3>
+            <p>DTI, LTV and PITI recomputed live from extracted income and liabilities, checked against guidelines.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.4-7 10-4-1.6-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Loan file detail</h3>
+            <p>Extraction, conditions checklist, ratios and next action on one screen for every loan in the book.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AUDITABLE BAND ============ -->
+    <section class="explain section">
+      <div class="wrap explain-inner">
+        <div class="reveal">
+          <span class="eyebrow">Auditable, not autonomous</span>
+          <h2>Every number ties back to a document.</h2>
+          <p>In lending, a figure you can't defend is a figure you can't fund on. LoanForge never invents a value — each extracted field cites its source document and page, carries a confidence score, and nothing clears without passing a rule.</p>
+          <ul class="explain-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every extracted field cites its source document and page.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A confidence score on every read — low ones are flagged, never guessed.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> No condition clears without passing an explicit underwriting rule.</li>
+          </ul>
+        </div>
+        <div class="explain-card reveal" data-delay="1" role="img" aria-label="Loan file extraction table: gross income from the 2025 W-2 at 97% confidence, employment from the VOE at 95%, liquid assets from bank statements at 92%, and co-borrower income from the 2025 W-2 at 94%.">
+          <div class="head">
+            <span class="t">Loan file · #LF-24817</span>
+            <span class="s mono">94%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#34D399"></span> Gross income</span>
+            <span class="src">2025 W-2</span>
+            <span class="wt mono">97%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#34D399"></span> Employment</span>
+            <span class="src">VOE</span>
+            <span class="wt mono">95%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#FBBF77"></span> Liquid assets</span>
+            <span class="src">Bank stmts</span>
+            <span class="wt mono">92%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#34D399"></span> Co-borrower income</span>
+            <span class="src">2025 W-2</span>
+            <span class="wt mono">94%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern data stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in a ten-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">FastAPI · Python</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Document AI pipeline</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Clear your pipeline faster.</h2>
+            <p>We build AI-native products like LoanForge. Tell us how your origination desk runs today and we'll show you what document extraction and auto-cleared conditions look like on your loans.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="LoanForge home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M8 3h7l4 4v13a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="#fff" stroke-width="1.5"/><path d="M15 3v4h4" stroke="#fff" stroke-width="1.5"/><path d="M10 14l2 2 3.5-3.5" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            LoanForge
+          </a>
+          <p>An AI loan-origination platform that extracts borrower data, auto-clears underwriting conditions, and drives every loan to clear-to-close.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#stall">Where loans stall</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> LoanForge</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

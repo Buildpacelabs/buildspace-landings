@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PriorPilot — AI Prior Authorization & Denial Management for Revenue-Cycle Teams</title>
+  <meta name="description" content="PriorPilot auto-assembles and submits prior-auth requests, predicts denials before you submit, tracks payer status, and drafts appeals — turning a fax-and-phone process into a triaged queue. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/prior-pilot/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0D9488">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="PriorPilot — Clear the prior-auth queue">
+  <meta property="og:description" content="AI prior-authorization and denial management: auto-assemble and submit auths, predict denials before submission, and draft appeals in one triaged queue.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/prior-pilot/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/prior-pilot/assets/dashboard.webp">
+  <meta property="og:image:alt" content="PriorPilot Authorization Queue dashboard showing first-pass approval trend, a prior-auth requests table and top denial reasons.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PriorPilot — Clear the prior-auth queue">
+  <meta name="twitter:description" content="AI prior-authorization and denial management for revenue-cycle teams. Predict denials before submission and draft appeals automatically. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/prior-pilot/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B6B62'/%3E%3Cpath d='M16 6l7 3v4.5c0 4.2-3 7.8-7 9-4-1.2-7-4.8-7-9V9z' fill='none' stroke='%232DD4BF' stroke-width='1.6' stroke-linejoin='round'/%3E%3Cpath d='M12.5 15.5l2.3 2.3 4.7-5' fill='none' stroke='%232DD4BF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PriorPilot",
+    "description": "An AI prior-authorization and denial-management platform for revenue-cycle teams. It auto-assembles and submits prior-auth requests to payers, tracks status, predicts likely denials before submission, and drafts appeal letters — turning a fax-and-phone process into a triaged queue.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="PriorPilot home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.4-3 8.2-7 9.4C8 21.2 5 17.4 5 13V6z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        PriorPilot
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why denials</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live payer status · 214 auths in flight
+          </span>
+          <h1>Clear the prior-auth queue — <span class="accent">before the denials land</span></h1>
+          <p class="hero-sub">PriorPilot auto-assembles and submits every prior-authorization, scores its denial risk before you send it, tracks the payer, and drafts the appeal when a decision goes the wrong way — one triaged queue instead of fax, phone and hold music.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 88% first-pass approval</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Denial risk before you submit</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Appeals drafted for you</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: denial-risk gauge + auth queue -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="Authorization queue preview: a gauge showing 88% first-pass approval, and a live queue of prior-auth requests coloured by status — approved, info requested, appeal and denied.">
+            <div class="viz-topbar">
+              <span class="lbl">Authorization queue · live</span>
+              <span class="viz-live"><span class="dot"></span> tracking</span>
+            </div>
+            <div class="viz-body">
+              <!-- Gauge -->
+              <div class="gauge">
+                <svg viewBox="-6 -6 212 116" aria-hidden="true">
+                  <path class="gauge-track" d="M14 100 A86 86 0 0 1 186 100"/>
+                  <path class="gauge-fill" data-dash="238" d="M14 100 A86 86 0 0 1 186 100"/>
+                </svg>
+                <div class="gauge-center">
+                  <div class="g-val mono">88<small>%</small></div>
+                  <div class="g-lbl">first-pass approval</div>
+                </div>
+                <div class="gauge-scale"><span>0</span><span>target 85</span><span>100</span></div>
+              </div>
+
+              <!-- Auth queue -->
+              <div class="queue">
+                <div class="qrow reveal" data-delay="1">
+                  <span class="qco" style="background:#0f766e">MRI</span>
+                  <span class="qmeta"><b>MRI lumbar spine</b><small>72148 · Aetna</small></span>
+                  <span class="qpill ok"><span class="qd"></span>Approved</span>
+                </div>
+                <div class="qrow reveal" data-delay="2">
+                  <span class="qco" style="background:#1f6feb">CT</span>
+                  <span class="qmeta"><b>CT abdomen / pelvis</b><small>74178 · BCBS</small></span>
+                  <span class="qpill info"><span class="qd"></span>Info</span>
+                </div>
+                <div class="qrow reveal" data-delay="3">
+                  <span class="qco" style="background:#7a45d6">ECO</span>
+                  <span class="qmeta"><b>Echocardiogram</b><small>93306 · Humana</small></span>
+                  <span class="qpill appeal"><span class="qd"></span>Appeal</span>
+                </div>
+                <div class="qrow reveal" data-delay="4">
+                  <span class="qco" style="background:#c6362c">PSG</span>
+                  <span class="qmeta"><b>Sleep study</b><small>95810 · Cigna</small></span>
+                  <span class="qpill denied"><span class="qd"></span>Denied</span>
+                </div>
+              </div>
+            </div>
+            <div class="viz-legend">
+              <span class="lg"><span class="sw a"></span> Approved</span>
+              <span class="lg"><span class="sw i"></span> Info requested</span>
+              <span class="lg"><span class="sw p"></span> Appeal</span>
+              <span class="lg"><span class="sw d"></span> Denied</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Queue at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="214" data-decimals="0">0</span></div><div class="lbl">Auths in flight</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="88" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">First-pass approval</div><div class="tag up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> +3 pts</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="1.9" data-decimals="1">0</span></div><div class="lbl">Avg turnaround (days)</div><div class="tag up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> faster</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span class="pre">$</span><span data-count="146" data-decimals="0">0</span><span class="unit">K</span></div><div class="lbl">At risk in open denials</div><div class="tag risk"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> in appeal</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="section" id="why">
+      <div class="wrap why-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Why auths get denied</span>
+            <h2>A denial is rarely a surprise. It's a checklist you missed.</h2>
+            <p>Most denials trace back to a handful of fixable gaps. PriorPilot learns each payer's rules and flags the missing piece before you submit — so the request goes out complete the first time.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v4M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>Medical necessity not established</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="86"><i></i></div>
+              <p class="driver-desc">Conservative-care history or the qualifying indication isn't documented the way the payer's policy requires.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Missing clinical docs</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="64"><i></i></div>
+              <p class="driver-desc">Imaging, chart notes or lab results referenced in the order never made it into the submission packet.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M4.9 4.9l14.2 14.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Out-of-network referral</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="46"><i></i></div>
+              <p class="driver-desc">The referring or rendering specialist sits outside the member's plan network for the requested service.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l-4 6 4 6M15 6l4 6-4 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CPT / diagnosis mismatch</span>
+                <span class="driver-weight mono">Low</span>
+              </div>
+              <div class="driver-bar" data-pct="34"><i></i></div>
+              <p class="driver-desc">The ICD-10 diagnosis doesn't link cleanly to the procedure code, or a more specific code is required.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-note reveal" data-delay="1">
+          <h3>Every risk score, fully attributed</h3>
+          <p>PriorPilot doesn't just say "high risk." It shows the weighted reasons behind the score — the exact gaps to close before the auth goes out. Here's one echocardiogram request flagged at 71/100.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="245"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">71</span>
+                <span class="of mono">/ 100</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#C6362C"></span> Prior imaging &lt; 12 mo <span class="k mono">41%</span></li>
+              <li><span class="d" style="background:#C2680B"></span> Diagnosis specificity <span class="k mono">29%</span></li>
+              <li><span class="d" style="background:#E0A94C"></span> Symptom onset undated <span class="k mono">18%</span></li>
+              <li><span class="d" style="background:#0D9488"></span> Payer base denial rate <span class="k mono">12%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">From order to outcome</span>
+          <h2>Assemble it. Predict it. Recover it.</h2>
+          <p>PriorPilot runs the whole prior-auth lifecycle — pulling the packet together, scoring denial risk before submission, and drafting the appeal if a payer says no.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v6h6M9 14l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Assemble</h3>
+            <p>The engine reads the order and chart, pulls the qualifying notes and imaging, matches the payer's policy, and builds a complete submission packet with the codes attached.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21c-4-1.2-7-4.8-7-9V6l7-3 7 3v6c0 4.2-3 7.8-7 9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="step-n mono">STEP 02</span>
+            <h3>Predict</h3>
+            <p>A denial-risk model scores each auth 0–100 before it's sent, attributes the risk to specific gaps, and tells your team exactly what to fix to clear the payer first time.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4v6h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 20v-6h-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 10a8 8 0 0 1 14-3M20 14a8 8 0 0 1-14 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Recover</h3>
+            <p>When a payer denies, PriorPilot drafts a citation-backed appeal, re-codes where needed, and routes it to peer-to-peer — all before the deadline window closes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The whole queue, and the file behind one auth.</h2>
+          <p>BuildspaceLabs built the MVP front end: an Authorization Queue for triage across payers, and a per-authorization detail view for working a denial and its appeal.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Authorization Queue</span>
+              <h3>Triage every payer in one worklist.</h3>
+              <p>First-pass approval, turnaround and denial exposure sit above a status-coded table — so the auths that need a human land on top, worst-first.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 12-month first-pass approval trend rising to 88%</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Requests coloured by status: approved, pending, info, denied, appeal</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Top denial reasons and per-payer approval rates on the rail</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.priorpilot.io/queue</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="PriorPilot Authorization Queue: a 12-month first-pass approval trend rising to 88%, a status-coded prior-auth requests table, and a rail of top denial reasons and payer performance.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Authorization Queue — first-pass approval, turnaround, and denial exposure at a glance.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Authorization detail</span>
+              <h3>Everything on one auth — down to the appeal.</h3>
+              <p>A status timeline, the AI-extracted clinical justification with chart citations, a weighted denial-risk score, and a drafted appeal with sequenced next actions.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Assembled → Submitted → Review → Decision → Appeal timeline</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Clinical justification pulled from chart notes, with citations</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A 71/100 denial-risk score and a 79%-overturn appeal draft</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.priorpilot.io/auth</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="PriorPilot authorization detail: a status timeline, an AI-extracted clinical justification with chart citations, a 71/100 denial-risk score with weighted drivers, and a drafted appeal with a 79% overturn estimate.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Authorization detail — the justification, the risk score, and the appeal to file.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the revenue-cycle workflow, end to end.</h2>
+          <p>Intake, submission, denial prediction and appeals consolidated into one prior-auth surface — nothing left on a fax cover sheet.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="18" r="2" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Authorization Queue</h3>
+            <p>A single worklist across payers with first-pass, turnaround and denial-exposure KPIs above a status-coded table.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5c0 4.4-3 8.2-7 9.4C8 21.2 5 17.4 5 13V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 12a9 9 0 0 1 7-6" stroke="#C2680B" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            <h3>Denial-risk score</h3>
+            <p>A 0–100 denial probability per auth, computed before submission and refreshed as documents change.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v6h6M9 14l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Auto-assembled packets</h3>
+            <p>The order, chart notes, imaging and codes pulled together into a payer-ready submission, no manual collation.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>AI-drafted appeals</h3>
+            <p>Citation-backed appeal letters with the winning argument, re-coding suggestions and a peer-to-peer path.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Live payer tracking</h3>
+            <p>Each request's status — submitted, in review, info requested, decided — updated across every payer in one place.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5M4 19h16M8 16v-5M12 16V8M16 16v-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Denial &amp; payer analytics</h3>
+            <p>Top denial reasons and per-payer approval and turnaround, so the recurring gaps get fixed at the source.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIFFERENTIATOR BAND ============ -->
+    <section class="diff section">
+      <div class="wrap diff-inner">
+        <div class="reveal">
+          <span class="eyebrow">Explainable, not black-box</span>
+          <h2>A risk score your billing team will actually trust.</h2>
+          <p>A denial score nobody understands gets ignored. PriorPilot shows the weighted gaps behind every score and cites the payer policy it's matching against — so the recommendation carries its own justification.</p>
+          <ul class="diff-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every score decomposes into named, weighted denial drivers.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Justifications and appeals cite the chart note and the payer policy.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Real-time denial exposure across all 214 auths in flight.</li>
+          </ul>
+        </div>
+        <div class="diff-card reveal" data-delay="1" role="img" aria-label="Denial-risk breakdown for auth PA-2026-04871: a score of 71 attributed to prior imaging within 12 months 41%, diagnosis specificity 29%, undated symptom onset 18%, and payer base denial rate 12%.">
+          <div class="head">
+            <span class="t">Denial-risk · auth PA-2026-04871</span>
+            <span class="s mono">71</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#C6362C"></span> Prior imaging &lt; 12 mo</span>
+            <span class="mini-bar" data-pct="41"><i style="background:#C6362C"></i></span>
+            <span class="wt mono">41%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#C2680B"></span> Diagnosis specificity</span>
+            <span class="mini-bar" data-pct="29"><i style="background:#E0954C"></i></span>
+            <span class="wt mono">29%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#E0A94C"></span> Symptom onset undated</span>
+            <span class="mini-bar" data-pct="18"><i style="background:#E0A94C"></i></span>
+            <span class="wt mono">18%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#0D9488"></span> Payer base denial rate</span>
+            <span class="mini-bar" data-pct="12"><i style="background:#2DD4BF"></i></span>
+            <span class="wt mono">12%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern data stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in a nine-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">FastAPI · Python</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">FHIR / HL7 intake</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Clear your prior-auth queue — with fewer denials.</h2>
+            <p>We build AI-native products like PriorPilot. Tell us about your revenue-cycle motion and we'll show you what a denial-predicting, appeal-drafting queue looks like on your payers and your codes.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="PriorPilot home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.4-3 8.2-7 9.4C8 21.2 5 17.4 5 13V6z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4.5" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            PriorPilot
+          </a>
+          <p>An AI prior-authorization and denial-management platform that auto-assembles auths, predicts denials before submission, and drafts the appeals to recover revenue.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#why">Why auths get denied</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> PriorPilot</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

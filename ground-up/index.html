@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GroundUp — Construction Project Management & Schedule Control for GCs</title>
+  <meta name="description" content="GroundUp keeps a general contractor's jobs on schedule and on budget — schedule gantts, RFI tracking, budget-vs-actual and critical-path recovery in one command centre. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/ground-up/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#F97316">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="GroundUp — Keep every job on schedule and on budget">
+  <meta property="og:description" content="A construction project-management command centre for general contractors: schedule gantts, RFIs, budget-vs-actual and critical-path recovery.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/ground-up/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/ground-up/assets/dashboard.webp">
+  <meta property="og:image:alt" content="GroundUp Project Command dashboard showing a schedule gantt, active projects table and RFI aging.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GroundUp — Keep every job on schedule and on budget">
+  <meta name="twitter:description" content="Construction project management for GCs: schedule gantts, RFIs, budget-vs-actual and critical-path recovery. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/ground-up/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23131A24'/%3E%3Cpath d='M7 24h18' stroke='%23F97316' stroke-width='2.2' stroke-linecap='round'/%3E%3Crect x='8' y='16' width='3.6' height='7' rx='1' fill='%23F97316'/%3E%3Crect x='14.2' y='11' width='3.6' height='12' rx='1' fill='%23FB923C'/%3E%3Crect x='20.4' y='6' width='3.6' height='17' rx='1' fill='%23F97316'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "GroundUp",
+    "description": "A construction project-management platform for general contractors that tracks schedule and milestones, RFIs, submittals and budget-vs-actual across active jobs, and models critical-path recovery when a job slips.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="GroundUp home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 20h18" stroke="#F97316" stroke-width="1.8" stroke-linecap="round"/><rect x="4.4" y="13" width="3.4" height="6" rx="1" fill="#FB923C"/><rect x="10.3" y="8.5" width="3.4" height="10.5" rx="1" fill="#F97316"/><rect x="16.2" y="4" width="3.4" height="15" rx="1" fill="#FB923C"/></svg>
+        </span>
+        Ground<span class="up">Up</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why jobs slip</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live across 8 active jobs
+          </span>
+          <h1>Every job, on schedule and <span class="accent">on budget</span></h1>
+          <p class="hero-sub">GroundUp is the command centre for a general contractor's portfolio — schedule gantts, RFIs, submittals and budget-vs-actual in one place, with the critical-path recovery mapped the moment a job starts to slip.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Schedule + budget in one view</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> RFIs that never age out silently</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Critical-path recovery, mapped</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: blueprint schedule -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="Blueprint schedule preview: five construction phases on a 16-week gantt — Sitework and Foundation complete, Framing 78% and in progress across today's line, MEP rough-in and Finishes still planned — with schedule at 61% and budget at 58%.">
+            <div class="viz-topbar">
+              <span class="lbl">Cedar Ridge · master schedule</span>
+              <span class="viz-live"><span class="dot"></span> tracking</span>
+            </div>
+            <div class="blueprint">
+              <div class="bp-months"><span>PHASE</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span></div>
+              <div class="bp-rows">
+                <div class="bp-today" aria-hidden="true"></div>
+                <div class="bp-row">
+                  <span class="bp-lab">Sitework</span>
+                  <span class="bp-track"><span class="bp-bar" style="left:0;width:18.75%"><span class="bp-fill" style="width:100%"></span></span></span>
+                </div>
+                <div class="bp-row">
+                  <span class="bp-lab">Foundation</span>
+                  <span class="bp-track"><span class="bp-bar" style="left:12.5%;width:18.75%"><span class="bp-fill" style="width:100%;animation-delay:.1s"></span></span><span class="bp-diamond" style="left:calc(31.25% - 6px);animation-delay:.2s"></span></span>
+                </div>
+                <div class="bp-row">
+                  <span class="bp-lab">Framing</span>
+                  <span class="bp-track"><span class="bp-bar" style="left:25%;width:31.25%"><span class="bp-fill" style="width:78%;animation-delay:.2s"></span></span></span>
+                </div>
+                <div class="bp-row">
+                  <span class="bp-lab">MEP rough-in</span>
+                  <span class="bp-track"><span class="bp-bar" style="left:50%;width:25%"><span class="bp-fill" style="width:22%;animation-delay:.3s"></span></span></span>
+                </div>
+                <div class="bp-row">
+                  <span class="bp-lab">Finishes</span>
+                  <span class="bp-track"><span class="bp-bar plan" style="left:68.75%;width:25%"></span></span>
+                </div>
+              </div>
+              <div class="bp-foot">
+                <div class="bp-meter">
+                  <div class="mh"><span>Schedule</span><b>61%</b></div>
+                  <div class="mt"><i class="sched" style="width:61%"></i></div>
+                </div>
+                <div class="bp-meter">
+                  <div class="mh"><span>Budget</span><b>58%</b></div>
+                  <div class="mt"><i class="budg" style="width:58%"></i></div>
+                </div>
+                <span class="bp-wk">Wk 9 / 16</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Portfolio at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="8" data-decimals="0">0</span></div><div class="lbl">Active projects</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="6" data-decimals="0">0</span><span class="unit">/8</span></div><div class="lbl">On schedule</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> two behind baseline</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="-1.4" data-decimals="1">0</span><span class="unit">%</span></div><div class="lbl">Budget variance</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 20V8M6 14l6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> $2.1M under</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="23" data-decimals="0">0</span></div><div class="lbl">Open RFIs</div><div class="tag warn"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> 5 overdue</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY JOBS SLIP ============ -->
+    <section class="section" id="why">
+      <div class="wrap drivers-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Why jobs slip</span>
+            <h2>A schedule never slips all at once. It leaks.</h2>
+            <p>By the time a job "feels late", the delay is already weeks deep. GroundUp watches the leaks in real time — so every lost day has a cause your team can act on.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4h9l4 4v12H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 4v5h5M9.6 12.5a2 2 0 1 1 2.8 2.4c-.5.4-1 .8-1 1.5M11.4 19h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>RFI bottlenecks</span>
+                <span class="driver-weight mono">Critical</span>
+              </div>
+              <div class="driver-bar" data-pct="90"><i></i></div>
+              <p class="driver-desc">Unanswered RFIs quietly hold up rough-in and inspections — the single most common driver of field delay.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5h11M3 10h7M3 15h13M3 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Schedule drift</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="78"><i></i></div>
+              <p class="driver-desc">Crews ramping slower than planned and out-of-sequence trades push the critical path a day at a time.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16l4-8 4 5 4-9 4 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Budget creep</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="58"><i></i></div>
+              <p class="driver-desc">Change orders and division overruns that only surface at month-end, long after the money's committed.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 10l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Field-to-office gap</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="72"><i></i></div>
+              <p class="driver-desc">Daily logs, weather days and delivery slips that live in a superintendent's notebook, not the schedule.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="drivers-note reveal" data-delay="1">
+          <h3>One job, fully attributed</h3>
+          <p>When Cedar Ridge went 11 days behind, GroundUp didn't just flag it — it decomposed exactly where the days went, so recovery targets the real cause.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="207"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">11d</span>
+                <span class="of mono">behind</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#F97316"></span> RFI response delays <span class="k mono">42%</span></li>
+              <li><span class="d" style="background:#D97706"></span> Framing crew ramp <span class="k mono">27%</span></li>
+              <li><span class="d" style="background:#0EA5E9"></span> Weather days <span class="k mono">18%</span></li>
+              <li><span class="d" style="background:#94A3B8"></span> Steel delivery <span class="k mono">13%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--paper));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">From field to forecast</span>
+          <h2>Track it. Flag it. Recover it.</h2>
+          <p>GroundUp closes the loop from what happened on site this morning to the schedule and budget forecast tonight — with the recovery plan already drafted.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5h12M3 10h8M3 15h14M3 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Track</h3>
+            <p>Schedule, milestones, RFIs, submittals, budget and daily logs from every active job roll up into one live command centre.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M12 9v4M12 16h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+            <h3>Flag</h3>
+            <p>The moment the critical path slips or a division runs hot, the job surfaces to the top — with the days and dollars quantified.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h16M6 16l4-8 4 5 4-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Recover</h3>
+            <p>A sequenced recovery plan lands with crew moves, resequencing and re-baselines — the exact steps to pull the date back.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The portfolio board and the job file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a Project Command board for the whole book, and a per-project file for the PM running the recovery.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Project Command</span>
+              <h3>Read the whole book in one glance.</h3>
+              <p>A schedule gantt for the driving job sits above active-project KPIs and a worst-first table — so the jobs that need a call are always on top.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Phase gantt with % complete and a live today line</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ahead / on-track / behind pills across every job</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> RFI aging and budget-by-division on one rail</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.groundup.build/command</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="GroundUp Project Command dashboard: a Cedar Ridge phase gantt with a today line, four portfolio KPIs, an active-projects table with schedule-status pills, and RFI aging plus budget-by-division on the right rail.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Project Command — portfolio triage with the schedule gantt, KPIs and RFI aging.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Project file</span>
+              <h3>Everything a PM needs on one job file.</h3>
+              <p>A milestone gantt with baseline-vs-forecast, budget-vs-actual by division, open RFIs by age and today's daily log — capped by a critical-path recovery plan.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Milestone gantt showing an 11-day slip against baseline</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Budget-vs-committed bars per CSI division</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> An 88%-confidence recovery plan, sequenced</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.groundup.build/cedar-ridge</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="GroundUp project file for Cedar Ridge Phase 2: a milestone gantt with baseline vs forecast, budget-vs-actual by division, open RFIs by age, a daily log with a site photo, and a critical-path recovery plan.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Project file — the schedule, the budget, the RFIs, and the recovery plan.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--paper),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for how a GC actually runs a job.</h2>
+          <p>Schedule, RFIs, submittals, budget and the field log consolidated into one command centre — nothing stranded in a spreadsheet or a text thread.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5h12M3 10h8M3 15h14M3 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Schedule gantt</h3>
+            <p>Phase and milestone gantts with % complete, a live today line and baseline-vs-forecast on every job.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 4h9l4 4v12H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 4v5h5M9.6 12.5a2 2 0 1 1 2.8 2.4c-.5.4-1 .8-1 1.5M11.4 19h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>RFI & submittal tracking</h3>
+            <p>Every RFI and submittal by age, ball-in-court and schedule impact — so nothing quietly goes overdue.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Budget vs. actual</h3>
+            <p>Committed cost against the GMP budget by CSI division, with variance flagged the day it moves.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h16M6 16l4-8 4 5 4-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Critical-path recovery</h3>
+            <p>When a job slips, a sequenced recovery plan with crew moves and re-baselines, and the days it buys back.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M9 3v3h6V3M8 11h8M8 15h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Daily field log</h3>
+            <p>Weather, crew counts, deliveries and progress photos logged from site and tied straight to the schedule.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Portfolio command</h3>
+            <p>One board across every active job — KPIs, schedule status and budget variance for the whole book at a glance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FIELD BAND ============ -->
+    <section class="field-band section">
+      <div class="wrap field-inner">
+        <div class="reveal">
+          <span class="eyebrow">Built for the field, not just the office</span>
+          <h2>A schedule the superintendent will actually keep current.</h2>
+          <p>Reporting nobody updates is worthless. GroundUp pulls the schedule, the budget and the field log into one surface — so the forecast reflects what really happened on site today.</p>
+          <ul class="field-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every slip decomposes into named, day-weighted causes.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Recovery plans ship with the days they buy back, not vague advice.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Real-time schedule and budget exposure across all 8 active jobs.</li>
+          </ul>
+        </div>
+        <div class="field-card reveal" data-delay="1" role="img" aria-label="Recovery plan for Cedar Ridge: net plus three days, from adding a framing crew six days, overlapping MEP four days, expediting RFI-031 three days, and re-baselining finishes two days.">
+          <div class="head">
+            <span class="t">Recovery plan · Cedar Ridge</span>
+            <span class="s mono">+3d</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#F97316"></span> Add framing crew, L3–L4</span>
+            <span class="mini-bar" data-pct="60"><i style="background:#FB923C"></i></span>
+            <span class="wt mono">6d</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#0EA5E9"></span> Overlap MEP rough-in, L1</span>
+            <span class="mini-bar" data-pct="40"><i style="background:#38BDF8"></i></span>
+            <span class="wt mono">4d</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#D97706"></span> Expedite RFI-031</span>
+            <span class="mini-bar" data-pct="30"><i style="background:#F5A742"></i></span>
+            <span class="wt mono">3d</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#94A3B8"></span> Re-baseline finishes</span>
+            <span class="mini-bar" data-pct="20"><i style="background:#94A3B8"></i></span>
+            <span class="wt mono">2d</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Field-ready front end, modern data stack.</h2>
+          <p>Delivered as a production-quality MVP in an eight-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Python · FastAPI</span>
+          <span class="chip">Mapbox GL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>See your whole book — on schedule and on budget.</h2>
+            <p>We build AI-native products like GroundUp. Tell us how your jobs run today, and we'll show you what a single command centre for schedule, RFIs and budget looks like on your projects.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="GroundUp home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 20h18" stroke="#F97316" stroke-width="1.8" stroke-linecap="round"/><rect x="4.4" y="13" width="3.4" height="6" rx="1" fill="#FB923C"/><rect x="10.3" y="8.5" width="3.4" height="10.5" rx="1" fill="#F97316"/><rect x="16.2" y="4" width="3.4" height="15" rx="1" fill="#FB923C"/></svg>
+            </span>
+            Ground<span class="up">Up</span>
+          </a>
+          <p>A construction project-management command centre for general contractors — schedule, RFIs, budget and the field log in one place.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#why">Why jobs slip</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> GroundUp</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

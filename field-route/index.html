@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FieldRoute — AI Field-Service Dispatch & Route Optimization</title>
+  <meta name="description" content="FieldRoute matches every service call to the best-qualified technician, sequences the fastest route, and tracks first-time-fix and SLAs on one dispatch board — with a technician mobile app in the field. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/field-route/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0891B2">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="FieldRoute — the right tech, on the fastest route">
+  <meta property="og:description" content="An AI field-service platform that auto-dispatches the best-matched technician, optimizes their route, and tracks first-time-fix against every SLA.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/field-route/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/field-route/assets/dashboard.webp">
+  <meta property="og:image:alt" content="FieldRoute Dispatch Board showing jobs, a live route map, and first-time-fix KPIs.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FieldRoute — the right tech, on the fastest route">
+  <meta name="twitter:description" content="Auto-dispatch the best-matched technician, optimize the route, and track first-time-fix on one board. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/field-route/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F172A'/%3E%3Cpath d='M16 7a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6z' fill='none' stroke='%230891B2' stroke-width='1.8'/%3E%3Ccircle cx='16' cy='13' r='2.2' fill='%2322D3EE'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "FieldRoute",
+    "description": "An AI field-service management platform that auto-dispatches the best-matched technician, optimizes routes, tracks first-time-fix and SLAs on a dispatch board, and puts jobs, parts and proof-of-service in a technician mobile app.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="FieldRoute home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a6.5 6.5 0 0 0-6.5 6.5c0 4.9 6.5 11.5 6.5 11.5s6.5-6.6 6.5-11.5A6.5 6.5 0 0 0 12 3z" stroke="#fff" stroke-width="1.7"/><circle cx="12" cy="9.3" r="2.3" fill="#fff"/></svg>
+        </span>
+        FieldRoute
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#dispatch">How dispatch works</a>
+        <a href="#how">Workflow</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live dispatch · 24 techs on route
+          </span>
+          <h1>The right tech, on the fastest route — <span class="accent">every time</span></h1>
+          <p class="hero-sub">FieldRoute turns a flood of service calls into one optimized dispatch board. It matches each job to the best-qualified technician, sequences their route, and tracks first-time-fix — down to the SLA minute.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 142 jobs dispatched today</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 88% first-time fix</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> One dispatch board</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: route optimizer -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="A live dispatch view: a city route map with a technician van heading to an emergency job pin and three more scheduled stops, with a 9-minute ETA, 88% first-time fix, and a 0:38 SLA countdown.">
+            <div class="viz-topbar">
+              <span class="lbl">Dispatch board · live</span>
+              <span class="viz-live"><span class="dot"></span> optimizing</span>
+            </div>
+            <div class="viz-map">
+              <span class="map-badge">Route MB-07 · 5 stops</span>
+              <svg viewBox="0 0 320 200" aria-hidden="true">
+                <rect x="0" y="0" width="320" height="200" fill="#F1F5F9"/>
+                <g class="route-blocks">
+                  <rect x="18" y="16" width="78" height="46" rx="5"/>
+                  <rect x="232" y="16" width="72" height="46" rx="5"/>
+                  <rect x="18" y="120" width="66" height="64" rx="5"/>
+                  <rect x="230" y="140" width="74" height="44" rx="5"/>
+                  <rect x="104" y="150" width="96" height="34" rx="5"/>
+                </g>
+                <rect class="route-park" x="114" y="82" width="86" height="46" rx="6"/>
+                <path d="M140 108 q16 -20 32 0" fill="none" stroke="#A7CBB4" stroke-width="2"/>
+                <g class="route-grid">
+                  <line x1="0" y1="72" x2="320" y2="72"/>
+                  <line x1="0" y1="138" x2="320" y2="138"/>
+                  <line x1="100" y1="0" x2="100" y2="200"/>
+                  <line x1="216" y1="0" x2="216" y2="200"/>
+                </g>
+                <!-- route: van -> pin1 (solid, drawn) -->
+                <path class="route-line" d="M48 150 L48 96 L110 96"/>
+                <!-- remaining planned route (dashed) -->
+                <path class="route-line remain" d="M110 96 L196 60 L250 120 L150 152"/>
+                <!-- pins -->
+                <g>
+                  <path class="route-pin now" d="M110 44 c-9 0 -15 7 -15 15 c0 10 15 25 15 25 s15 -15 15 -25 c0 -8 -6 -15 -15 -15 z"/>
+                  <text class="pin-num" x="110" y="63" text-anchor="middle">1</text>
+                  <path class="route-pin sched" d="M196 30 c-9 0 -15 7 -15 15 c0 10 15 25 15 25 s15 -15 15 -25 c0 -8 -6 -15 -15 -15 z"/>
+                  <text class="pin-num" x="196" y="49" text-anchor="middle">2</text>
+                  <path class="route-pin sched" d="M250 92 c-9 0 -15 7 -15 15 c0 10 15 25 15 25 s15 -15 15 -25 c0 -8 -6 -15 -15 -15 z"/>
+                  <text class="pin-num" x="250" y="111" text-anchor="middle">3</text>
+                  <path class="route-pin next" d="M150 128 c-9 0 -15 7 -15 15 c0 10 15 25 15 25 s15 -15 15 -25 c0 -8 -6 -15 -15 -15 z"/>
+                  <text class="pin-num" x="150" y="147" text-anchor="middle">4</text>
+                </g>
+                <!-- technician van -->
+                <circle class="van-pulse" cx="48" cy="150" r="13"/>
+                <circle class="van-dot" cx="48" cy="150" r="13"/>
+                <g transform="translate(39,143)" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                  <path d="M1 3 h9 l4 4 h4 v4 h-2"/><path d="M1 3 v8 h2"/>
+                  <circle cx="6" cy="12" r="1.6" fill="#fff" stroke="none"/><circle cx="15" cy="12" r="1.6" fill="#fff" stroke="none"/>
+                </g>
+              </svg>
+            </div>
+            <div class="viz-stops">
+              <div class="viz-stat"><div class="k">Next stop ETA</div><div class="v">9<small> min</small></div></div>
+              <div class="viz-stat"><div class="k">First-time fix</div><div class="v">88<small>%</small></div></div>
+              <div class="viz-stat crit"><div class="k">SLA left</div><div class="v">0:38</div></div>
+            </div>
+            <div class="viz-legend">
+              <span class="lg"><span class="sw h"></span> Emergency</span>
+              <span class="lg"><span class="sw r"></span> Scheduled</span>
+              <span class="lg"><span class="sw c"></span> Technician</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Operations at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="142" data-decimals="0">0</span></div><div class="lbl">Jobs dispatched today</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="88" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">First-time fix rate</div><div class="tag up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> +3 pts</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="24" data-decimals="0">0</span></div><div class="lbl">Technicians active</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="42" data-decimals="0">0</span><span class="unit">m</span></div><div class="lbl">Avg response time</div><div class="tag fast"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 6 min faster</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DISPATCH FACTORS ============ -->
+    <section class="section" id="dispatch">
+      <div class="wrap factors-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">What a good dispatch weighs</span>
+            <h2>Assigning a job is four decisions at once.</h2>
+            <p>A dispatcher juggles skills, location, parts and the SLA clock for every call. FieldRoute weighs all four in the same instant — and shows its work, so the assignment is never a guess.</p>
+          </div>
+          <div class="factor-list">
+            <div class="factor f1">
+              <div class="factor-top">
+                <span class="factor-name"><span class="factor-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Skills &amp; certification</span>
+                <span class="factor-weight mono">High</span>
+              </div>
+              <div class="factor-bar" data-pct="88"><i></i></div>
+              <p class="factor-desc">EPA 608, equipment type and job history — only techs who can actually close this fault get considered.</p>
+            </div>
+            <div class="factor f2">
+              <div class="factor-top">
+                <span class="factor-name"><span class="factor-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="2"/></svg></span>Proximity &amp; live location</span>
+                <span class="factor-weight mono">High</span>
+              </div>
+              <div class="factor-bar" data-pct="82"><i></i></div>
+              <p class="factor-desc">Live GPS finds the closest qualified van — cutting drive time and the response clock.</p>
+            </div>
+            <div class="factor f3">
+              <div class="factor-top">
+                <span class="factor-name"><span class="factor-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16v11H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 7l8-4 8 4M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Parts on hand</span>
+                <span class="factor-weight mono">Medium</span>
+              </div>
+              <div class="factor-bar" data-pct="64"><i></i></div>
+              <p class="factor-desc">Matches the parts a fault needs to what each tech is carrying — so it's fixed on the first visit.</p>
+            </div>
+            <div class="factor f4">
+              <div class="factor-top">
+                <span class="factor-name"><span class="factor-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l2.5 2M9 2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>SLA &amp; priority</span>
+                <span class="factor-weight mono">Critical</span>
+              </div>
+              <div class="factor-bar" data-pct="94"><i></i></div>
+              <p class="factor-desc">Emergencies and contract SLAs jump the queue — the board is always aware of the clock.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="factors-note reveal" data-delay="1">
+          <h3>One job, fully matched</h3>
+          <p>Every assignment decomposes into the factors that produced it — with weights, not hunches. Here's how the engine scored the top technician for one emergency.</p>
+          <div class="match-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="325"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">94</span>
+                <span class="of mono">% match</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#0891B2"></span> Skills &amp; certs <span class="k mono">38%</span></li>
+              <li><span class="d" style="background:#059669"></span> Proximity <span class="k mono">27%</span></li>
+              <li><span class="d" style="background:#D97706"></span> Parts on hand <span class="k mono">20%</span></li>
+              <li><span class="d" style="background:#94A3B8"></span> Track record <span class="k mono">15%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">From call to closed</span>
+          <h2>Capture it. Match it. Route it.</h2>
+          <p>FieldRoute closes the loop from a service call to a completed, signed-off job — with no whiteboard, no phone tag, and no paper tickets in between.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Intake</h3>
+            <p>Jobs land from an equipment alarm, a phone call or the customer portal — each captured with the site, asset and reported fault.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.6" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="2.6" stroke="currentColor" stroke-width="2"/><path d="M9.5 7H15a3 3 0 0 1 3 3v4M6 9.6V14a3 3 0 0 0 3 3h5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Match &amp; dispatch</h3>
+            <p>The engine ranks technicians on skills, live location, parts and SLA, then auto-assigns the best fit — or hands the dispatcher a ranked shortlist.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 0 0-14 0c0 4.7 7 11 7 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Route &amp; track</h3>
+            <p>Each tech gets an optimized run of stops, live ETAs, and captures parts used, photos and a sign-off — closing the job from the field.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The dispatch board and the work order, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a live Dispatch Board for the whole day, and a per-job work order for the dispatcher assigning the next emergency.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Dispatch Board</span>
+              <h3>Run the whole day from one board.</h3>
+              <p>Live first-time-fix, response-time and active-tech KPIs sit above a priority-sorted job table, a live route map, and the unassigned queue — so the jobs that need a decision are always on top.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Jobs sorted by SLA urgency, colour-coded by priority</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A live route map with numbered stops and the technician's van</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> An unassigned queue that flags emergencies first</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.fieldroute.io/dispatch</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="FieldRoute Dispatch Board: first-time-fix and response-time KPIs, a jobs-completed trend chart, an SLA-sorted job table, a live city route map with numbered stops, and an unassigned queue.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Dispatch Board — today's jobs, live routes and SLA countdowns in one view.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Work order</span>
+              <h3>Everything the dispatcher needs to close one job.</h3>
+              <p>The equipment and reported fault, a live route map with ETA, the parts the job needs, a status timeline, and an AI-suggested technician ranked on skills and proximity — with the dispatch action one tap away.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Live route from the tech's location with a 9-minute ETA</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Parts matched to the fault, flagged in-van or depot pickup</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A 94%-match technician recommendation with alternates</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.fieldroute.io/jobs/WO-4821</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="FieldRoute work order for WO-4821: the reported fault, a live route map with a 9-minute ETA, the parts needed, a Created-to-Complete status timeline, and a 94%-match AI-suggested technician with a dispatch action.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Work order — the fault, the route, the parts, and the tech to send.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the field-service workflow, end to end.</h2>
+          <p>Dispatch, routing, parts and proof-of-service consolidated into one operations surface — and a mobile app in every technician's pocket.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="13" y="3" width="8" height="5" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="13" y="11" width="8" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="8" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Live dispatch board</h3>
+            <p>Today's jobs, KPIs, route map and unassigned queue on one real-time surface for the dispatcher.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Skills-based auto-dispatch</h3>
+            <p>Matches every job to the best-qualified, closest technician — or a ranked shortlist for the dispatcher.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="2.6" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="2.6" stroke="currentColor" stroke-width="2"/><path d="M9.5 7H15a3 3 0 0 1 3 3v4M6 9.6V14a3 3 0 0 0 3 3h5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Route optimization</h3>
+            <p>Sequences each tech's stops for the shortest drive and the tightest arrival windows, live all day.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l2.5 2M9 2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>SLA &amp; priority tracking</h3>
+            <p>Live countdowns per job, with emergencies and contract SLAs always jumping the queue.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M11 18h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Technician mobile app</h3>
+            <p>Every tech carries their route, parts list, access notes and photo proof-of-service — no paper tickets.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16l4-5 4 3 5-7 3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>First-time-fix analytics</h3>
+            <p>Track first-time fix, response time and route efficiency by tech, team and site — trending every day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FIELD-FIRST BAND ============ -->
+    <section class="field-band section">
+      <div class="wrap field-inner">
+        <div class="reveal">
+          <span class="eyebrow">Built for the field, not the back office</span>
+          <h2>The board is only as good as what happens on the roof.</h2>
+          <p>Dispatch software fails when the tech in the field can't use it. FieldRoute puts the whole job — route, parts, access notes and sign-off — in an app that works on a phone, in a parking lot, on a bad connection.</p>
+          <ul class="field-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every job carries its parts list, equipment history and site access notes.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Photo proof-of-service and customer sign-off captured on site.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Live location and ETA flow straight back to the dispatch board.</li>
+          </ul>
+        </div>
+        <div class="field-card reveal" data-delay="1" role="img" aria-label="Performance snapshot: 88% first-time fix, with skilled-match rate 96%, on-time arrival 92%, and same-visit parts 84%.">
+          <div class="fc-head">
+            <span class="t">First-time fix · this week</span>
+            <span class="s mono">88%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#22D3EE"></span> Skilled-match rate</span>
+            <span class="mini-bar" data-pct="96"><i style="background:#22D3EE"></i></span>
+            <span class="wt mono">96%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#34D399"></span> On-time arrival</span>
+            <span class="mini-bar" data-pct="92"><i style="background:#34D399"></i></span>
+            <span class="wt mono">92%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#FBBF77"></span> Same-visit parts</span>
+            <span class="mini-bar" data-pct="84"><i style="background:#FBBF77"></i></span>
+            <span class="wt mono">84%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern routing stack, production-grade apps.</h2>
+          <p>Delivered as a production-quality MVP — a dispatcher web app and a technician mobile app — in a ten-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">React Native</span>
+          <span class="chip">PostgreSQL · PostGIS</span>
+          <span class="chip">Python · OR-Tools</span>
+          <span class="chip">Mapbox GL</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Get every tech to the right job, on time.</h2>
+            <p>We build AI-native products like FieldRoute. Tell us about your service operation and we'll show you what an optimized dispatch board looks like on your jobs, techs and SLAs.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="FieldRoute home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a6.5 6.5 0 0 0-6.5 6.5c0 4.9 6.5 11.5 6.5 11.5s6.5-6.6 6.5-11.5A6.5 6.5 0 0 0 12 3z" stroke="#fff" stroke-width="1.7"/><circle cx="12" cy="9.3" r="2.3" fill="#fff"/></svg>
+            </span>
+            FieldRoute
+          </a>
+          <p>An AI field-service platform that auto-dispatches the best-matched technician, optimizes routes, and tracks first-time-fix against every SLA.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#dispatch">How dispatch works</a>
+          <a href="#how">Workflow</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> FieldRoute</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

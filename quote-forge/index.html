@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuoteForge — AI CPQ, Discount Guardrails & Proposals for Enterprise Sales</title>
+  <meta name="description" content="QuoteForge builds enterprise quotes from your catalog, guards every discount against margin floors, routes approvals, and generates proposals — with AI discount guidance on each deal. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/quote-forge/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#CA8A04">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="QuoteForge — Price big deals without giving away the margin">
+  <meta property="og:description" content="An AI CPQ and proposal platform: build quotes from your catalog, guard discounts against margin floors, route approvals, and generate proposals.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/quote-forge/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/quote-forge/assets/dashboard.webp">
+  <meta property="og:image:alt" content="QuoteForge Quotes dashboard showing quote value trends, an open-quotes table and a discount-vs-guardrail distribution.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QuoteForge — Price big deals without giving away the margin">
+  <meta name="twitter:description" content="AI CPQ, discount guardrails, approvals and proposals in one enterprise sales surface. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/quote-forge/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231C1917'/%3E%3Cpath d='M11 8h7l4 4v11a1 1 0 0 1-1 1H11a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z' fill='none' stroke='%23CA8A04' stroke-width='1.5'/%3E%3Cpath d='M18 8v4h4' fill='none' stroke='%23CA8A04' stroke-width='1.5'/%3E%3Cpath d='M13 16h6M13 19h4' stroke='%23EAB308' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "QuoteForge",
+    "description": "An AI CPQ and proposal platform for enterprise sales. It builds quotes from a product catalog, gives AI discount and margin guidance against guardrails, routes approvals, and generates branded proposals.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="QuoteForge home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 3h8l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="#CA8A04" stroke-width="1.5"/><path d="M14 3v5h5" stroke="#CA8A04" stroke-width="1.5"/><path d="M9 13h7M9 16.5h4.5" stroke="#EAB308" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        QuoteForge
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#leaks">Why margin leaks</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live quote engine
+          </span>
+          <h1>Quote big deals without giving away <span class="accent">the margin</span></h1>
+          <p class="hero-sub">QuoteForge configures every deal from your catalog, checks each discount against your margin floor, and gives reps AI guidance on how far they can go — then routes the approval and generates the proposal.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Guardrails on every discount</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Quote to proposal in one flow</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Approvals routed in hours, not days</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: margin dial + quote totals -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="A live quote preview: a gross-margin dial reading 34% against a 40% floor, and a quote breakdown showing $196,440 list, minus a $64,780 discount, netting $131,660.">
+            <div class="viz-topbar">
+              <span class="lbl">Quote Q-2026-0836 · live</span>
+              <span class="viz-live"><span class="dot"></span> pricing</span>
+            </div>
+            <div class="viz-body">
+              <!-- Margin dial -->
+              <div class="dial">
+                <svg viewBox="0 0 200 128" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="dialGrad" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#EAB308"/>
+                      <stop offset="100%" stop-color="#A16207"/>
+                    </linearGradient>
+                  </defs>
+                  <path class="dial-track" d="M16 110 A84 84 0 0 1 184 110"/>
+                  <path class="dial-arc" d="M16 110 A84 84 0 0 1 184 110" data-dash="150"/>
+                  <line class="dial-tick" x1="135" y1="49" x2="148" y2="27"/>
+                </svg>
+                <div class="dial-label">
+                  <div class="v">34%</div>
+                  <div class="l">gross margin</div>
+                </div>
+                <div class="dial-floor">floor 40% · 5.8 pts under</div>
+              </div>
+
+              <!-- Quote totals -->
+              <div class="qtot">
+                <div class="qhead">
+                  <span class="qn">NORTHWIND MFG</span>
+                  <span class="qacct">420 seats</span>
+                </div>
+                <div class="qrow">
+                  <div class="qr-top"><span class="qr-k">List price</span><span class="qr-v mono">$196,440</span></div>
+                  <div class="qr-bar" data-pct="100"><i style="background:#F3DFA0"></i></div>
+                </div>
+                <div class="qrow">
+                  <div class="qr-top"><span class="qr-k">Discount 33%</span><span class="qr-v mono neg">−$64,780</span></div>
+                  <div class="qr-bar" data-pct="33"><i style="background:linear-gradient(90deg,#EF4444,#F59E0B)"></i></div>
+                </div>
+                <div class="qrow">
+                  <div class="qr-top"><span class="qr-k">Net contract value</span><span class="qr-v mono net">$131,660</span></div>
+                  <div class="qr-bar" data-pct="67"><i style="background:linear-gradient(90deg,#CA8A04,#EAB308)"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="viz-legend">
+              <span class="lg"><span class="sw" style="background:#84CC16"></span> Within guardrail</span>
+              <span class="lg"><span class="sw" style="background:#D97706"></span> Over 25%</span>
+              <span class="lg"><span class="sw" style="background:#DC2626"></span> Below floor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Pipeline at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="84" data-decimals="0">0</span></div><div class="lbl">Open quotes in pipeline</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span class="pre">$</span><span data-count="48" data-decimals="0">0</span><span class="unit">K</span></div><div class="lbl">Average quote value</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="34" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Win rate</div><div class="tag up"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 15l6-6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> +4 pts</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="3.2" data-decimals="1">0</span><span class="unit"> hrs</span></div><div class="lbl">Avg. approval time</div><div class="tag gold"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg> auto-routed</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LEAKS (why margin escapes) ============ -->
+    <section class="section" id="leaks">
+      <div class="wrap drivers-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Where margin escapes</span>
+            <h2>Every deal is a negotiation. Margin leaks in the gaps.</h2>
+            <p>By the time a discounted quote reaches finance, the margin is already gone. QuoteForge catches it at the moment the rep builds the quote — not in a month-end review.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18l6-6 4 3 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 7v4h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Rogue discounting</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="88"><i></i></div>
+              <p class="driver-desc">Reps discount to hit quota, then finance discovers the deal landed below the margin floor.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Slow approvals</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="66"><i></i></div>
+              <p class="driver-desc">Approval chains live in email and Slack, so hot deals stall for days waiting on a sign-off.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v6h6M9 14h6M9 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Inconsistent proposals</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="58"><i></i></div>
+              <p class="driver-desc">Every rep rebuilds the proposal in a deck, so pricing, terms and branding drift deal to deal.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 4l16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Margin blind spots</span>
+                <span class="driver-weight mono">Critical</span>
+              </div>
+              <div class="driver-bar" data-pct="92"><i></i></div>
+              <p class="driver-desc">No one sees the true margin of a quote until it's booked — the single sharpest driver of leakage.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="drivers-note reveal" data-delay="1">
+          <h3>One quote, fully guarded</h3>
+          <p>Every quote decomposes into where the price went — so the discount always comes with a margin your desk can defend.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="118"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">34%</span>
+                <span class="of mono">margin</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#F3DFA0"></span> List price <span class="k mono">$196K</span></li>
+              <li><span class="d" style="background:#DC2626"></span> Discount <span class="k mono">−$65K</span></li>
+              <li><span class="d" style="background:#78716C"></span> Cost of delivery <span class="k mono">$87K</span></li>
+              <li><span class="d" style="background:#CA8A04"></span> Gross margin <span class="k mono">$45K</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--paper));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Configure · price · close</span>
+          <h2>From catalog to signed proposal, in one flow.</h2>
+          <p>QuoteForge turns a product catalog and a set of pricing rules into a quote a rep can build in minutes and a desk can approve with confidence.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 7v10l9 4 9-4V7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 12l9 4 9-4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+            <h3>Configure</h3>
+            <p>Reps assemble the deal from your catalog — seats, modules, support tiers and services — with dependencies and bundles enforced automatically.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Price &amp; guard</h3>
+            <p>Live pricing shows the margin as it's built. AI guidance recommends how far to discount — and blocks anything that breaks the floor.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M14 2v6h6M9 15l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Approve &amp; propose</h3>
+            <p>Out-of-band deals route to the right approver instantly, and a branded proposal generates the moment the quote clears.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The pipeline board and the quote file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a Quotes dashboard for the deal desk and a single-quote detail view where pricing, margin and approvals come together.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Quotes dashboard</span>
+              <h3>See the whole book — and where discounts are drifting.</h3>
+              <p>Open quotes, win rate and approval time sit above a live table, with a discount-vs-guardrail distribution that shows exactly how many deals are running hot.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Quoted-vs-won value across a rolling 12 months</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Margin-health pills on every open quote</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A discount distribution against the 25% guardrail</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.quoteforge.io/quotes</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="QuoteForge Quotes dashboard: open-quote KPIs, a quoted-vs-won value bar chart, an open-quotes table with margin-health pills, and a discount-vs-guardrail distribution.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Quotes dashboard — pipeline KPIs, quote table and discount guardrail health.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Quote detail</span>
+              <h3>The line items, the margin, and what the AI would do.</h3>
+              <p>A full line-item table, a list-to-margin breakdown, an AI discount-guidance card and the live approval chain — everything needed to clear a deal on one screen.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Line items with per-item discount and extended price</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Margin breakdown with a floor gauge</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI recommended-max discount and a routed approval chain</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.quoteforge.io/quote</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="QuoteForge quote detail: a line-item table, a list-to-margin breakdown with a floor gauge, an AI discount-guidance card recommending a 25% cap, and a routed approval chain.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Quote detail — line items, margin breakdown, AI guidance and approval chain.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--paper),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the quote-to-close workflow, end to end.</h2>
+          <p>Configuration, pricing guardrails, approvals and proposals consolidated into one enterprise sales surface — nothing left in a spreadsheet or a deck.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 20V9" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Quotes dashboard</h3>
+            <p>Open-quote KPIs, a quoted-vs-won trend and a live table with margin-health pills on every deal.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M3 7v10l9 4 9-4V7" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg></span>
+            <h3>Catalog configuration</h3>
+            <p>Build deals from products, modules and services with bundles and dependencies enforced.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l1.9 4.3L18 9l-4.1 1.7L12 15l-1.9-4.3L6 9z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3>AI discount guidance</h3>
+            <p>A recommended-max discount per deal, benchmarked on comparable quotes, with the margin impact attached.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Margin guardrails</h3>
+            <p>Discount ceilings and margin floors enforced at quote time — no deal slips below the line unnoticed.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12l4 4 12-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Routed approvals</h3>
+            <p>Out-of-policy quotes route to the right approver automatically, with a full audit trail per deal.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M14 2v6h6M8 13h8M8 17h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Proposal generation</h3>
+            <p>A branded proposal — cover, line items, terms and e-sign — generated the moment the quote is approved.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GUARDRAILS BAND ============ -->
+    <section class="explain section">
+      <div class="wrap explain-inner">
+        <div class="reveal">
+          <span class="eyebrow">Guardrails, not guesswork</span>
+          <h2>A discount your desk can actually defend.</h2>
+          <p>A quote nobody can justify gets escalated, delayed, or quietly written down. QuoteForge shows the margin behind every discount — so the number the rep sends is one finance already trusts.</p>
+          <ul class="explain-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every discount checked against a discount ceiling and a margin floor.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI guidance benchmarks each deal against comparable closed-won quotes.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Real-time margin and discount exposure across the whole open pipeline.</li>
+          </ul>
+        </div>
+        <div class="explain-card reveal" data-delay="1" role="img" aria-label="Quote Q-2026-0836 guardrail check: gross margin 34% against the 40% floor, with the discount, floor gap and approval requirement broken out.">
+          <div class="head">
+            <span class="t">Guardrail check · Q-2026-0836</span>
+            <span class="s mono">34%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#DC2626"></span> Blended discount</span>
+            <span class="mini-bar" data-pct="82"><i style="background:#DC2626"></i></span>
+            <span class="wt mono">33%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#EAB308"></span> Guardrail ceiling</span>
+            <span class="mini-bar" data-pct="62"><i style="background:#EAB308"></i></span>
+            <span class="wt mono">25%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#78716C"></span> Gross margin</span>
+            <span class="mini-bar" data-pct="57"><i style="background:#CA8A04"></i></span>
+            <span class="wt mono">34%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#86EFAC"></span> Margin floor</span>
+            <span class="mini-bar" data-pct="67"><i style="background:#86EFAC"></i></span>
+            <span class="wt mono">40%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern pricing stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in an eight-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Python · pricing engine</span>
+          <span class="chip">Temporal workflows</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Hold the line on margin — on every quote.</h2>
+            <p>We build AI-native products like QuoteForge. Tell us how your team prices deals today and we'll show you what guarded, AI-guided quoting looks like on your catalog.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="QuoteForge home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 3h8l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" stroke="#CA8A04" stroke-width="1.5"/><path d="M14 3v5h5" stroke="#CA8A04" stroke-width="1.5"/><path d="M9 13h7M9 16.5h4.5" stroke="#EAB308" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </span>
+            QuoteForge
+          </a>
+          <p>An AI CPQ and proposal platform — build quotes from your catalog, guard every discount against the margin floor, route approvals, and generate proposals.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#leaks">Why margin leaks</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> QuoteForge</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

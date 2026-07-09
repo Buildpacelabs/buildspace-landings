@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VitalLoop — AI Remote Patient Monitoring for Chronic-Care Teams</title>
+  <meta name="description" content="VitalLoop watches every home reading from chronic-care patients, triages abnormal trends into a prioritized care queue, drafts patient outreach, and tracks billable RPM minutes. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/vital-loop/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#E11D48">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="VitalLoop — Catch a decline at home before it becomes an admission">
+  <meta property="og:description" content="An AI remote patient monitoring platform that triages home vitals into a prioritized care queue, drafts outreach, and tracks billable RPM minutes.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/vital-loop/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/vital-loop/assets/dashboard.webp">
+  <meta property="og:image:alt" content="VitalLoop Care Queue dashboard showing daily readings volume, a risk-tiered patient queue, and alert types.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VitalLoop — AI remote patient monitoring for chronic care">
+  <meta name="twitter:description" content="Triage home vitals into a prioritized care queue, draft patient outreach, and track billable RPM minutes. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/vital-loop/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E11D48'/%3E%3Cpath d='M5 17h4l2-6 3 11 2.5-7 1.5 2H27' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VitalLoop",
+    "description": "An AI remote patient monitoring (RPM) platform for chronic-care teams that ingests home vitals, triages abnormal trends into a prioritized care queue, drafts patient outreach, and tracks billable RPM minutes.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="VitalLoop home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h3.5l1.8-4 3 9 2.2-6 1.5 3H21" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        VitalLoop
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#signals">What we watch</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live reading monitoring
+          </span>
+          <h1>Catch a decline at home <span class="accent">before the ER does</span></h1>
+          <p class="hero-sub">VitalLoop watches every home reading from your chronic-care patients, triages the ones trending the wrong way into a prioritized care queue, and drafts the outreach — while it tracks every billable RPM minute.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 486 patients monitored</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Explainable triage</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> RPM minutes tracked</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: ECG + vitals + adherence -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="VitalLoop live monitoring preview: a heartbeat trace, a patient's home vitals (blood pressure 158/96 rising, glucose 184, SpO2 96%), and 82% reading adherence.">
+            <div class="viz-topbar">
+              <span class="lbl">Care Queue · live</span>
+              <span class="viz-live"><span class="dot"></span> monitoring</span>
+            </div>
+
+            <!-- ECG band -->
+            <div class="viz-ecg">
+              <div class="ecg-head">
+                <span class="bpm">1,204<small> readings today</small></span>
+                <span class="tag">+12% vs avg</span>
+              </div>
+              <div class="ecg-chart">
+                <svg viewBox="0 0 320 96" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ecgFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#E11D48" stop-opacity="0.16"/>
+                      <stop offset="100%" stop-color="#E11D48" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <g class="ecg-grid">
+                    <line x1="0" y1="20" x2="320" y2="20"/>
+                    <line x1="0" y1="38" x2="320" y2="38"/>
+                    <line x1="0" y1="58" x2="320" y2="58"/>
+                    <line x1="0" y1="76" x2="320" y2="76"/>
+                    <line x1="64" y1="0" x2="64" y2="96"/>
+                    <line x1="128" y1="0" x2="128" y2="96"/>
+                    <line x1="192" y1="0" x2="192" y2="96"/>
+                    <line x1="256" y1="0" x2="256" y2="96"/>
+                  </g>
+                  <path class="ecg-area" d="M0,58 L16,58 L22,54 L28,58 L34,61 L38,28 L42,72 L46,58 L56,50 L64,58 L80,58 L96,58 L102,54 L108,58 L114,61 L118,28 L122,72 L126,58 L136,50 L144,58 L160,58 L176,58 L182,54 L188,58 L194,61 L198,28 L202,72 L206,58 L216,50 L224,58 L240,58 L256,58 L262,54 L268,58 L274,61 L278,28 L282,72 L286,58 L296,50 L304,58 L320,58 L320,96 L0,96 Z"/>
+                  <path class="ecg-line" d="M0,58 L16,58 L22,54 L28,58 L34,61 L38,28 L42,72 L46,58 L56,50 L64,58 L80,58 L96,58 L102,54 L108,58 L114,61 L118,28 L122,72 L126,58 L136,50 L144,58 L160,58 L176,58 L182,54 L188,58 L194,61 L198,28 L202,72 L206,58 L216,50 L224,58 L240,58 L256,58 L262,54 L268,58 L274,61 L278,28 L282,72 L286,58 L296,50 L304,58 L320,58"/>
+                  <circle class="ecg-dot" cx="320" cy="58" r="4"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- vitals + adherence ring -->
+            <div class="viz-body">
+              <div class="viz-vitals">
+                <div class="vital">
+                  <span class="vi r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 3 10 2-5h5"/></svg></span>
+                  <div><div class="vk">Blood pressure</div><div class="vv">158/96</div></div>
+                  <span class="vd up">↑ high</span>
+                </div>
+                <div class="vital">
+                  <span class="vi a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 21a6 6 0 0 0 6-6c0-4-6-9-6-9s-6 5-6 9a6 6 0 0 0 6 6z"/></svg></span>
+                  <div><div class="vk">Fasting glucose</div><div class="vv">184</div></div>
+                  <span class="vd dn">watch</span>
+                </div>
+                <div class="vital">
+                  <span class="vi t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0-9-9M3 12l3-1 2 3 2-6 2 3h3"/></svg></span>
+                  <div><div class="vk">Oxygen (SpO₂)</div><div class="vv">96%</div></div>
+                  <span class="vd ok">stable</span>
+                </div>
+              </div>
+              <div class="viz-ring">
+                <div class="vr-wrap">
+                  <svg viewBox="0 0 96 96" aria-hidden="true">
+                    <circle class="rt" cx="48" cy="48" r="40"/>
+                    <circle class="rf" cx="48" cy="48" r="40" data-dash="206"/>
+                  </svg>
+                  <div class="vr-label"><span class="n">82%</span></div>
+                </div>
+                <span class="cap">Reading adherence</span>
+              </div>
+            </div>
+
+            <div class="viz-legend">
+              <span class="lg"><span class="sw c"></span> Critical</span>
+              <span class="lg"><span class="sw e"></span> Elevated</span>
+              <span class="lg"><span class="sw s"></span> Stable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Program at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="486" data-decimals="0">0</span></div><div class="lbl">Patients monitored</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="1204" data-decimals="0">0</span></div><div class="lbl">Readings today</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="23" data-decimals="0">0</span></div><div class="lbl">Open alerts</div><div class="tag alert"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> 6 critical now</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="8940" data-decimals="0">0</span><span class="unit">min</span></div><div class="lbl">Billable RPM minutes</div><div class="tag bill"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> June cycle</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SIGNALS ============ -->
+    <section class="section" id="signals">
+      <div class="wrap signals-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">What VitalLoop watches</span>
+            <h2>Deterioration is rarely silent. It shows up in the readings.</h2>
+            <p>VitalLoop turns the stream of home devices into ranked alerts — every flag tied to the reading that triggered it, so a nurse knows exactly why a patient surfaced.</p>
+          </div>
+          <div class="signal-list">
+            <div class="signal s1">
+              <div class="signal-top">
+                <span class="signal-name"><span class="signal-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h4l2-5 3 10 2-5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>BP out of range</span>
+                <span class="signal-count mono">9 open</span>
+              </div>
+              <div class="signal-bar" data-pct="82"><i></i></div>
+              <p class="signal-desc">Systolic over 150 or diastolic over 95 on the connected cuff — the most common trigger in the panel.</p>
+            </div>
+            <div class="signal s2">
+              <div class="signal-top">
+                <span class="signal-name"><span class="signal-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v4M12 21a6 6 0 0 0 6-6c0-4-6-9-6-9s-6 5-6 9a6 6 0 0 0 6 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Glucose spike</span>
+                <span class="signal-count mono">6 open</span>
+              </div>
+              <div class="signal-bar" data-pct="60"><i></i></div>
+              <p class="signal-desc">Fasting reading above 200 mg/dL from the glucometer, weighted higher for insulin-dependent patients.</p>
+            </div>
+            <div class="signal s3">
+              <div class="signal-top">
+                <span class="signal-name"><span class="signal-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20h16M6 20V9l6-4 6 4v11M9 20v-5h6v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Weight gain (CHF)</span>
+                <span class="signal-count mono">5 open</span>
+              </div>
+              <div class="signal-bar" data-pct="48"><i></i></div>
+              <p class="signal-desc">More than 3 lb in 48 hours on the cellular scale — the earliest tell of fluid retention.</p>
+            </div>
+            <div class="signal s4">
+              <div class="signal-top">
+                <span class="signal-name"><span class="signal-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5M8.5 15.5 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Missed readings</span>
+                <span class="signal-count mono">3 open</span>
+              </div>
+              <div class="signal-bar" data-pct="34"><i></i></div>
+              <p class="signal-desc">No upload in 48 hours — a data gap that quietly hides the trend, so re-engagement outreach queues automatically.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="signals-note reveal" data-delay="1">
+          <h3>One patient, fully attributed</h3>
+          <p>Every risk score decomposes into the drivers that produced it — with weights, not a black-box number. Here's how one critical patient breaks down.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="269"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">78</span>
+                <span class="of mono">/ 100</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#7C3AED"></span> Rapid weight gain <span class="k mono">39%</span></li>
+              <li><span class="d" style="background:#E11D48"></span> BP trending up <span class="k mono">29%</span></li>
+              <li><span class="d" style="background:#D97706"></span> Diuretic adherence <span class="k mono">20%</span></li>
+              <li><span class="d" style="background:#A4939A"></span> Missed readings <span class="k mono">12%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW: capture -> triage -> reach ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">From reading to outreach</span>
+          <h2>Measure it. Triage it. Reach the patient.</h2>
+          <p>VitalLoop closes the loop from a reading taken at the kitchen table to the call a nurse should make today — and logs the billable minute on the way.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11h2l1.5-3 2 5 1.5-2H17M9 22h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Capture at home</h3>
+            <p>Connected BP cuffs, scales, glucometers and pulse-ox devices stream readings straight into the record — no app fiddling for the patient.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="18" r="2.4" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Triage into the queue</h3>
+            <p>The model scores every trend, ranks abnormal readings into one worst-first care queue, and attributes each alert to the signal behind it.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Reach out &amp; bill</h3>
+            <p>VitalLoop drafts the patient message or call script for the nurse to approve — and logs every qualifying RPM minute toward the billing threshold.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The care queue and the patient file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a population Care Queue for triage and a per-patient detail view for the nurse running the outreach.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Care Queue board</span>
+              <h3>Triage the whole panel in one glance.</h3>
+              <p>Live readings, open alerts and billable RPM minutes sit above a risk-tiered patient table — so the patients trending the wrong way are always on top.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 14-day readings-volume trend and adherence at a glance</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Worst-first queue by tier: Critical, Elevated, Stable</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Alert mix and drafted outreach ready for review</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.vitalloop.health/queue</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="VitalLoop Care Queue board: a 14-day daily readings-volume chart, a risk-tiered patient queue with latest vitals and trend arrows, alert types by trigger, and 82% reading adherence.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Care Queue board — 486 patients monitored, 23 open alerts, 8,940 billable RPM minutes.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Patient detail</span>
+              <h3>Every vital, every driver, on one file.</h3>
+              <p>Thirty-day sparklines for blood pressure, glucose and weight, a weighted AI risk assessment, an alert timeline — capped by a drafted outreach message the nurse approves.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 78/100 deterioration-risk ring with RPM minutes</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Weighted risk drivers and medication adherence bars</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> An 86%-confidence care action with a drafted message</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.vitalloop.health/patient</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="VitalLoop patient detail for Eleanor Hayes: 30-day blood pressure, glucose and weight sparklines, a weighted AI risk assessment, an alert timeline, medication adherence bars, and a drafted outreach message.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Patient detail — the vitals, the drivers, and the outreach to send.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the chronic-care RPM workflow, end to end.</h2>
+          <p>Ingestion, triage, outreach and billing consolidated into one care-team surface — nothing left in a spreadsheet.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 20V9" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Care Queue board</h3>
+            <p>Live readings, open alerts and RPM minutes above a worst-first, risk-tiered patient table.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="18" r="2.4" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>AI triage</h3>
+            <p>Every abnormal trend scored and ranked, so the patients who need a nurse rise to the top.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 18v-6M11 18V6M17 18v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Explainable risk</h3>
+            <p>Each score decomposes into weighted drivers: weight, blood pressure, adherence, missed readings.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h4l2-5 3 10 2-5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Home vitals timeline</h3>
+            <p>Thirty-day sparklines for blood pressure, glucose, weight and SpO₂ on every patient file.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Drafted outreach</h3>
+            <p>A warm, plain-language message or call script the nurse reviews and approves in one tap.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>RPM billing tracker</h3>
+            <p>Every qualifying minute logged toward the 20-minute threshold, per patient, per cycle.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPLAINABLE BAND ============ -->
+    <section class="explain section">
+      <div class="wrap explain-inner">
+        <div class="reveal">
+          <span class="eyebrow">Clinical-grade, explainable</span>
+          <h2>Alerts a nurse can trust and act on.</h2>
+          <p>A score nobody understands gets ignored on a busy panel. VitalLoop shows the weighted readings behind every risk flag — so the recommendation carries its own justification, and a human stays in the loop.</p>
+          <ul class="explain-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every risk score decomposes into named, weighted drivers.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Care actions arrive with a confidence estimate, not false certainty.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Nurses approve every message before it reaches a patient.</li>
+          </ul>
+        </div>
+        <div class="explain-card reveal" data-delay="1" role="img" aria-label="Deterioration risk breakdown for patient Eleanor H.: a 78 out of 100 score attributed to rapid weight gain 39%, blood pressure trending up 29%, diuretic adherence 20% and missed readings 12%.">
+          <div class="head">
+            <span class="t">Deterioration risk · Eleanor H.</span>
+            <span class="s mono">78</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#7C3AED"></span> Rapid weight gain</span>
+            <span class="mini-bar" data-pct="39"><i style="background:#A78BFA"></i></span>
+            <span class="wt mono">39%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#E11D48"></span> BP trending up</span>
+            <span class="mini-bar" data-pct="29"><i style="background:#FB7185"></i></span>
+            <span class="wt mono">29%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#D97706"></span> Diuretic adherence</span>
+            <span class="mini-bar" data-pct="20"><i style="background:#FBBF6A"></i></span>
+            <span class="wt mono">20%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#A4939A"></span> Missed readings</span>
+            <span class="mini-bar" data-pct="12"><i style="background:#C9BCC0"></i></span>
+            <span class="wt mono">12%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Interoperable stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in a nine-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">HL7 FHIR</span>
+          <span class="chip">Python · risk model</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Bring every home reading into one care queue.</h2>
+            <p>We build AI-native products like VitalLoop. Tell us about your chronic-care panel and we'll show you what an explainable RPM triage system looks like on your patients' data.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="VitalLoop home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h3.5l1.8-4 3 9 2.2-6 1.5 3H21" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            VitalLoop
+          </a>
+          <p>An AI remote patient monitoring platform that triages home vitals into a prioritized care queue, drafts outreach, and tracks billable RPM minutes.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#signals">What we watch</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> VitalLoop</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

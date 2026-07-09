@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notewell — AI Meeting Assistant: Recaps, Decisions & Action Items</title>
+  <meta name="description" content="Notewell records and transcribes every meeting, extracts the decisions and action items, assigns owners and due dates, and tracks follow-through until it's done. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/notewell/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#4F46E5">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="Notewell — Every meeting, turned into finished work">
+  <meta property="og:description" content="An AI meeting assistant that captures decisions and action items, assigns owners and due dates, and tracks follow-through.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/notewell/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/notewell/assets/dashboard.webp">
+  <meta property="og:image:alt" content="Notewell Meetings dashboard showing weekly meetings, action items captured, and follow-through per meeting.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notewell — Every meeting, turned into finished work">
+  <meta name="twitter:description" content="Records, transcribes, and turns meetings into decisions, owned action items, and tracked follow-through. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/notewell/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Cg stroke='%23fff' stroke-width='2.1' stroke-linecap='round'%3E%3Cpath d='M8 16v1'/%3E%3Cpath d='M12 12v8'/%3E%3Cpath d='M16 8v16'/%3E%3Cpath d='M20 11v10'/%3E%3Cpath d='M24 15v2'/%3E%3C/g%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Notewell",
+    "description": "An AI meeting assistant that records and transcribes meetings, extracts decisions and action items, assigns owners and due dates, and tracks follow-through until it's complete.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="Notewell home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round"><path d="M4 12v1M8 8v8M12 4v16M16 7v10M20 11v2"/></svg>
+        </span>
+        Notewell
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why Notewell</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live transcription &amp; recap
+          </span>
+          <h1>Every meeting, turned into <span class="accent">finished work</span></h1>
+          <p class="hero-sub">Notewell records and transcribes your meetings, pulls out the decisions and action items, assigns owners and due dates, and tracks follow-through — so nothing agreed in the room quietly disappears.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Speaker-labeled transcripts</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Owners &amp; due dates, automatically</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Follow-through you can see</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: live recorder → recap -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="rec-card" role="img" aria-label="Notewell live recap: a waveform capturing the Q3 Roadmap Review, two transcript lines, a decision and an action item captured with owner and due date, and a follow-through trend rising to 86%.">
+            <div class="rec-top">
+              <span class="lbl">Q3 Roadmap Review · live</span>
+              <span class="rec-live"><span class="dot"></span> REC 48:12</span>
+            </div>
+
+            <div class="rec-wave" aria-hidden="true">
+              <span style="--h:42%;--d:0s"></span><span style="--h:70%;--d:-.06s"></span><span style="--h:32%;--d:-.12s"></span><span style="--h:86%;--d:-.18s"></span><span style="--h:54%;--d:-.24s"></span><span style="--h:98%;--d:-.30s"></span><span style="--h:60%;--d:-.36s"></span><span style="--h:100%;--d:-.42s"></span><span style="--h:46%;--d:-.48s"></span><span style="--h:76%;--d:-.54s"></span><span style="--h:36%;--d:-.60s"></span><span style="--h:88%;--d:-.66s"></span><span style="--h:58%;--d:-.72s"></span><span style="--h:100%;--d:-.78s"></span><span style="--h:44%;--d:-.84s"></span><span style="--h:82%;--d:-.90s"></span><span style="--h:52%;--d:-.96s"></span><span style="--h:92%;--d:-1.02s"></span><span style="--h:38%;--d:-1.08s"></span><span style="--h:72%;--d:-1.14s"></span><span style="--h:50%;--d:-1.20s"></span><span style="--h:90%;--d:-1.26s"></span><span style="--h:34%;--d:-1.32s"></span><span style="--h:80%;--d:-1.38s"></span><span style="--h:62%;--d:-1.44s"></span><span style="--h:100%;--d:-1.50s"></span><span style="--h:48%;--d:-1.56s"></span><span style="--h:84%;--d:-1.62s"></span><span style="--h:40%;--d:-1.68s"></span><span style="--h:74%;--d:-1.74s"></span>
+            </div>
+
+            <div class="rec-stream">
+              <div class="rec-line"><span class="who" style="--c:#4F46E5">PK</span><p>Let's ship onboarding v2 to a 10% cohort in July, gated on activation lift.</p></div>
+              <div class="rec-line"><span class="who" style="--c:#0EA5A0">MB</span><p>Keep the billing pilot to one design-partner account this quarter.</p></div>
+            </div>
+
+            <div class="rec-caps">
+              <span class="cap dec"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> Decision captured · onboarding v2 → 10% cohort</span>
+              <span class="cap act"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11l2 2 5-5M4 5h16M4 12h4M4 19h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Action → Priya Kapoor · due Jun 19</span>
+            </div>
+
+            <div class="rec-foot">
+              <div class="ff-head">
+                <span>Follow-through</span>
+                <span class="val mono">86%</span>
+              </div>
+              <div class="nrr-chart">
+                <svg viewBox="0 0 260 80" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ffFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.22"/>
+                      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <line class="nrr-baseline" x1="0" y1="58" x2="260" y2="58"/>
+                  <path class="nrr-area" d="M10 66 L40 60 L70 62 L100 54 L130 50 L160 44 L190 40 L220 32 L250 26 L250 76 L10 76 Z"/>
+                  <path class="nrr-line" d="M10 66 L40 60 L70 62 L100 54 L130 50 L160 44 L190 40 L220 32 L250 26"/>
+                  <circle class="nrr-dot" cx="250" cy="26" r="4.5"/>
+                </svg>
+              </div>
+              <div class="nrr-foot"><span>Action items · 8 weeks</span><span>62% → 86%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="This week at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="42" data-decimals="0">0</span></div><div class="lbl">Meetings this week</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="168" data-decimals="0">0</span></div><div class="lbl">Action items captured</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M9 11l2 2 5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> owned &amp; dated</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="86" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Follow-through rate</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="21" data-decimals="0">0</span><span class="unit">hrs</span></div><div class="lbl">Hours saved on notes</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/></svg> this week</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY / DRIVERS ============ -->
+    <section class="section" id="why">
+      <div class="wrap drivers-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Why meetings leak</span>
+            <h2>The meeting ends. The follow-through shouldn't.</h2>
+            <p>Decisions get made and to-dos get promised — then the recording sits unwatched and the notes never become work. Notewell closes that gap the moment the call ends.</p>
+          </div>
+          <div class="driver-list">
+            <div class="driver d1">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11l2 2 5-5M4 5h16M4 12h4M4 19h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Action items never captured</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="63"><i></i></div>
+              <p class="driver-desc">The to-do is spoken, everyone nods — and it never makes it into a system anyone will check.</p>
+            </div>
+            <div class="driver d2">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h9l5 5v13H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v6h6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Decisions left undocumented</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="48"><i></i></div>
+              <p class="driver-desc">Two weeks later nobody agrees on what was actually decided — or who agreed to it.</p>
+            </div>
+            <div class="driver d3">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.4" stroke="currentColor" stroke-width="2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 8v6M14 11h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>No owner or due date</span>
+                <span class="driver-weight mono">High</span>
+              </div>
+              <div class="driver-bar" data-pct="57"><i></i></div>
+              <p class="driver-desc">A task with no name and no date attached is a task nobody is actually going to do.</p>
+            </div>
+            <div class="driver d4">
+              <div class="driver-top">
+                <span class="driver-name"><span class="driver-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" stroke="currentColor" stroke-width="2"/></svg></span>Recap never shared</span>
+                <span class="driver-weight mono">Medium</span>
+              </div>
+              <div class="driver-bar" data-pct="39"><i></i></div>
+              <p class="driver-desc">Whoever missed the call is left guessing, and the room re-litigates it all next week.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="drivers-note reveal" data-delay="1">
+          <h3>One meeting, fully captured</h3>
+          <p>Notewell doesn't just transcribe — it structures. Every recap ships with decisions, owned action items and a follow-through score you can hold people to.</p>
+          <div class="attrib-ring">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="297"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">86</span>
+                <span class="of mono">follow-through</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#4F46E5"></span> Decisions captured <span class="k mono">4</span></li>
+              <li><span class="d" style="background:#7C74F0"></span> Action items <span class="k mono">9</span></li>
+              <li><span class="d" style="background:#0E9F6E"></span> With owner &amp; date <span class="k mono">100%</span></li>
+              <li><span class="d" style="background:#D97706"></span> Completed on time <span class="k mono">86%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">From audio to accountability</span>
+          <h2>Record it. Extract it. Track it to done.</h2>
+          <p>Notewell runs the whole path from a live conversation to owned, tracked work — with no one taking manual minutes in the middle.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3" stroke="currentColor" stroke-width="2"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Record &amp; transcribe</h3>
+            <p>Notewell joins the call or takes an upload and produces a speaker-labeled transcript in real time — no note-taker required.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l1.9 4.3L18 9l-4.1 1.7L12 15l-1.9-4.3L6 9l4.1-1.7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <span class="step-n mono">STEP 02</span>
+            <h3>Extract decisions &amp; actions</h3>
+            <p>The model reads the transcript, pulls out every decision and action item, and drafts a clean, shareable recap in seconds.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11l2 2 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Assign &amp; track</h3>
+            <p>Each action item gets an owner and a due date, then Notewell tracks follow-through until every item is closed out.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The workspace view and the meeting recap, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a Meetings dashboard for the whole team and a per-meeting recap for the decisions and action items.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Meetings dashboard</span>
+              <h3>See every meeting — and whether it actually landed.</h3>
+              <p>Weekly meetings, action items captured, overdue and hours saved sit above a table where follow-through is a column you can sort on.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Meetings &amp; action-items trend over the last 8 weeks</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Follow-through % per meeting, colour-coded</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Open action items grouped by owner, with a decision log</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.notewell.io/meetings</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="Notewell Meetings dashboard: stat tiles for meetings this week, action items captured, overdue and hours saved, a meetings-and-action-items trend chart, a meetings table with attendees and follow-through, and a decision log.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Meetings dashboard — weekly KPIs, trend chart, and follow-through per meeting.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Meeting recap</span>
+              <h3>The transcript, distilled into decisions and owners.</h3>
+              <p>An AI summary up top, the key decisions listed out, an action-items table with statuses, and a transcript with the exact moments Notewell flagged.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI summary and key-decisions list generated from the call</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Action items with owner, due date and a status pill</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A waveform and transcript with AI-flagged moments highlighted</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.notewell.io/recap</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="Notewell meeting recap for the Q3 Roadmap Review: a waveform strip, an AI summary, a key-decisions list, an action-items table with owners and status pills, and a transcript excerpt with AI-flagged moments.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Meeting recap — summary, decisions, owned action items, and a flagged transcript.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the whole life of a meeting.</h2>
+          <p>Transcription, recap, decisions, owned action items and follow-through — one surface, from the call to the closed task.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3" stroke="currentColor" stroke-width="2"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Live transcription</h3>
+            <p>A speaker-labeled transcript in real time, from a live call or an uploaded recording.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l1.9 4.3L18 9l-4.1 1.7L12 15l-1.9-4.3L6 9l4.1-1.7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+            <h3>AI recap &amp; summary</h3>
+            <p>A clean, shareable summary of what happened — ready the moment the call ends.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 11l2 2 5-5M4 5h16M4 12h4M4 19h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Decision &amp; action extraction</h3>
+            <p>Every decision and to-do pulled out of the conversation automatically, with context.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.4" stroke="currentColor" stroke-width="2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="15" y="14" width="7" height="6" rx="1" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Owners &amp; due dates</h3>
+            <p>Each action item is assigned to a person and dated — a task someone will actually do.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16l4-5 4 3 5-7 3 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Follow-through tracking</h3>
+            <p>A per-meeting and per-owner view of what shipped, what's due soon and what's overdue.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="18" cy="5" r="3" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="12" r="3" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="3" stroke="currentColor" stroke-width="2"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Shareable recaps</h3>
+            <p>Send the recap to everyone who was — and wasn't — in the room, in one click.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIFFERENTIATOR BAND ============ -->
+    <section class="explain section">
+      <div class="wrap explain-inner">
+        <div class="reveal">
+          <span class="eyebrow">More than a transcript</span>
+          <h2>Notes are where follow-through goes to die.</h2>
+          <p>Plenty of tools will hand you a wall of text. Notewell hands you owned, dated, tracked work — so the meeting produces outcomes, not just a recording nobody opens.</p>
+          <ul class="explain-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every action item lands with an owner and a due date.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Decisions are logged and attributed, not left to memory.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Follow-through is a number leadership can actually track.</li>
+          </ul>
+        </div>
+        <div class="explain-card reveal" data-delay="1" role="img" aria-label="Action items from the Q3 Roadmap Review: three tasks with owners and due dates, marked done, in progress and overdue.">
+          <div class="ec-head">
+            <span class="t">Action items · Q3 Roadmap Review</span>
+            <span class="tag">86% on time</span>
+          </div>
+          <div class="task">
+            <span class="who" style="background:#475569">RC</span>
+            <div class="tb"><b>Update activation-lift dashboard</b><small>Rafael Cruz · due Jun 17</small></div>
+            <span class="pill done">Done</span>
+          </div>
+          <div class="task">
+            <span class="who" style="background:#4F46E5">PK</span>
+            <div class="tb"><b>Share cohort report &amp; setup spec</b><small>Priya Kapoor · due Jun 19</small></div>
+            <span class="pill prog">In progress</span>
+          </div>
+          <div class="task">
+            <span class="who" style="background:#9333EA">DW</span>
+            <div class="tb"><b>Draft mobile read-only scope</b><small>Dana Whitfield · due Jun 13</small></div>
+            <span class="pill over">Overdue</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Real-time audio stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in an eight-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Python · FastAPI</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Streaming ASR</span>
+          <span class="chip">WebSockets</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Turn every meeting into finished work.</h2>
+            <p>We build AI-native products like Notewell. Tell us how your team runs meetings and we'll show you what recaps, owned action items and tracked follow-through look like on your calls.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Notewell home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round"><path d="M4 12v1M8 8v8M12 4v16M16 7v10M20 11v2"/></svg>
+            </span>
+            Notewell
+          </a>
+          <p>An AI meeting assistant that captures decisions and action items, assigns owners and due dates, and tracks follow-through to done.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#why">Why Notewell</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> Notewell</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

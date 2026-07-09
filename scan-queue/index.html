@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScanQueue — AI Radiology Worklist Prioritization for Teleradiology</title>
+  <meta name="description" content="ScanQueue reads incoming CT, MR and X-ray studies, flags suspected critical findings for STAT read, and orders every radiologist's worklist by acuity and SLA — so the sickest patient is read first, not FIFO. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/scan-queue/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#6366F1">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="ScanQueue — Read the sickest patient first, not FIFO">
+  <meta property="og:description" content="An AI radiology worklist that flags suspected critical findings and orders every read by acuity and SLA.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/scan-queue/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/scan-queue/assets/dashboard.webp">
+  <meta property="og:image:alt" content="ScanQueue priority worklist showing critical findings escalated to the top of a radiologist's reading queue.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ScanQueue — Read the sickest patient first, not FIFO">
+  <meta name="twitter:description" content="AI radiology worklist prioritization — flag critical findings and rank every read by acuity and SLA. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/scan-queue/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B0E18'/%3E%3Crect x='6' y='6' width='20' height='20' rx='5' fill='none' stroke='%236366F1' stroke-width='2'/%3E%3Cpath d='M12 12h5a3 3 0 0 1 0 6h-4l4 3' fill='none' stroke='%23A5B4FC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ScanQueue",
+    "description": "An AI radiology worklist prioritization platform that flags suspected critical findings on incoming CT, MR and X-ray studies and orders every radiologist's worklist by acuity and SLA — so the sickest patient is read first, not first-in-first-out.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="ScanQueue home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="4" stroke="#fff" stroke-width="1.8"/><path d="M8 8h5a3 3 0 0 1 0 6H9l4 3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Scan<b>Queue</b>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why acuity</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live worklist · 137 studies
+          </span>
+          <h1>Read the sickest patient <span class="accent">first</span>, not first-in&#8209;line</h1>
+          <p class="hero-sub">ScanQueue reads every incoming CT, MR and X-ray, flags suspected critical findings for a STAT read, and re-orders each radiologist's worklist by acuity and SLA — so an intracranial bleed never waits behind a routine chest film.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> CT · MR · X-ray</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Radiologist-in-the-loop</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> SLA-aware routing</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: reading-room console -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="viz-card" role="img" aria-label="Reading-room console preview: an abstract head CT with an AI bounding box on a suspected hemorrhage, beside a worklist where the critical study is escalated to the top of the queue.">
+            <div class="viz-topbar">
+              <span class="lbl">Priority worklist · live</span>
+              <span class="viz-live"><span class="dot"></span> triaging</span>
+            </div>
+            <div class="viz-body">
+              <!-- Abstract scan -->
+              <div class="viz-scan">
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="hbrain" cx="50%" cy="46%" r="60%">
+                      <stop offset="0%" stop-color="#39404f"/><stop offset="62%" stop-color="#242a37"/><stop offset="100%" stop-color="#161a24"/>
+                    </radialGradient>
+                    <radialGradient id="hbleed" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#f4f6fb"/><stop offset="55%" stop-color="#cfd5e6"/><stop offset="100%" stop-color="#8f97b3" stop-opacity="0"/>
+                    </radialGradient>
+                  </defs>
+                  <rect width="200" height="200" fill="#05070d"/>
+                  <ellipse cx="100" cy="100" rx="78" ry="72" fill="none" stroke="#c9cdd8" stroke-width="3.4" opacity="0.9"/>
+                  <ellipse cx="100" cy="101" rx="70" ry="64" fill="url(#hbrain)"/>
+                  <path d="M100 34 Q105 100 100 168" stroke="#7b8296" stroke-width="1.6" fill="none" opacity="0.8"/>
+                  <path d="M84 86 q-11 4 -11 18 q0 9 9 10 q8 1 9 -7 q3 -13 -7 -21z" fill="#0c0f18"/>
+                  <path d="M116 86 q11 4 11 18 q0 9 -9 10 q-8 1 -9 -7 q-3 -13 7 -21z" fill="#0c0f18"/>
+                  <ellipse class="bleed" cx="70" cy="72" rx="22" ry="17" fill="url(#hbleed)"/>
+                  <rect class="roi-box" x="46" y="50" width="50" height="44" rx="3"/>
+                  <rect x="46" y="38" width="86" height="12" rx="2.5" fill="#4F46E5"/>
+                  <text class="roi-label" x="50" y="47">HEMORRHAGE 98%</text>
+                  <text class="ov" x="8" y="14">CT · HEAD</text>
+                  <text class="ov" x="150" y="14">Se 2/64</text>
+                </svg>
+              </div>
+
+              <!-- Mini worklist -->
+              <div class="viz-list">
+                <div class="viz-row crit">
+                  <span class="rk">1</span>
+                  <span class="who"><b>W. Boyd</b><small>CT Head · 9m SLA</small></span>
+                  <span class="vpill c">CRITICAL</span>
+                </div>
+                <div class="viz-row crit">
+                  <span class="rk">2</span>
+                  <span class="who"><b>R. Iqbal</b><small>CTA Chest · 12m SLA</small></span>
+                  <span class="vpill c">CRITICAL</span>
+                </div>
+                <div class="viz-row">
+                  <span class="rk">3</span>
+                  <span class="who"><b>A. Ferreira</b><small>CT Abd · 22m SLA</small></span>
+                  <span class="vpill p">PRIORITY</span>
+                </div>
+                <div class="viz-row">
+                  <span class="rk">4</span>
+                  <span class="who"><b>H. Green</b><small>XR Chest · 1h SLA</small></span>
+                  <span class="vpill r">ROUTINE</span>
+                </div>
+                <div class="viz-foot"><span>Ordered by acuity, then SLA</span><span><b>137</b> queued</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Reading room at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="137" data-decimals="0">0</span></div><div class="lbl">Studies triaged live</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="6" data-decimals="0">0</span></div><div class="lbl">Critical findings flagged</div><div class="tag crit"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> STAT read now</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="24" data-decimals="0">0</span><span class="unit">min</span></div><div class="lbl">Avg report turnaround</div><div class="tag good"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 19V5M6 13l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 9 min faster</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono"><span data-count="98" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Top-finding AI confidence</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY: FIFO vs acuity ============ -->
+    <section class="section" id="why">
+      <div class="wrap why-grid">
+        <div class="reveal">
+          <span class="eyebrow">Why order matters</span>
+          <h2>A first-in-first-out queue reads the calmest patient first.</h2>
+          <p style="margin-top:18px;color:var(--slate);font-size:clamp(16px,1.4vw,18px)">When studies are read in arrival order, an emergent intracranial bleed can sit behind a stack of routine films. ScanQueue reads every study on arrival, flags the emergent ones, and pushes them to the top — before a human has even opened the list.</p>
+          <ul class="why-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Suspected critical findings are surfaced within seconds of arrival, not minutes into a shift.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every study carries an acuity rank and a live SLA countdown, so nothing quietly breaches.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> The radiologist stays in the loop — the AI orders the list, the physician reads and signs.</li>
+          </ul>
+        </div>
+
+        <div class="compare reveal" data-delay="1">
+          <h3>Same 6 studies, two orders</h3>
+          <span class="csub">arrival vs. acuity</span>
+          <div class="queue">
+            <div class="qh">
+              <span class="qname"><span class="qi bad"><svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>First-in-first-out</span>
+              <span class="qbadge bad">bleed read 6th</span>
+            </div>
+            <div class="qtiles">
+              <div class="qtile rest">XR</div>
+              <div class="qtile rest">MR</div>
+              <div class="qtile rest">XR</div>
+              <div class="qtile rest">CT</div>
+              <div class="qtile rest">US</div>
+              <div class="qtile crit">CT<span class="qc">!</span></div>
+            </div>
+          </div>
+          <div class="queue">
+            <div class="qh">
+              <span class="qname"><span class="qi good"><svg viewBox="0 0 24 24" width="14" height="14" fill="none"><path d="M4 6h16M4 12h16M4 18h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>ScanQueue acuity order</span>
+              <span class="qbadge good">bleed read 1st</span>
+            </div>
+            <div class="qtiles">
+              <div class="qtile crit first">CT<span class="qc">!</span></div>
+              <div class="qtile rest">CT</div>
+              <div class="qtile rest">US</div>
+              <div class="qtile rest">MR</div>
+              <div class="qtile rest">XR</div>
+              <div class="qtile rest">XR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,var(--base),#0B0E18);border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">From arrival to read</span>
+          <h2>Ingest. Rank. Route.</h2>
+          <p>ScanQueue sits between the modality and the reading room — turning a raw stream of studies into an ordered, SLA-aware worklist for every radiologist on shift.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 4v16" stroke="currentColor" stroke-width="2"/><path d="M13 13l2 2 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Ingest &amp; detect</h3>
+            <p>Every CT, MR and X-ray is analysed on arrival. Detection models look for emergent findings — hemorrhage, pulmonary embolism, large-vessel occlusion, pneumothorax — and attach a confidence score.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h10M4 12h7M4 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M17 5v14M17 19l-3-3M17 19l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Rank by acuity &amp; SLA</h3>
+            <p>Each study gets an acuity rank and a live SLA countdown. Critical flags jump the queue; the rest order by clinical priority and time remaining — never by arrival alone.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="17" r="3" stroke="currentColor" stroke-width="2"/><path d="M10 7h5a2 2 0 0 1 2 2v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Route to the right read</h3>
+            <p>Studies land on the right radiologist's list — matched to subspecialty and current load — with a draft impression and prior comparison ready before the read even starts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The worklist and the study, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a dark reading-room worklist for triage across the shift, and a per-study detail view with the AI findings and a report draft.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Priority worklist</span>
+              <h3>Triage the whole shift in one glance.</h3>
+              <p>Live queue depth, critical flags and turnaround KPIs sit above an acuity-ordered worklist — critical rows escalated in red, each with a suspected finding, wait time and SLA countdown.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Queue-depth-over-shift chart with critical arrivals marked</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Critical / Priority / Routine flags with a live SLA countdown</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Critical-findings live feed and modality-mix at a glance</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.scanqueue.io/worklist</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="ScanQueue priority worklist: queue-depth chart, critical-flag stat tiles, and an acuity-ordered table where intracranial hemorrhage and pulmonary embolism are escalated to the top with SLA countdowns.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Priority worklist — critical studies first, each with its SLA countdown.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Study detail</span>
+              <h3>Everything the radiologist needs on one study.</h3>
+              <p>An AI findings panel with the suspected finding, confidence and severity; an abstract region-of-interest overlay; a priors comparison; and a structured report draft with the recommended next action.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> AI findings with a bounded region of interest and 98% confidence</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Auto-registered priors comparison flagging interval change</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Structured report draft with a recommended next action</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.scanqueue.io/study</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="ScanQueue study detail: an axial CT head with an AI bounding box on a suspected hemorrhage, a priors comparison, detected findings with confidence bars, and a report draft with the recommended next action.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Study detail — the finding, its region of interest, priors, and the report draft.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,#0B0E18,var(--base))">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the reading room, end to end.</h2>
+          <p>Detection, prioritization and reporting consolidated into one radiologist surface — nothing left in a paper list or a second screen.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="19" cy="18" r="1.6" fill="currentColor"/></svg></span>
+            <h3>Priority worklist</h3>
+            <p>An acuity-ordered reading queue with live queue-depth, critical-flag and turnaround KPIs above it.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10.3 3.9 1.8 18a1.7 1.7 0 0 0 1.5 2.6h17.4a1.7 1.7 0 0 0 1.5-2.6L13.7 3.9a1.7 1.7 0 0 0-3 0z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v4M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Critical-finding detection</h3>
+            <p>Suspected hemorrhage, PE, large-vessel occlusion and pneumothorax flagged for a STAT read with a confidence score.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>SLA countdown &amp; alerts</h3>
+            <p>Every study carries a target SLA and a live countdown, so an emergent read never quietly breaches its window.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 9h20M7 4v16" stroke="currentColor" stroke-width="2"/><rect x="10" y="12" width="6" height="4" rx="1" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <h3>Region-of-interest overlay</h3>
+            <p>A bounded region of interest marks where the model saw the finding, so review starts at the right slice.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="7" height="16" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="4" width="7" height="16" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 3"/></svg></span>
+            <h3>Priors comparison</h3>
+            <p>Auto-registered prior studies sit beside the current one, calling out the interval change that matters.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v6h6M9 14h6M9 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Structured report draft</h3>
+            <p>A draft impression and recommended next action per study — the radiologist edits and signs, always in control.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIFFERENTIATOR BAND ============ -->
+    <section class="diff section">
+      <div class="wrap diff-inner">
+        <div class="reveal">
+          <span class="eyebrow">Radiologist-in-the-loop</span>
+          <h2>The AI orders the list. The physician reads it.</h2>
+          <p>ScanQueue never signs a report or hides a study. It triages and prioritizes — surfacing what looks emergent with an honest confidence score — while every read and every sign-off stays with the radiologist.</p>
+          <ul class="diff-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every flag carries a confidence score — surfaced as a suspicion, not a diagnosis.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Nothing is auto-signed; the physician reads, edits the draft, and signs.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> The whole queue stays visible — reprioritized, never hidden.</li>
+          </ul>
+        </div>
+        <div class="diff-card reveal" data-delay="1" role="img" aria-label="Acuity mix of the live queue: 6 critical, 24 priority, and 107 routine studies.">
+          <div class="head">
+            <span class="t">Live queue · acuity mix</span>
+            <span class="s mono">137</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#EF4444"></span> Critical · STAT read</span>
+            <span class="mini-bar" data-pct="18"><i style="background:linear-gradient(90deg,#F87171,#EF4444)"></i></span>
+            <span class="wt mono">6</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#FBBF24"></span> Priority</span>
+            <span class="mini-bar" data-pct="52"><i style="background:linear-gradient(90deg,#FBBF24,#F59E0B)"></i></span>
+            <span class="wt mono">24</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#34D399"></span> Routine</span>
+            <span class="mini-bar" data-pct="100"><i style="background:linear-gradient(90deg,#34D399,#10B981)"></i></span>
+            <span class="wt mono">107</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Modern imaging stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in a ten-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">FastAPI · Python</span>
+          <span class="chip">DICOM · HL7 FHIR</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Orthanc PACS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>See what an acuity-first worklist does to your turnaround.</h2>
+            <p>We build AI-native products like ScanQueue. Tell us about your reading-room workflow and we'll show you what prioritization looks like on your modalities and SLAs.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="ScanQueue home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="4" stroke="#fff" stroke-width="1.8"/><path d="M8 8h5a3 3 0 0 1 0 6H9l4 3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Scan<b>Queue</b>
+          </a>
+          <p>An AI radiology worklist that flags suspected critical findings and orders every read by acuity and SLA — so the sickest patient is read first.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#why">Why acuity</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> ScanQueue</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

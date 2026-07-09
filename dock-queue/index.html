@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DockQueue — Dock Scheduling & Yard Management for Distribution Centers</title>
+  <meta name="description" content="DockQueue turns dock chaos into a live schedule — carrier self-booking, automatic door assignment, real-time yard tracking and a detention clock that stops free-time overruns. Built by BuildspaceLabs.">
+  <link rel="canonical" href="https://buildpacelabs.github.io/buildspace-landings/dock-queue/">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0F766E">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BuildspaceLabs">
+  <meta property="og:title" content="DockQueue — Every dock door, on schedule">
+  <meta property="og:description" content="Dock appointment scheduling and yard management: carrier self-booking, automatic door assignment, live dwell tracking and detention alerts.">
+  <meta property="og:url" content="https://buildpacelabs.github.io/buildspace-landings/dock-queue/">
+  <meta property="og:image" content="https://buildpacelabs.github.io/buildspace-landings/dock-queue/assets/dashboard.webp">
+  <meta property="og:image:alt" content="DockQueue dock schedule board showing a door timeline grid, appointment blocks and yard capacity.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DockQueue — Every dock door, on schedule">
+  <meta name="twitter:description" content="Dock appointment scheduling and yard management with live dwell tracking and detention alerts. Built by BuildspaceLabs.">
+  <meta name="twitter:image" content="https://buildpacelabs.github.io/buildspace-landings/dock-queue/assets/dashboard.webp">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F766E'/%3E%3Cg fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='8' y='9' width='16' height='14' rx='1'/%3E%3Cpath d='M8 13h16M13 13v10M19 13v10'/%3E%3C/g%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DockQueue",
+    "description": "A dock appointment scheduling and yard management platform for distribution centers — carrier self-booking, automatic door assignment, live yard and trailer tracking, dwell-time tracking and a detention free-time clock, in one operational board.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "creator": {
+      "@type": "Organization",
+      "name": "BuildspaceLabs",
+      "url": "https://buildspacelabs.com"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html" aria-label="DockQueue home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M9 9v11M15 9v11"/></svg>
+        </span>
+        DockQueue
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#why">Why yards fall behind</a>
+        <a href="#how">How it works</a>
+        <a href="#tour">Product</a>
+        <a href="#features">Features</a>
+      </nav>
+      <div class="nav-right">
+        <a class="built-by" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+          Built by <b>BuildspaceLabs</b>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-primary nav-cta" href="https://buildspacelabs.com/contact-us">Book a demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="hero-status">
+            <span class="pulse-dot" aria-hidden="true"><span></span><span></span></span>
+            Live yard · 41 trailers on site
+          </span>
+          <h1>Every dock door, <span class="accent">on schedule</span></h1>
+          <p class="hero-sub">DockQueue lets carriers self-book dock appointments, assigns the right door on arrival, and tracks every trailer's dwell — so detention charges stop before the free-time clock runs out.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tour">See the product</a>
+          </div>
+          <ul class="hero-trust">
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 24 doors, one timeline</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Carrier self-booking</li>
+            <li class="item"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Detention clock built in</li>
+          </ul>
+        </div>
+
+        <!-- SIGNATURE VISUAL: live dock board -->
+        <div class="hero-visual reveal" data-delay="1">
+          <div class="dock-board" role="img" aria-label="Live dock board: five doors as rows against a 06:00 to 18:00 time axis, with inbound and outbound appointment blocks, an at-door marker, a delayed appointment, a sweeping now line, and a yard gauge at 68% capacity.">
+            <div class="board-top">
+              <span class="lbl">Dock schedule · today</span>
+              <span class="board-live"><span class="dot"></span> live · 11:20</span>
+            </div>
+
+            <div class="board-grid">
+              <svg viewBox="0 0 300 150" aria-hidden="true">
+                <!-- alt row bg -->
+                <rect class="bg-row" x="24" y="42" width="270" height="24"/>
+                <rect class="bg-row" x="24" y="90" width="270" height="24"/>
+                <!-- vertical hour lines (every 2h) -->
+                <g class="bg-line">
+                  <line x1="26"    y1="16" x2="26"    y2="138"/>
+                  <line x1="70.3"  y1="16" x2="70.3"  y2="138"/>
+                  <line x1="114.7" y1="16" x2="114.7" y2="138"/>
+                  <line x1="159"   y1="16" x2="159"   y2="138"/>
+                  <line x1="203.4" y1="16" x2="203.4" y2="138"/>
+                  <line x1="247.7" y1="16" x2="247.7" y2="138"/>
+                  <line x1="292"   y1="16" x2="292"   y2="138"/>
+                </g>
+                <!-- axis labels -->
+                <g class="bg-axis" text-anchor="middle">
+                  <text x="26"    y="11">06</text>
+                  <text x="70.3"  y="11">08</text>
+                  <text x="114.7" y="11">10</text>
+                  <text x="159"   y="11">12</text>
+                  <text x="203.4" y="11">14</text>
+                  <text x="247.7" y="11">16</text>
+                  <text x="292"   y="11">18</text>
+                </g>
+                <!-- row separators -->
+                <g class="bg-line">
+                  <line x1="24" y1="18"  x2="294" y2="18"/>
+                  <line x1="24" y1="42"  x2="294" y2="42"/>
+                  <line x1="24" y1="66"  x2="294" y2="66"/>
+                  <line x1="24" y1="90"  x2="294" y2="90"/>
+                  <line x1="24" y1="114" x2="294" y2="114"/>
+                  <line x1="24" y1="138" x2="294" y2="138"/>
+                </g>
+                <!-- door labels -->
+                <g class="bg-door">
+                  <text x="4" y="33">D01</text>
+                  <text x="4" y="57">D02</text>
+                  <text x="4" y="81">D03</text>
+                  <text x="4" y="105">D04</text>
+                  <text x="4" y="129">D05</text>
+                </g>
+
+                <!-- D01 (top18) -->
+                <rect class="blk-in"  x="37.1"  y="22" width="33.3" height="16" rx="3"/><rect class="blk-in-cap" x="37.1" y="22" width="2.6" height="16" rx="1.3"/>
+                <rect class="blk-out" x="114.7" y="22" width="33.3" height="16" rx="3"/><rect class="blk-out-cap" x="114.7" y="22" width="2.6" height="16" rx="1.3"/>
+                <!-- D02 (top42) at-door -->
+                <rect class="blk-in"  x="26"   y="46" width="33.3" height="16" rx="3"/><rect class="blk-door-ring" x="26.7" y="46.7" width="31.9" height="14.6" rx="2.6"/><rect class="blk-in-cap" x="26" y="46" width="2.6" height="16" rx="1.3"/><circle class="pip-door" cx="55" cy="49.5" r="2.1" fill="#067647"/>
+                <rect class="blk-out" x="92.5"  y="46" width="44.3" height="16" rx="3"/><rect class="blk-out-cap" x="92.5" y="46" width="2.6" height="16" rx="1.3"/>
+                <!-- D03 (top66) delayed -->
+                <rect class="blk-out" x="48.2"  y="70" width="22.2" height="16" rx="3"/><rect class="blk-out-cap" x="48.2" y="70" width="2.6" height="16" rx="1.3"/>
+                <rect class="blk-in"  x="103.6" y="70" width="44.3" height="16" rx="3"/><rect class="blk-late" x="104.3" y="70.7" width="42.9" height="14.6" rx="2.6"/><rect class="blk-in-cap" x="103.6" y="70" width="2.6" height="16" rx="1.3"/>
+                <!-- D04 (top90) -->
+                <rect class="blk-in"  x="42.6"  y="94" width="38.8" height="16" rx="3"/><rect class="blk-in-cap" x="42.6" y="94" width="2.6" height="16" rx="1.3"/>
+                <rect class="blk-out" x="136.9" y="94" width="33.3" height="16" rx="3"/><rect class="blk-out-cap" x="136.9" y="94" width="2.6" height="16" rx="1.3"/>
+                <rect class="blk-in"  x="203.4" y="94" width="33.3" height="16" rx="3"/><rect class="blk-in-cap" x="203.4" y="94" width="2.6" height="16" rx="1.3"/>
+                <!-- D05 (top114) -->
+                <rect class="blk-in"  x="26"    y="118" width="22.2" height="16" rx="3"/><rect class="blk-in-cap" x="26" y="118" width="2.6" height="16" rx="1.3"/>
+                <rect class="blk-out" x="81.4"  y="118" width="44.3" height="16" rx="3"/><rect class="blk-out-cap" x="81.4" y="118" width="2.6" height="16" rx="1.3"/>
+                <rect class="blk-in"  x="170.2" y="118" width="33.3" height="16" rx="3"/><rect class="blk-in-cap" x="170.2" y="118" width="2.6" height="16" rx="1.3"/>
+
+                <!-- NOW sweep -->
+                <g class="now-sweep">
+                  <line class="now-line" x1="26" y1="16" x2="26" y2="138"/>
+                </g>
+              </svg>
+            </div>
+
+            <div class="board-foot">
+              <div class="yard-gauge">
+                <svg viewBox="0 0 78 78" aria-hidden="true">
+                  <circle class="yg-track" cx="39" cy="39" r="31"/>
+                  <circle class="yg-fill" cx="39" cy="39" r="31" data-dash="132"/>
+                </svg>
+                <div class="yg-label"><span class="v">68<small style="font-size:9px">%</small></span><span class="l">yard</span></div>
+              </div>
+              <div class="board-stats">
+                <div class="bstat"><div class="n">82<span style="font-size:11px">%</span></div><div class="l">Door util.</div></div>
+                <div class="bstat"><div class="n">47<span style="font-size:11px">m</span></div><div class="l">Avg dwell</div></div>
+                <div class="bstat"><div class="n amber">$2.1K</div><div class="l">Detention</div></div>
+              </div>
+            </div>
+            <div class="board-legend">
+              <span class="lg"><span class="sw in"></span> Inbound</span>
+              <span class="lg"><span class="sw out"></span> Outbound</span>
+              <span class="lg"><span class="sw door"></span> At door</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ KPI BAND ============ -->
+    <section class="kpi-band" aria-label="Facility at a glance">
+      <div class="wrap">
+        <div class="kpi-inner">
+          <div class="kpi reveal"><div class="num mono"><span data-count="96" data-decimals="0">0</span></div><div class="lbl">Appointments today</div></div>
+          <div class="kpi reveal" data-delay="1"><div class="num mono"><span data-count="82" data-decimals="0">0</span><span class="unit">%</span></div><div class="lbl">Door utilization</div></div>
+          <div class="kpi reveal" data-delay="2"><div class="num mono"><span data-count="47" data-decimals="0">0</span><span class="unit">m</span></div><div class="lbl">Average dwell</div><div class="tag save"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> 8 min faster</div></div>
+          <div class="kpi reveal" data-delay="3"><div class="num mono">$<span data-count="2.1" data-decimals="1">0</span><span class="unit">K</span></div><div class="lbl">Detention risk today</div><div class="tag risk"><svg viewBox="0 0 24 24" width="11" height="11" fill="none" aria-hidden="true"><path d="M12 8v5M12 16.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 3l9 16H3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> 3 trailers flagged</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="section" id="why">
+      <div class="wrap why-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom:28px">
+            <span class="eyebrow">Why yards fall behind</span>
+            <h2>Dock delays aren't bad luck. They're a scheduling gap.</h2>
+            <p>When carriers arrive without a slot, doors pile up, trailers sit, and detention accrues invisibly. DockQueue closes the gap between the appointment book and the yard.</p>
+          </div>
+          <div class="why-list">
+            <div class="why w1">
+              <div class="why-top">
+                <span class="why-name"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Blind booking</span>
+                <span class="why-cost mono">High</span>
+              </div>
+              <div class="why-bar" data-pct="84"><i></i></div>
+              <p class="why-desc">Carriers pick any time by phone or email — so four trailers show up for one open door at 10am.</p>
+            </div>
+            <div class="why w2">
+              <div class="why-top">
+                <span class="why-name"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M15 10h4l3 3v4h-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="6" cy="19" r="1.6" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="1.6" stroke="currentColor" stroke-width="2"/></svg></span>Lost trailers</span>
+                <span class="why-cost mono">Medium</span>
+              </div>
+              <div class="why-bar" data-pct="62"><i></i></div>
+              <p class="why-desc">No live yard map means trailers get "found" on a walkaround — while the clock keeps running.</p>
+            </div>
+            <div class="why w3">
+              <div class="why-top">
+                <span class="why-name"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l3 2M9 2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Invisible detention</span>
+                <span class="why-cost mono">Critical</span>
+              </div>
+              <div class="why-bar" data-pct="93"><i></i></div>
+              <p class="why-desc">Free-time overruns only surface on the carrier's invoice — weeks after anyone could have prevented them.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-note reveal" data-delay="1">
+          <h3>Where the 47 minutes go</h3>
+          <p>Every trailer's dwell breaks down into named stages — so you can see whether the time is at the gate, waiting for a door, or on the dock.</p>
+          <div class="gauge-row">
+            <div class="ring-wrap">
+              <svg viewBox="0 0 132 132" aria-hidden="true">
+                <circle class="ring-track" cx="66" cy="66" r="55"/>
+                <circle class="ring-fill" cx="66" cy="66" r="55" data-dash="270"/>
+              </svg>
+              <div class="ring-label">
+                <span class="score mono">47</span>
+                <span class="of mono">min dwell</span>
+              </div>
+            </div>
+            <ul class="ring-legend">
+              <li><span class="d" style="background:#B42318"></span> Waiting for a door <span class="k mono">30%</span></li>
+              <li><span class="d" style="background:#0F766E"></span> Loading / unloading <span class="k mono">43%</span></li>
+              <li><span class="d" style="background:#C2770C"></span> Gate &amp; yard staging <span class="k mono">19%</span></li>
+              <li><span class="d" style="background:#8A9B98"></span> Paperwork &amp; release <span class="k mono">8%</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW ============ -->
+    <section class="section" id="how" style="background:linear-gradient(180deg,#FFFFFF,var(--base));border-block:1px solid var(--hair)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Book · assign · track</span>
+          <h2>From a booking request to a departed trailer.</h2>
+          <p>DockQueue runs the whole appointment lifecycle on one board — no clipboard, no whiteboard, no guesswork about who's at which door.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-n mono">STEP 01</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 15l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Book</h3>
+            <p>Carriers self-book an inbound or outbound appointment against live door capacity — no double-booked slots, no phone tag with the guard shack.</p>
+          </article>
+          <article class="step reveal" data-delay="1">
+            <span class="step-n mono">STEP 02</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" stroke="currentColor" stroke-width="2"/><path d="M4 20h16M9 20V9h6v11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Assign</h3>
+            <p>On check-in, DockQueue spots the trailer to the right door — matching reefer, hazmat and load type — and logs the yard location in real time.</p>
+          </article>
+          <article class="step reveal" data-delay="2">
+            <span class="step-n mono">STEP 03</span>
+            <span class="step-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Track</h3>
+            <p>Dwell and the detention free-time clock run live — coordinators get alerted before a trailer breaches, not after the charge lands.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT TOUR ============ -->
+    <section class="section" id="tour">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Inside the product</span>
+          <h2>The schedule board and the appointment file, side by side.</h2>
+          <p>BuildspaceLabs built the MVP front end: a live dock-door timeline for the whole facility, and a per-appointment file for the trailer at the door.</p>
+        </div>
+
+        <div class="tour">
+          <!-- Dashboard -->
+          <div class="shot-row">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Dock schedule board</span>
+              <h3>See all 24 doors on one timeline.</h3>
+              <p>A door-by-door time grid places every appointment where it belongs — inbound and outbound colour-coded, at-door and delayed flagged, with a live "now" line and yard capacity alongside.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Dock-door timeline from 06:00 to 18:00</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Upcoming appointments with live status and dwell</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Yard capacity and on-time arrival rate at a glance</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.dockqueue.io/schedule</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/dashboard.webp" alt="DockQueue dock schedule board: a dock-door timeline grid for doors D01 to D08, inbound and outbound appointment blocks, an upcoming-appointments table, a yard capacity gauge and an on-time arrival rate.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Dock schedule board — the door timeline, upcoming appointments and yard KPIs.</figcaption>
+            </div>
+          </div>
+
+          <!-- Detail -->
+          <div class="shot-row reverse">
+            <div class="shot-copy reveal">
+              <span class="eyebrow">Appointment detail</span>
+              <h3>Everything about one trailer at the door.</h3>
+              <p>A check-in timeline from gate to departure, the trailer's contents, a dwell breakdown against target and a live detention clock — plus a one-tap door reassignment when a bay is blocking the flow.</p>
+              <ul class="shot-feats">
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Gate-in → yard → door → loading → departed timeline</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Dwell breakdown vs target with a detention clock</li>
+                <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Recommended door reassignment to protect free time</li>
+              </ul>
+            </div>
+            <div class="reveal" data-delay="1">
+              <figure class="browser">
+                <div class="browser-bar" aria-hidden="true">
+                  <span class="browser-dots"><span></span><span></span><span></span></span>
+                  <span class="browser-url"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="2"/></svg>app.dockqueue.io/appointment</span>
+                </div>
+                <img loading="lazy" decoding="async" src="assets/detail.webp" alt="DockQueue appointment detail: a check-in timeline from gate to departure, trailer contents, a dwell breakdown versus target, a detention clock and a recommended door reassignment.">
+              </figure>
+              <figcaption class="shot-cap"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Appointment detail — check-in timeline, dwell breakdown and detention clock.</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features" style="background:linear-gradient(180deg,var(--base),#FFFFFF)">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">What's in the box</span>
+          <h2>Built for the dock and the yard, end to end.</h2>
+          <p>Scheduling, door assignment, yard tracking and detention control on one operational surface — nothing left on a whiteboard.</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h18M8 13h3M8 17h3M15 13h1M15 17h1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Dock-door timeline</h3>
+            <p>Every door as a row against the day's time axis, appointments colour-coded by inbound and outbound.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M19 8v6M22 11h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Carrier self-booking</h3>
+            <p>A portal where carriers reserve inbound and outbound slots against real door capacity.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="7" width="13" height="10" rx="1.5" stroke="currentColor" stroke-width="2"/><path d="M15 10h4l3 3v4h-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="6" cy="19" r="1.6" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="1.6" stroke="currentColor" stroke-width="2"/></svg></span>
+            <h3>Live yard tracking</h3>
+            <p>Every trailer's spot, state and dwell on a real-time yard map — no more walkarounds.</p>
+          </article>
+          <article class="feature reveal">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 18v-6M11 18V8M17 18v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4 21h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <h3>Dwell vs target</h3>
+            <p>Each appointment's dwell broken into stages and measured against your target time.</p>
+          </article>
+          <article class="feature reveal" data-delay="1">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="13" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l3 2M9 2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Detention clock</h3>
+            <p>A free-time countdown per trailer with alerts before an overrun turns into a charge.</p>
+          </article>
+          <article class="feature reveal" data-delay="2">
+            <span class="feature-ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 15l3-4 3 3 5-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <h3>Yard analytics</h3>
+            <p>Door utilization, on-time arrival rate and detention exposure trended over time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DIFFERENTIATOR BAND ============ -->
+    <section class="diff section">
+      <div class="wrap diff-inner">
+        <div class="reveal">
+          <span class="eyebrow">Dwell you can see</span>
+          <h2>Detention you can prevent.</h2>
+          <p>Most detention is avoidable — it comes from doors, not carriers. DockQueue shows exactly where each trailer's minutes are going, so a coordinator can act while the clock is still running.</p>
+          <ul class="diff-points">
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Every trailer's dwell attributed to a named stage.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> A live free-time clock, not a surprise invoice line.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Door reassignments suggested before a bay blocks the flow.</li>
+          </ul>
+        </div>
+        <div class="diff-card reveal" data-delay="1" role="img" aria-label="Detention drivers this week: door wait 42%, slow unload 28%, late arrival 18%, paperwork 12%.">
+          <div class="head">
+            <span class="t">Detention drivers · this week</span>
+            <span class="s mono">$2.1K</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#B42318"></span> Waiting for a door</span>
+            <span class="mini-bar" data-pct="42"><i style="background:#E0685C"></i></span>
+            <span class="wt mono">42%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#0F766E"></span> Slow load / unload</span>
+            <span class="mini-bar" data-pct="28"><i style="background:#22A196"></i></span>
+            <span class="wt mono">28%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#C2770C"></span> Late carrier arrival</span>
+            <span class="mini-bar" data-pct="18"><i style="background:#E0982F"></i></span>
+            <span class="wt mono">18%</span>
+          </div>
+          <div class="row">
+            <span class="name"><span class="dot" style="background:#8A9B98"></span> Paperwork &amp; release</span>
+            <span class="mini-bar" data-pct="12"><i style="background:#B7C3C0"></i></span>
+            <span class="wt mono">12%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECH ============ -->
+    <section class="section tech">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow" style="justify-content:center">Under the hood</span>
+          <h2>Real-time stack, production-grade front end.</h2>
+          <p>Delivered as a production-quality MVP in a seven-week engagement.</p>
+        </div>
+        <div class="chips reveal" data-delay="1">
+          <span class="chip">Next.js</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">Tailwind CSS</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Python · FastAPI</span>
+          <span class="chip">Redis + WebSockets</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section cta">
+      <div class="wrap">
+        <div class="cta-card reveal">
+          <div class="inner">
+            <h2>Put your dock doors on a schedule.</h2>
+            <p>We build AI-native products like DockQueue. Tell us how your facility runs its docks and yard, and we'll show you what a live scheduling and detention system looks like on your operation.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="https://buildspacelabs.com/contact-us">
+                Book a demo
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="DockQueue home">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M9 9v11M15 9v11"/></svg>
+            </span>
+            DockQueue
+          </a>
+          <p>A dock scheduling and yard management platform — carrier self-booking, automatic door assignment, live dwell tracking and a detention clock that stops free-time overruns.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#why">Why yards fall behind</a>
+          <a href="#how">How it works</a>
+          <a href="#tour">Product tour</a>
+          <a href="#features">Features</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in touch</h4>
+          <a href="contact.html">Contact</a>
+          <a href="https://buildspacelabs.com/contact-us">Book a demo ↗</a>
+          <a href="mailto:buildspacelabs@vruoom.com">buildspacelabs@vruoom.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="credit">
+          <a class="bs-lockup" href="https://buildspacelabs.com" target="_blank" rel="noopener">
+            <span class="bs">{bs}</span> BuildspaceLabs
+          </a>
+          <span class="tag">Designed &amp; engineered by BuildspaceLabs — we design and ship AI-native products like this one.</span>
+        </div>
+        <span class="footer-note">© <span data-year>2026</span> DockQueue</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
